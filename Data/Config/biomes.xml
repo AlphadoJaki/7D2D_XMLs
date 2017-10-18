@@ -10,11 +10,17 @@ Rules for each biome generation and operation.
 The weather sections within each biome are restrictions
 to the "global" weather condition running across the
 entire world.  For example, if the global weather says
-the temperature of the world is 20 degrees and your biome
-does not have any restrictions that allow below 50 degree
-weather, then your biome will have the lowest possible
-temperature allowed within its restrictions defined in this
+the precipitation of the world is 20 and your biome
+does not have any restrictions that allow below 50 for
+precipitation, then your biome will have the lowest possible
+precipitation allowed within its restrictions defined in this
 file.
+
+Temperature is different.  It is the base temperature
+of the biome to subtract from the global temperature.
+The final temperature is effected by rain, wind, clouds,
+and angle of the sun (each of these will only subtract
+from the temperature).
 
 Format & location:
 <worldgeneration>
@@ -28,21 +34,7 @@ Format & location:
    <biome/>
 <worldgeneration/>
 
-Example 1:
-  <weather>
-    <Temperature min="-10" max="20" prob="1"/>
-    <Temperature min="20" max="80" prob="1"/>
-  <weather/>
-"This would mean there's a total probability of 2.  
-This number is from adding all the 'prob' values
-of the 'Temperature' conditions.  The first line
-'<Temperature min="-10" max="20" prob="1"/>' is
-saying there's a 50% chance the temperature will
-be between -10 and 20, since 1 is 50% of the total
-'Temperature' probability of 2."
-
-
-Example 2:
+Example:
   <weather>
     <Fog min="0" max="0" prob="0.1"/>
     <Fog min="20" max="30" prob="0.95"/>
@@ -68,8 +60,8 @@ Options:
 
 Description of Options:
   - Temperature
-      Values are in fahrenheit and restrict the temperature in
-      this biome to fit within the min and max degrees specified.
+      Values are in fahrenheit and subtract the temperature in
+      this biome from the global temperature.
   - Fog
       Values are between 0 and 100.  The result is used to determine
       whether or not to use the "Foggy" Environment spectrums for
@@ -102,7 +94,7 @@ Description of Options:
 	
 		<property class="Foggy">
 			<property name="Spectrum" value="foggy" />
-			<property name="Temperature" value="-10" />
+			<property name="Temperature" value="-5" />
 			<property name="AmbientSound" value="..." />
 			<property name="ParticleEffect" value="..." />
 		</property>
@@ -112,7 +104,7 @@ Description of Options:
 			<property name="Temperature" value="-10" />
 			<property name="AmbientSound" value="..." />
 			<property name="ParticleEffect" value="..." />
-		</property>	
+		</property>
 	
 	</weather>
 
@@ -146,10 +138,10 @@ Description of Options:
 		   
 		<!-- Resource Parameters: -->
 			<!-- rwgGenerationType: string: defines the type of allowed resouce generation, THIS ONLY AFFECTS RANDOM GEN; 
-					Possible values are 'noise', 'caves', 'all'
+					Possible values are 'noise', 'all', 'all'
 			
 					noise - Uses regular perlin noise calculations for resources like in Navezgane
-					caves - Uses cave resource nodes instead of noise
+					all - Uses cave resource nodes instead of noise
 					all - Will use both noise based generation AND cave node generation.
 			-->
         
@@ -157,7 +149,7 @@ Description of Options:
         <!-- Snow Biome Main -->
         <biome name="snow" biomemapcolor="#FFFFFF">
           <weather>
-          		<Temperature min="-10" max="20" prob="1"/>
+          		<Temperature min="-50" max="-50" prob="1"/>
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="100" prob=".5"/>
@@ -210,9 +202,9 @@ Description of Options:
 					<resource blockname="clay" prob="0.2" />
 				</layer>
                 <layer depth="*" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>                             
                
                 <layer depth="3" blockname="bedrock" />
@@ -223,6 +215,7 @@ Description of Options:
                 <decoration type="prefab" name="rock_form02" prob=".001" rotatemax="7"/>
                 <decoration type="prefab" name="rock_form01" prob=".01" rotatemax="7"/>
                 <decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
+                <decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>
                 <decoration type="block" blockname="snowstorm1" prob ="0.00004" />
                 <decoration type="block" blockname="lootForest" prob="0.00025"/>
                 <decoration type="block" blockname="rock05" prob =".005" />
@@ -247,7 +240,7 @@ Description of Options:
       <!-- Forest Biome Main -->
       <biome name="forest" biomemapcolor="#008D00" >
           <weather>
-          		<Temperature min="-10" max="101" prob="1"/>
+          		<Temperature min="-7" max="-7" prob="1"/>
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -264,7 +257,7 @@ Description of Options:
 				</layers>
 				<decorations>
 					<decoration type="block" blockname="tallGrassDiagonal" prob =".5" />
-					<decoration type="block" blockname="goldenrod" prob="0.08"/>
+					<decoration type="block" blockname="goldenrod" prob="0.008"/>
 					<decoration type="block" blockname="cotton" prob="0.07"/>
 					<decoration type="block" blockname="rock01" prob =".01" />                
 					<decoration type="block" blockname="rock02" prob =".01" />
@@ -280,11 +273,11 @@ Description of Options:
 					
 				</layer>
                 <layer depth="*" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>               
                 <layer depth="3" blockname="bedrock" />
             </layers>
@@ -294,7 +287,7 @@ Description of Options:
                 <decoration type="prefab" name="rock_form02" prob=".001" rotatemax="7"/>
                 <decoration type="prefab" name="rock_form01" prob=".01" rotatemax="7"/>
                 <decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
-                <decoration type="block" blockname="goldenrod" prob="0.003"/>
+                <decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>
                 <decoration type="block" blockname="cotton" prob="0.003"/>
 				<decoration type="block" blockname="plantChrysanthemum" prob="0.001"/>                
                 <decoration type="block" blockname="rock01" prob=".005"/>
@@ -324,7 +317,7 @@ Description of Options:
       <!-- Pine Forest Main Biome  -->
       <biome name="pine_forest" biomemapcolor="#004000" >
           <weather>
-          		<Temperature min="-10" max="101" prob="1"/>
+          		<Temperature min="-10" max="-20" prob="1"/>
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -342,7 +335,7 @@ Description of Options:
 				</layers>
 				<decorations>
 					<decoration type="block" blockname="tallGrassDiagonal" prob =".5" />
-					<decoration type="block" blockname="goldenrod" prob="0.08"/>
+					<decoration type="block" blockname="goldenrod" prob="0.008"/>
 					<decoration type="block" blockname="cotton" prob="0.07"/>
 					<decoration type="block" blockname="rock01" prob =".01" />                
 					<decoration type="block" blockname="rock02" prob =".01" />
@@ -360,7 +353,7 @@ Description of Options:
 				</layers>
 				<decorations>
 					<decoration type="block" blockname="tallGrassDiagonal" prob =".5" />
-					<decoration type="block" blockname="goldenrod" prob="0.08"/>
+					<decoration type="block" blockname="goldenrod" prob="0.008"/>
 					<decoration type="block" blockname="cotton" prob="0.07"/>
 					<decoration type="block" blockname="rock01" prob =".01" />                
 					<decoration type="block" blockname="rock02" prob =".01" />
@@ -378,11 +371,11 @@ Description of Options:
 					<resource blockname="clay" cluster="2" prob="0.2" />
 				</layer>
                 <layer depth="*" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>                                           
                 <layer depth="3" blockname="bedrock" />
             </layers>
@@ -392,7 +385,7 @@ Description of Options:
                 <decoration type="prefab" name="rock_form02" prob=".001" rotatemax="7"/>
                 <decoration type="prefab" name="rock_form01" prob=".01" rotatemax="7"/>
                 <decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
-                <decoration type="block" blockname="goldenrod" prob="0.001"/>
+                <decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>                
                 <decoration type="block" blockname="cotton" prob="0.001"/>
                 <decoration type="block" blockname="rock01" prob =".001" />                
                 <decoration type="block" blockname="rock02" prob =".001" />
@@ -417,7 +410,7 @@ Description of Options:
       <!-- Plains Main Biome-->
       <biome name="plains" biomemapcolor="#00FF00" >
           <weather>
-          		<Temperature min="40" max="104" prob="1"/>          		          		          	
+          		<Temperature min="5" max="10" prob="1"/>          		          		          	
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -438,6 +431,7 @@ Description of Options:
           	
           	
           	<decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
+          	<decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>
 			<decoration type="block" blockname="PlainsTree" prob="0.025" rotatemax="7"/>
             <decoration type="block" blockname="PlainsTree2" prob="0.009"/>
             <decoration type="block" blockname="PlainsTree2" prob="0.009"/>
@@ -475,9 +469,9 @@ Description of Options:
                 <layer depth="3" blockname="dirt" >					
 				</layer>
                 <layer depth="*" blockname="stone" > 	
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>
               
                 <layer depth="3" blockname="bedrock" />
@@ -491,7 +485,7 @@ Description of Options:
          	 	    <decoration type="block" blockname="rockResource" prob =".0004" rotatemax="3"/>
          	 	    <decoration type="block" blockname="rockResource02" prob =".0004" rotatemax="3"/>
                 <decoration type="block" blockname="lootPlains" prob="0.00025"/>
-                
+                <decoration type="block" blockname="goldenrod" prob="0.002"/>
                 <decoration type="block" blockname="desertShrub" prob ="0.007" />
                 <decoration type="block" blockname="DeadShrub" prob ="0.0005" />
                 <decoration type="block" blockname="birdnest" prob ="0.0009" /> 
@@ -504,7 +498,7 @@ Description of Options:
        <!-- Desert Main Biome -->
        <biome name="desert" biomemapcolor="#FFE477">
           <weather>
-          		<Temperature min="35" max="120" prob="1"/>
+          		<Temperature min="25" max="25" prob="1"/>
           		<CloudThickness min="5" max="50" prob="1"/>          		
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
@@ -531,7 +525,7 @@ Description of Options:
              <decoration type="block" blockname="cactus06" prob ="0.01" rotatemax="3"/>
              <decoration type="block" blockname="rockResource" prob =".004" rotatemax="3"/>
              <decoration type="block" blockname="rockResource02" prob =".004" rotatemax="3"/>
-             <decoration type="prefab" name="car_wasteland" prob=".007" rotatemax="7"/>
+			 <decoration type="block" blockname="randomCars" prob="0.007" rotatemax="3"/>
              <decoration type="block" blockname="lootDesert" prob="0.01"/>
              <decoration type="block" blockname="brownGrassDiagonal" prob =".01" />
            </decorations>
@@ -544,6 +538,7 @@ Description of Options:
            </layers>
            <decorations>
            <decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
+           <decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>
              <decoration type="block" blockname="desertShrub" prob=".25" rotatemax="7"/>
              <decoration type="block" blockname="plantYucca" prob=".03" rotatemax="7"/>
              <decoration type="block" blockname="plantAloe" prob=".03" rotatemax="7"/>
@@ -560,9 +555,9 @@ Description of Options:
                 <layer depth="30" blockname="sandStone" >					
 				</layer>
                 <layer depth="*" blockname="stone" > 	
-            		<!---<resource blockname="crudeOil" cluster="1" prob="0.1" rwgGenerationType="caves" /> -->
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />                     
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="oilDeposit" cluster="2" prob="0.1" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />                     
+            		<resource blockname="gravel" cluster="1" prob="0.1" rwgGenerationType="all" />
                 </layer>
  
                
@@ -602,7 +597,7 @@ Description of Options:
        <!-- Water Main Biome -->
       <biome name="water" biomemapcolor="#0063ff">		
           <weather>
-          		<Temperature min="35" max="120" prob="1"/>
+          		<Temperature min="-20" max="-20" prob="1"/>
           		<CloudThickness min="5" max="50" prob="1"/>          		
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
@@ -653,19 +648,19 @@ Description of Options:
 					<resource blockname="clay" prob="0.5" />
 				</layer>
                 <layer depth="20" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>
                 <layer depth="20" blockname="stone" > 
-                	<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />	
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
+                	<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />	
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
                 </layer>  
                 <layer depth="20" blockname="stone" > 
-                	<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />	
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+                	<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />	
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
                 </layer>                               
                 <layer depth="*" blockname="stone" >
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
               		
     			</layer>                
                 <layer depth="3" blockname="bedrock" />
@@ -687,8 +682,8 @@ Description of Options:
             	<decoration type="block" blockname="MountainPineDry" prob="0.005" rotatemax="7"/>
             	<decoration type="block" blockname="DeadShrub" prob="0.005" rotatemax="7"/> 
             	<decoration type="block" blockname="DeadTree02" prob="0.005" rotatemax="7"/>
-            	<decoration type="block" blockname="deadPineLeaf" prob ="0.01" rotatemax="7"/>
-            	<decoration type="prefab" name="car_wasteland" prob=".001" />				
+            	<decoration type="block" blockname="deadPineLeaf" prob ="0.01" rotatemax="7"/>	
+				<decoration type="block" blockname="randomCars" prob="0.001" rotatemax="3"/>				
 				
 				
           </decorations>
@@ -697,7 +692,7 @@ Description of Options:
        <!-- Radiated Main Biome -->     
        <biome name="radiated" biomemapcolor="#FF0000" radiationlevel="10">
           <weather>
-          		<Temperature min="35" max="180" prob="1"/>
+          		<Temperature min="50" max="50" prob="1"/>
           		<Fog min="10" max="40" prob="1"/>
           		<CloudThickness min="100" max="100" prob="1"/>
           		<Precipitation min="100" max="100" prob="1"/>
@@ -724,7 +719,7 @@ Description of Options:
               <decoration type="block" blockname="MountainPineDry" prob="0.001" rotatemax="7"/>
               <decoration type="block" blockname="DeadShrub" prob="0.001" rotatemax="7"/>
               <decoration type="block" blockname="DeadTree02" prob="0.003" rotatemax="7"/>
-              <decoration type="prefab" name="car_wasteland" prob=".02" />
+			  <decoration type="block" blockname="car03Damage2" prob="0.002" rotatemax="3"/>
             </decorations>
 			<terrain class="Hills" />
        </biome>
@@ -732,7 +727,7 @@ Description of Options:
         <!-- Wasteland Main Biome -->
         <biome name="wasteland" biomemapcolor="#ffa800" >
           <weather>
-          		<Temperature min="-10" max="120" prob="1"/>
+          		<Temperature min="10" max="10" prob="1"/>
           		<Fog min="0" max="0" prob=".8"/>
           		<Fog min="100" max="100" prob=".2"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -743,6 +738,22 @@ Description of Options:
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>  
           </weather>
+			<subbiome prob="0.1">
+				<layers>
+					<layer depth="1" blockname="dirt" />
+				</layers>
+				<decorations>
+					<decoration type="block" blockname="randomCars" prob="0.3" rotatemax="3"/>	
+					<decoration type="block" blockname="brownGrassDiagonal" prob =".5" />					
+					<decoration type="block" blockname="rock01" prob =".01" />                
+					<decoration type="block" blockname="rock02" prob =".01" />
+					<decoration type="block" blockname="rock04" prob =".01" />
+					<decoration type="block" blockname="rockResource" prob =".025" rotatemax="3"/>
+					<decoration type="block" blockname="rockResource02" prob =".025" rotatemax="3"/>
+					<decoration type="block" blockname="driftwood" prob ="0.001" rotatemax="3"/>
+					<decoration type="block" blockname="driftwood2" prob ="0.001" rotatemax="3"/>	
+				</decorations>			
+			</subbiome>			  
           <layers>
 			<layer filluptorg="60" blockname="water" />
             <layer depth="3" blockname="destroyedStone" />
@@ -750,29 +761,29 @@ Description of Options:
 					<resource blockname="clay" prob="0.2" />
 				</layer>
                 <layer depth="20" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>  
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>                               
                 <layer depth="*" blockname="stone" >
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
               		
     			</layer>                
                 <layer depth="3" blockname="bedrock" />
@@ -808,7 +819,7 @@ Description of Options:
             <decoration type="prefab" name="mp_waste_pile_01" prob=".0065" />
             <decoration type="prefab" name="mp_waste_pile_02" prob=".0065" />
             <decoration type="prefab" name="mp_waste_pile_03" prob=".005" />
-            <decoration type="prefab" name="car_wasteland" prob=".013" />
+			<decoration type="block" blockname="car03Damage2" prob="0.0005" rotatemax="3"/>
             <decoration type="block" blockname="brownGrassDiagonal" prob =".05" />
           </decorations>
 		  <terrain class="Wasteland" />
@@ -818,7 +829,7 @@ Description of Options:
 
       <biome name="burnt_forest" biomemapcolor="#ba00ff" >
           <weather>
-          		<Temperature min="85" max="150" prob="1"/>
+          		<Temperature min="40" max="40" prob="1"/>
           		<Fog min="0" max="0" prob="1"/>
           		<CloudThickness min="81" max="100" prob="1"/>
           		<Wind min="10" max="20" prob="0.9"/>
@@ -833,6 +844,7 @@ Description of Options:
             <decoration type="block" blockname="rockResource" prob =".0025" rotatemax="3"/>
             <decoration type="block" blockname="rockResource02" prob =".0025" rotatemax="3"/>
             <decoration type="prefab" name="coal_form01" prob=".0007" rotatemax="7"/>
+            <decoration type="prefab" name="potassium_nitrate_form" prob=".0007" rotatemax="7"/>
             <decoration type="block" blockname="DeadShrub" prob="0.01" rotatemax="7"/>
             <decoration type="block" blockname="DeadTree02" prob="0.01" rotatemax="7"/>
             <decoration type="block" blockname="trashPile01" prob="0.007" rotatemax="7"/>
@@ -861,29 +873,29 @@ Description of Options:
 					<resource blockname="clay" prob="0.2" />
 				</layer>
                 <layer depth="20" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>  
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>                               
                 <layer depth="*" blockname="stone" >
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
               		
     			</layer>                
                 <layer depth="3" blockname="bedrock" />
@@ -922,7 +934,7 @@ Description of Options:
       <!-- City Main Biome Diersville -->
       <biome name="city" biomemapcolor="#808080" >
           <weather>
-          		<Temperature min="-10" max="101" prob="1"/>
+          		<Temperature min="0" max="0" prob="1"/>
           		<Fog min="0" max="0" prob=".9"/>
           		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -957,7 +969,7 @@ Description of Options:
       <!-- City Main Biome Gravestown -->
       <biome name="city_wasteland" biomemapcolor="#c0c0c0" >
           <weather>
-          		<Temperature min="-10" max="101" prob="1"/>
+          		<Temperature min="5" max="5" prob="1"/>
           		<Fog min="10" max="40" prob="1"/>
           		<CloudThickness min="10" max="70" prob="0.1"/>
           		<CloudThickness min="70" max="100" prob="0.9"/>
@@ -972,29 +984,29 @@ Description of Options:
 					<resource blockname="clay" prob="0.2" />
 				</layer>
                 <layer depth="20" blockname="stone" > 	
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>  
                 <layer depth="20" blockname="stone" > 
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
-            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="coalOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
+            		<resource blockname="gravel" cluster="2" prob="0.1" rwgGenerationType="all" />
                 </layer>                               
                 <layer depth="*" blockname="stone" >
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
               		
     			</layer>                
                 <layer depth="3" blockname="bedrock" />
@@ -1008,7 +1020,7 @@ Description of Options:
       <!-- Wasteland Hub Biome Random Gen -->      
 	  <biome name="wasteland_hub" biomemapcolor="#a0a0a0" >
           <weather>
-          		<Temperature min="-10" max="101" prob="1"/>
+          		<Temperature min="10" max="10" prob="1"/>
           		<Fog min="0" max="0" prob=".8"/>
           		<Fog min="100" max="100" prob=".2"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
@@ -1045,19 +1057,19 @@ Description of Options:
 			<resource blockname="clay" prob="0.08" />
 		</layer>
 		<layer depth="20" blockname="stone" > 	
-			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
-			<resource blockname="coalOre" cluster="2" prob="0.1" rwgGenerationType="caves" />
+			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
+			<resource blockname="coalOre" cluster="2" prob="0.1" rwgGenerationType="all" />
 		</layer>
 		<layer depth="20" blockname="stone" > 
-			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />	
-			<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="caves" />
+			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />	
+			<resource blockname="potassiumNitrate" cluster="1" prob="0.1" rwgGenerationType="all" />
 		</layer>  
 		<layer depth="20" blockname="stone" > 
-			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />	
-			<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+			<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />	
+			<resource blockname="leadOre" cluster="1" prob="0.1" rwgGenerationType="all" />
 		</layer>                               
 		<layer depth="*" blockname="stone" >
-            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="caves" />
+            		<resource blockname="ironOre" cluster="1" prob="0.1" rwgGenerationType="all" />
               		
 		</layer>                
 		<layer depth="3" blockname="bedrock" />
@@ -1093,8 +1105,8 @@ Description of Options:
         <decoration type="prefab" name="waste_rubble_bldg_03" prob=".003" />
         <decoration type="prefab" name="mp_waste_pile_01" prob=".0065" />
         <decoration type="prefab" name="mp_waste_pile_02" prob=".0065" />
-        <decoration type="prefab" name="mp_waste_pile_03" prob=".005" />
-        <decoration type="prefab" name="car_wasteland" prob=".013" />
+        <decoration type="prefab" name="mp_waste_pile_03" prob=".005" />        
+		<decoration type="block" blockname="randomCars" prob="0.13" rotatemax="3"/>
       </decorations>
       <terrain class="Wasteland" />
       </biome>
@@ -1164,6 +1176,7 @@ Description of Options:
             <decal texture="14" face="0" prob="0.001" />
             <decal texture="15" face="0" prob="0.001" />           
             <blockontop blockname="lootStreet" prob="0.001" rotatemax="7"/>
+			<blockontop blockname="randomCars" prob="0.002" rotatemax="3"/>
         </poi>
 
        <poi name="Country Road Asphalt" poimapcolor="#272f48" blockname="asphalt">
@@ -1184,6 +1197,7 @@ Description of Options:
            <decal texture="14" face="0" prob="0.005" />
            <decal texture="15" face="0" prob="0.005" />
            <blockontop blockname="lootStreet" prob="0.001" rotatemax="7"/>
+		   <blockontop blockname="randomCars" prob="0.0015" rotatemax="3"/>
        </poi>
 
         <poi name="Road Gravel" poimapcolor="#806f52" blockname="gravel" >
@@ -1204,6 +1218,7 @@ Description of Options:
            <decal texture="14" face="0" prob="0.005" />
            <decal texture="15" face="0" prob="0.005" />
            <blockontop blockname="lootStreet" prob="0.001" rotatemax="7"/>
+		   <blockontop blockname="randomCars" prob="0.0005" rotatemax="3"/>
        </poi>  
        
         <poi name="Water" poimapcolor="#0063ff" blockname="water" />
