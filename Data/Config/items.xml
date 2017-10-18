@@ -1613,6 +1613,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Catapult" />
 		<!-- Catapult might not be the best name for it but it can also be used for a slingshot -->
+		<property name="Hitmask_override" value="Arrow" />
 		<property name="Delay" value="1" />
 		<property name="Magazine_size" value="1" />
 		<property name="Magazine_items" value="arrow, ironArrow, steelArrow, flamingArrow" />
@@ -1656,6 +1657,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
  	<property name="SoundDestroy" value="wooddestroy1" />
 	<property class="Action0"> <!-- AttackAction -->
 		<property name="Class" value="Launcher" />
+		<property name="Hitmask_override" value="Arrow" />
 		<property name="Delay" value="0.8" />
 		<property name="Magazine_size" value="1" />
 		<property name="Magazine_items" value="crossbowBolt, ironCrossbowBolt, steelCrossbowBolt, explodingCrossbowBolt" />
@@ -3971,7 +3973,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	</property>
 	<property class="UMA">
 		<property name="Mesh" value="clothes_denim_pants" />
-		<property name="Overlay0Tint" value="688DD7" />
+		<property name="Overlay0Tint" value="90,115,125" />
 		<property name="Overlay0" value="pants_01" />
 		<property name="Layer" value="0" />
 		<property name="UISlot" value="Pants" />
@@ -3999,7 +4001,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="CustomIcon" value="denimPants" />
 	<property name="CustomIconTint" value="100,0,0" />
 	<property class="UMA">
-		<property name="Overlay0Tint" value="100,0,0" />
+		<property name="Overlay0Tint" value="130,20,20" />
 	</property>
 </item>
 
@@ -5312,7 +5314,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="23" />
 	<property name="Stacknumber" value="500" /> <!-- STK resource -->
-	<property name="CraftingIngredientTime" value="5" />
+	<property name="CraftingIngredientTime" value="8" />
 	<property class="Action1">
 		<property name="Class" value="Eat" />
 		<property name="Delay" value="1.0" />
@@ -5425,6 +5427,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="23" />
 	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="CraftingIngredientTime" value="5" />
 	<property class="Action1">
 		<property name="Class" value="Eat" />
 		<property name="Delay" value="1.0" />
@@ -5464,7 +5467,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="14" />
 	<property name="Stacknumber" value="15" /> <!-- STK resource -->
-	<property name="CraftingIngredientTime" value="20" />
+	<property name="CraftingIngredientTime" value="10" />
 	<property class="Action1">
 		<property name="Class" value="Eat" />
 		<property name="Delay" value="1" />
@@ -5512,7 +5515,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="HoldType" value="3" />
 	<property name="Stacknumber" value="15" /> <!-- STK resource -->
 	<property name="Weight" value="10" />
-	<property name="CraftingIngredientTime" value="20" />
+	<property name="CraftingIngredientTime" value="10" />
 	<property class="Action1">
 		<property name="Class" value="Eat" />
 		<property name="Delay" value="1" />
@@ -6540,7 +6543,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="HoldType" value="21" />
 	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
 	<property name="Group" value="Resources" />
-	<property name="CraftingIngredientTime" value="1" />
+	<property name="CraftingIngredientTime" value="2" />
 </item>
 
 <item id="1347" name="gunPowder">
@@ -6687,6 +6690,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="14" />
 	<property name="Stacknumber" value="500" />
+	<property name="CraftingIngredientTime" value="9" />
 	<!-- DTD-610TL Animation for throwing does not work properly.
 	<property class="Action0">
 		<property name="Class" value="ThrowAway" />
@@ -6717,8 +6721,8 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Material" value="glass" />
 	<property name="HoldType" value="3" />
 	<property name="Stacknumber" value="15" /> <!-- STK resource -->
-	<property name="Weight" value="15" />
-	<property name="CraftingIngredientTime" value="15" />
+	<property name="Weight" value="10" />
+	<property name="CraftingIngredientTime" value="9" />
 	<property class="Action1"> <!-- UseAction -->
 		<property name="Class" value="ExchangeItem" />
 		<property name="Delay" value="1.0" />
@@ -7071,10 +7075,10 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 
 <item id="1435" name="casinoCoin">
 	<property name="Meshfile" value="Items/Misc/casino_coinPrefab" />
-	<property name="Material" value="metal" />
-	<property name="Weight" value="5" />
+	<property name="Material" value="brass" />
+	<property name="Weight" value="1" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 </item>
 
 <item id="1439" name="glue">
@@ -7130,7 +7134,7 @@ Item ID ranges:       Master items (if applicable) are listed at the start of th
 	<property name="Material" value="leather" />
 	<property name="HoldType" value="45" />
 	<property name="Stacknumber" value="1" /> <!-- STK resource -->
-	<property name="Weight" value="10" />
+	<property name="Weight" value="100" />
 	<property name="Group" value="Resources" />
 	<property name="CraftingSkillGroup" value="Tool Smithing"/>
 </item>

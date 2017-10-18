@@ -2347,6 +2347,7 @@
 
   <SoundDataNode name="Supply_Crate_Plane_lp"> <AudioSource name="Sounds/AudioSource_Distant"/>
     <AudioClip ClipName="Sounds/SupplyDrops/Supply_Crate_Plane_lp" Loop="true"/>
+    <IgnoreDistanceCheck/>
     <LocalCrouchVolumeScale name="0.5" /> <CrouchNoiseScale name="0.5" /> <NoiseScale name="1" /> <MaxVoices name="3" /> <MaxEntities name="30" /> <MaxRepeatRate name="0.01" /> </SoundDataNode>
 
 
