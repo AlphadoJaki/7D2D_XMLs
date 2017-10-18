@@ -4568,6 +4568,7 @@ ARMOR ATTRIBUTE EXAMPLE
         <property class="Preview">
             <property name="Zoom" value="28" />
             <property name="Pos" value="0,-0.05" />
+
             <property name="Rot" value="90,45,0" />
         </property>
     </item>
@@ -7034,6 +7035,7 @@ ARMOR ATTRIBUTE EXAMPLE
             <property name="Zoom" value="28" />
             <property name="Pos" value="0,-0.05" />
             <property name="Rot" value="90,45,0" />
+
         </property>
     </item>
     <item id="703" name="canBoiledWater">
@@ -7547,6 +7549,7 @@ ARMOR ATTRIBUTE EXAMPLE
             <property name="Layer" value="1" />
             <property name="UISlot" value="Face" />
         </property>
+
         <property class="Preview">
             <property name="Zoom" value="28" />
             <property name="Pos" value="0,-0.05" />
@@ -7635,6 +7638,7 @@ ARMOR ATTRIBUTE EXAMPLE
         <property name="Meshfile" value="Items/Misc/Book" />
         <property name="Material" value="paper" />
         <property name="HoldType" value="21" />
+
         <property name="Stacknumber" value="50" />
 		<property name="CustomIcon" value="huntingKnifeBook" />
         <property class="Action1">

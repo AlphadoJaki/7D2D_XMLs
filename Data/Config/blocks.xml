@@ -1079,6 +1079,7 @@
     <property name="Material" value="cloth" />
     <property name="Shape" value="Ext3dModel" />
     <property name="Mesh" value="models" />
+
     <property name="Model" value="LootContainers/trash_pile04" param1="main_mesh" />
     <property name="IsTerrainDecoration" value="true" />
     <property name="LootList" value="2" />
@@ -3686,6 +3687,7 @@
       <property name="Item" value="woodPlank" />
       <property name="ItemCount" value="2" />
       <property name="UpgradeHitCount" value="4" />
+
     </property>
     <drop event="Destroy" count="0" />
     <property name="Group" value="Building" />
@@ -4629,6 +4631,7 @@
   </block>
   <block id="693" name="adobeWhiteDrywallBaseboard">
     <property name="Material" value="stone" />
+
     <property name="Mesh" value="opaque2" />
     <property name="Texture" value="171,171,171,174,171,171" />
   </block>
@@ -8671,6 +8674,7 @@
   
   <block id="1196" name="window02Broken01">
     <property name="Material" value="glass" />
+
     <property name="Mesh" value="cutout" />
     <property name="Shape" value="PlateCentered" />
     <property name="Texture" value="410,410,409,410,409,410" />
