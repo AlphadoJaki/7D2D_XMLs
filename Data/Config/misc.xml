@@ -28,7 +28,7 @@
         <hold_type id="22" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 22 sham -->
         <hold_type id="23" newmodel="false" ray_cast="2.0" holster=".28" unholster="0.2" />        <!-- 23 stews, bowl -->
         <hold_type id="24" newmodel="false" ray_cast="0.3" holster=".28" unholster="1.0" />        <!-- 24 hand zombie 02 crawler -->
-        <hold_type id="25" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" />        <!-- 25 pipe bomb -->
+        <hold_type id="25" newmodel="false" ray_cast="0.4" holster=".28" unholster="0.2" />        <!-- 25 pipe bomb -->
         <hold_type id="26" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" two_handed="true" />        <!-- 26 crossbow -->
         <hold_type id="27" newmodel="false" ray_cast="0.8" holster=".28" unholster="0.6" two_handed="true" />        <!-- 27 wooden bow -->
         <hold_type id="28" newmodel="false" ray_cast="0.8" holster=".28" unholster="0.2" />        <!-- 28 hornet stinger -->
@@ -43,7 +43,7 @@
         <hold_type id="37" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" two_handed="true" />          <!-- nailgun -->
         <hold_type id="38" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- cobblestones -->
         <hold_type id="39" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" two_handed="true" />          <!-- blunderbuss -->
-        <hold_type id="40" newmodel="false" ray_cast="0.20" holster=".28" unholster="0.2" />       <!-- rock small -->
+        <hold_type id="40" newmodel="false" ray_cast="0.4" holster=".28" unholster="0.2" />       <!-- rock small -->
         <hold_type id="44" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" two_handed="true" />          <!-- magnum -->
         <hold_type id="45" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- sack -->
         <hold_type id="46" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />         <!-- bear hand -->
