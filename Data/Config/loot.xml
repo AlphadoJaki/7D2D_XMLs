@@ -399,6 +399,7 @@
 		<item name="pistol_barrel"/>
         <item name="pistol_parts"/>       
         <item name="pistol_receiver"/>     
+        <item name="pistol_grip"/>
         <item name="PumpShotgun_barrel"/>        	
 		<item name="PumpShotgun_parts"/>	
         <item name="PumpShotgun_shortBarrel"/>   
@@ -476,6 +477,8 @@
 		<item name="762mmBulletSchematic"/>
 		<item name="augerSchematic" />
 		<item name="firstAidKitSchematic" />	
+		<item name="explodingCrossbowBoltSchematic" />	
+		
 		
 	</lootgroup>	
 	
@@ -490,9 +493,11 @@
 	<lootgroup name="commonBooks" count="1">
 	    <item name="book" prob="20"/>	
 		<item name="forgeAheadBook"/>	
+		<item name="crossbowSchematic"/>			
 		<item name="hammerSchematic"/>	
 		<item name="huntingKnifeBook"/>
 		<item name="pistolBook"/>
+		<item name="wrenchSchematic"/>		
 		<item name="sawedoffPumpShotgunSchematic"/>
 		<item name="pumpShotgunSchematic"/>				
 		<item name="huntingRifleSchematic"/>		

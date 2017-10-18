@@ -3519,6 +3519,7 @@
     <property name="ParticleOnDeath" value="treeGib_burnt" />
 	<property name="ModelOffset" value="0,-1.2,0" />
     <drop event="Destroy" name="trunkPine" count="3" prob="1" />
+	<preperty name="FallOver" value="false" />
   </block>
   <block id="587" name="WinterPine01">
     <property name="Class" value="ModelTree" />
@@ -4334,6 +4335,7 @@
     </property>
     <!-- uses dummy texture id from opaque atlas -->
     <drop event="Destroy" name="pineSeed" count="1" prob="1" />
+	<property name="FallOver" value="false" />
   </block>
   <block id="675" name="plantedMountainPine6m">
     <property name="Class" value="ModelTree" />
@@ -4465,6 +4467,7 @@
     </property>
     <!-- uses dummy texture id from opaque atlas -->
     <drop event="Destroy" name="mapleSeed" count="1" prob="1" />
+	<property name="FallOver" value="false" />
   </block>
   <block id="681" name="plantedMaple6m">
     <property name="Class" value="ModelTree" />
