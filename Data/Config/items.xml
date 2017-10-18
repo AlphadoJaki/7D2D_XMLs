@@ -1967,7 +1967,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="HoldType" value="45" />
 	<property name="Material" value="metal" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="FuelValue" value="2" />
 	<property name="EconomicValue" value="83" /> <!-- oil barrel 500 -->
 	<property name="EconomicBundleSize" value="100" />
@@ -2097,8 +2097,9 @@ which does not exist, yet. -->
 		<property name="Class" value="Projectile" />
 		<property name="Explosion.ParticleIndex" value="0" />
 		<!-- no expl. -->
-		<property name="Velocity" value="75" />
-		<property name="FlyTime" value="0.15" />
+		<property name="Velocity" value="55" />
+		<property name="FlyTime" value="0" />
+		<property name="Gravity" value="-6" />
 		<property name="LifeTime" value="12" />
 		<property name="DamageBonus.head" value="5" />
 		<property name="DamageBonus.glass" value="25" />
@@ -2166,8 +2167,9 @@ which does not exist, yet. -->
 		<property name="Buff_chance" value="0.5" />
 		<property name="Explosion.ParticleIndex" value="0" /> <!-- no expl. -->
 		<property name="Velocity" value="80" />
-		<property name="FlyTime" value=".25" />
-		<property name="LifeTime" value="17" />
+		<property name="FlyTime" value="0" />
+		<property name="Gravity" value="-4" />
+		<property name="LifeTime" value="12" />
 		<property name="DamageBonus.head" value="5" />
 		<property name="DamageBonus.glass" value="25" />
 		<property name="DamageBonus.wood" value="0.1" />
@@ -2200,8 +2202,9 @@ which does not exist, yet. -->
 		<property name="Buff_chance" value="0.5" />
 		<property name="Explosion.ParticleIndex" value="0" />
 		<property name="Velocity" value="85" />
-		<property name="FlyTime" value=".25" />
-		<property name="LifeTime" value="17" />
+		<property name="FlyTime" value="0" />
+		<property name="Gravity" value="-4" />
+		<property name="LifeTime" value="12" />
 		<property name="DamageBonus.head" value="5" />
 		<property name="DamageBonus.glass" value="25" />
 		<property name="DamageBonus.wood" value="0.1" />
@@ -2234,8 +2237,9 @@ which does not exist, yet. -->
 		<property name="Explosion.ParticleIndex" value="0" />
 		<!-- no expl. -->
 		<property name="Velocity" value="65" />
-		<property name="FlyTime" value=".25" />
-		<property name="LifeTime" value="17" />
+		<property name="FlyTime" value="0" />
+		<property name="Gravity" value="-6" />
+		<property name="LifeTime" value="12" />
 		<property name="DamageBonus.head" value="5" />
 		<property name="DamageBonus.glass" value="25" />
 		<property name="DamageBonus.wood" value="0.1" />
@@ -2377,7 +2381,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/rock_smallPrefab" />
 	<property name="Material" value="stone" />
 	<property name="HoldType" value="40" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="RepairAmount" value="300" />
 	<property name="Weight" value="5" />
 	<property name="EconomicValue" value="5" />
@@ -2400,7 +2404,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/clayPrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="40" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="Group" value="Resources" />
@@ -5593,7 +5597,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Misc/sackPrefab" />
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="organic" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="1" />
 	<property name="SellableToTrader" value="false" />
@@ -6528,7 +6532,7 @@ which does not exist, yet. -->
 	<property name="Material" value="metal" />
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="14" />
-	<property name="Stacknumber" value="15" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="1" />
 	<property name="SellableToTrader" value="false" />
@@ -6759,7 +6763,7 @@ which does not exist, yet. -->
 	<property name="Material" value="glass" />
 	<property name="HoldType" value="3" />
 	<property name="Weight" value="10" />
-	<property name="Stacknumber" value="15" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="EconomicValue" value="48" />
 	<property class="Action1">
 		<property name="Class" value="Eat" />
@@ -7095,7 +7099,7 @@ which does not exist, yet. -->
 	<property name="Extends" value="schematicMaster" />
 	<property name="EconomicValue" value="500" />
 	<property class="Action1">
-		<property name="Recipes_to_learn" value="minibikeChassis,minibikeWheels,minibikeSeat,minibikeHandlebars" />
+		<property name="Recipes_to_learn" value="minibikeChassis,minibikeSeat,minibikeHandlebars" />
 		<property name="Skills_to_gain" value="Miscellaneous Crafting" />
 	</property>
 </item>
@@ -7417,7 +7421,7 @@ which does not exist, yet. -->
 	<property name="RepairTime" value="1" />
 	<property name="RepairAmount" value="30" />
 	<property name="HoldType" value="16" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="FuelValue" value="1" />
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="50" />
@@ -7436,7 +7440,7 @@ which does not exist, yet. -->
 	<property name="Material" value="wood" />
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="FuelValue" value="10" />
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="50" />
@@ -7453,7 +7457,7 @@ which does not exist, yet. -->
 	<property name="HoldType" value="45" />
 	<property name="Material" value="glass" />
 	<property name="Weight" value="5" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="50" />
 	<property name="Group" value="Resources" />
@@ -7464,7 +7468,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="metal" />
 	<property name="Weight" value="5" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="SellableToTrader" value="false" />
 	<property name="HoldType" value="45" />
 	<property name="DropScale" value="3" />
@@ -7479,7 +7483,7 @@ which does not exist, yet. -->
 	<property name="HoldType" value="45" />
 	<property name="Material" value="metal" />
 	<property name="Weight" value="1" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="10" />
 	<property name="Group" value="Resources" />
@@ -7558,7 +7562,7 @@ which does not exist, yet. -->
 	<property name="HoldType" value="21" />
 	<property name="Material" value="leather" />
 	<property name="Weight" value="5" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="FuelValue" value="5" />
 	<property name="EconomicValue" value="20" />
 	<property name="Group" value="Resources" />
@@ -7571,7 +7575,7 @@ which does not exist, yet. -->
 	<property name="Material" value="leather" />
 	<property name="RepairAmount" value="80" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="FuelValue" value="5" />
 	<property name="EconomicValue" value="22" />
 	<property name="Group" value="Resources,Clothing" />
@@ -7628,7 +7632,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="brass" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="Weight" value="1" />
 	<property name="EconomicValue" value="20" />
 	<property name="EconomicBundleSize" value="10" />
@@ -7640,7 +7644,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/scrapLeadDroppedPrefab" />
 	<property name="Material" value="lead" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="Weight" value="1" />
 	<property name="EconomicValue" value="20" />
 	<property name="EconomicBundleSize" value="10" />
@@ -7652,7 +7656,7 @@ which does not exist, yet. -->
 	<property name="Material" value="clay" />
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="6" />
 	<property name="EconomicBundleSize" value="150" />
 	<property name="Group" value="Resources" />
@@ -7665,7 +7669,7 @@ which does not exist, yet. -->
 	<property name="HoldType" value="21" />
 	<property name="Material" value="dirt" />
 	<property name="Weight" value="5" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="5000" />
 	<property name="SellableToTrader" value="false" />
@@ -7678,7 +7682,7 @@ which does not exist, yet. -->
 	<property name="HoldType" value="40" />
 	<property name="Material" value="snow" />
 	<property name="Weight" value="5" />
-	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="150" />
 	<property name="SellableToTrader" value="false" />
@@ -7701,7 +7705,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="stone" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="DropScale" value="1" />
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="70" />
@@ -7713,7 +7717,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="stone" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="70" />
 	<property name="Group" value="Building,Resources" />
@@ -7724,7 +7728,7 @@ which does not exist, yet. -->
 	<property name="Material" value="stone" />
 	<property name="Weight" value="20" />
 	<property name="HoldType" value="34" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="9" />
 	<property name="EconomicBundleSize" value="20" />
 	<property name="Group" value="Resources" />
@@ -7734,7 +7738,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Food/cornmealPrefab" />
 	<property name="Material" value="metal" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="300" />
 	<property name="Group" value="Resources" />
 	<property name="CraftingIngredientTime" value="2" />
@@ -7746,7 +7750,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/cloth" />
 	<property name="Material" value="cloth" />
 	<property name="HoldType" value="14" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="RepairAmount" value="50" />
 	<property name="FuelValue" value="1" />
 	<property name="Weight" value="5" />
@@ -7760,7 +7764,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="HoldType" value="45" />
 	<property name="Material" value="paper" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
 	<property name="FuelValue" value="1" />
 	<property name="Weight" value="1" />
 	<property name="EconomicValue" value="15" />
@@ -7782,7 +7786,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/cloth" />
 	<property name="Material" value="MmilitaryFiber" />
 	<property name="HoldType" value="14" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="500" /> <!-- STK resource -->
 	<property name="CraftingIngredientExp" value="10" />
 	<property name="CraftingIngredientTime" value="10" />
 	<property name="RepairTime" value="0.6" />
@@ -7844,7 +7848,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="12" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="CraftingIngredientTime" value="5" />
@@ -7858,7 +7862,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="12" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="CraftingIngredientTime" value="5" />
@@ -7873,7 +7877,7 @@ which does not exist, yet. -->
 	<property name="Material" value="paper" />
 	<property name="FuelValue" value="1" />
 	<property name="Weight" value="1" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<!--
 	<property name="EconomicValue" value="5" />
 	<property name="EconomicBundleSize" value="50" />
@@ -7890,7 +7894,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="CraftingIngredientTime" value="60" />
@@ -7907,7 +7911,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/featherPrefab" />
 	<property name="Material" value="cloth" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="2500" /> <!-- STK resource -->
 	<property name="FuelValue" value="1" />
 	<!-- <property name="CraftingIngredientExp" value="0" /> -->
 	<property name="EconomicValue" value="10" />
@@ -7944,7 +7948,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/coalDroppedPrefab" />
 	<property name="Material" value="coal" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="FuelValue" value="20" />
 	<property name="DropScale" value="8" />
 	<property name="EconomicValue" value="10" />
@@ -7957,7 +7961,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Food/cornmealPrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="1000" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="10" />
 	<property name="EconomicBundleSize" value="10" />
 	<property name="Group" value="Resources" />
@@ -7968,7 +7972,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/gun_powderPrefab" />
 	<property name="Material" value="dirt" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="15000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="22" />
 	<property name="EconomicBundleSize" value="10" />
 	<property name="Group" value="Resources,Ammo/Weapons,Tools/Traps" />
@@ -7980,7 +7984,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="lead" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="36" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="Group" value="Resources,Ammo/Weapons" />
@@ -7991,7 +7995,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Crafting/bullet_casingPrefab" />
 	<property name="Material" value="brass" />
 	<property name="HoldType" value="21" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="25" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="Group" value="Resources,Ammo/Weapons" />
@@ -8003,7 +8007,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="lead" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="25" />
 	<property name="EconomicBundleSize" value="5" />
 	<property name="Group" value="Resources,Ammo/Weapons" />
@@ -8067,7 +8071,7 @@ which does not exist, yet. -->
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
 	<property name="Material" value="metal" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="50" /> <!-- STK repairKit -->
+	<property name="Stacknumber" value="500" /> <!-- STK repairKit -->
 	<property name="EconomicValue" value="186" />
 	<property name="RepairTime" value="2" />
 	<property name="RepairAmount" value="2000" />
@@ -8079,7 +8083,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Food/coffeePrefab" />
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="3" />
-	<property name="Stacknumber" value="50" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="100" />
 	<property name="Group" value="Chemicals" />
 	<property name="CraftingSkillGroup" value="Science"/>
@@ -8090,7 +8094,7 @@ which does not exist, yet. -->
 	<property name="Material" value="metal" />
 	<property name="Weight" value="0" />
 	<property name="HoldType" value="3" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="2500" /> <!-- STK resource -->
 	<property name="EconomicValue" value="35" />
 	<property name="Group" value="Chemicals" />
 	<property name="CraftingSkillGroup" value="Science"/>
@@ -8102,7 +8106,7 @@ which does not exist, yet. -->
 	<property name="Material" value="organic" />
 	<property name="HoldType" value="45" />
 	<property name="FuelValue" value="20" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="20" />
 	<property name="CraftingIngredientTime" value="15" />
 	<property name="Group" value="Food/Cooking" />
@@ -8114,7 +8118,7 @@ which does not exist, yet. -->
 	<property name="Material" value="organic" />
 	<property name="FuelValue" value="20" />
 	<property name="HoldType" value="45" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="EconomicValue" value="24" />
 	<property name="CraftingIngredientTime" value="15" />
 	<property name="Group" value="Chemicals" />
@@ -8126,7 +8130,7 @@ which does not exist, yet. -->
 	<property name="Weight" value="10" />
 	<property name="HoldType" value="3" />
 	<property name="FuelValue" value="20" />
-	<property name="Stacknumber" value="250" /> <!-- STK resource -->
+	<property name="Stacknumber" value="2500" /> <!-- STK resource -->
 	<property name="EconomicValue" value="30" />
 	<property name="Group" value="Chemicals" />
 	<property name="CraftingSkillGroup" value="Science"/>
@@ -8137,7 +8141,7 @@ which does not exist, yet. -->
 	<property name="Material" value="metal" />
 	<property name="Weight" value="5" />
 	<property name="HoldType" value="14" />
-	<property name="Stacknumber" value="500" />
+	<property name="Stacknumber" value="5000" />
 	<property name="EconomicValue" value="5" />
 	<property name="CraftingIngredientTime" value="9" />
 	<!-- DTD-610TL Animation for throwing does not work properly.
@@ -8169,7 +8173,7 @@ which does not exist, yet. -->
 	<property name="Meshfile" value="Items/Food/emptyJarPrefab" />
 	<property name="Material" value="glass" />
 	<property name="HoldType" value="3" />
-	<property name="Stacknumber" value="500" /> <!-- STK resource -->
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
 	<property name="Weight" value="10" />
 	<property name="EconomicValue" value="6" />
 	<property name="CraftingIngredientTime" value="9" />
@@ -8830,7 +8834,7 @@ which does not exist, yet. -->
 	<property name="IsDeveloper" value="true" />
 </item>
 
-<!--
+
 <item id="1501" name="Super Wrench">
 	<property name="Extends" value="wrench" />
 	<property name="CustomIcon" value="wrench" />
@@ -8929,5 +8933,19 @@ which does not exist, yet. -->
 		<property name="Zoom_max_in" value="10" />
         </property>
     </item>
--->
+
+<item id="1504" name="DiamondDust">
+	<property name="Meshfile" value="Items/Food/coffeePrefab" />
+	<property name="Material" value="organic" />
+        <property name="CustomIcon" value="potassiumNitratePowder" />
+        <property name="CustomIconTint" value="C0C0C0" />
+	<property name="HoldType" value="3" />
+	<property name="Stacknumber" value="5000" /> <!-- STK resource -->
+	<property name="EconomicValue" value="90" />
+	<property name="Group" value="Chemicals" />
+	<property name="CraftingSkillGroup" value="Science"/>
+</item>
+
+
+
 </items>

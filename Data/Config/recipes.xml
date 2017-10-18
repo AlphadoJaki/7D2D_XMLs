@@ -4,6 +4,8 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 -->
 <recipes>
 <!-- * * * * * * * * * * * * scrap and forge-emptying recipes * * * * * * * * * * * * -->
+
+
 <recipe name="militaryFiber" count="1" tooltip="ttScrapMetalBrass">
 	<wildcard_forge_category />
 </recipe>
@@ -85,6 +87,28 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 </recipe>
 
 <!-- * * * * * * * * * * * * main recipes * * * * * * * * * * * * -->
+<recipe name="DiamondDust" count="500" craft_area="workbench" craft_time="90">
+	<ingredient name="rawDiamond" count="2"/>
+</recipe>
+
+<recipe name="steelPolish" count="1" craft_area="chemistryStation">
+	<ingredient name="DiamondDust" count="1"/>
+	<ingredient name="oil" count="1"/>
+        <ingredient name="cloth" count="1"/>
+	<ingredient name="bottledRiverWater" count="1"/>
+</recipe>
+<recipe name="steelPolish" count="1" craft_area="chemistryStation">
+	<ingredient name="DiamondDust" count="2"/>
+	<ingredient name="aloeCream" count="1"/>
+        <ingredient name="cloth" count="1"/>
+	<ingredient name="bottledRiverWater" count="1"/>
+</recipe>
+<recipe name="steelPolish" count="1" craft_area="chemistryStation">
+	<ingredient name="DiamondDust" count="1"/>
+	<ingredient name="snowberryExtract" count="1"/>
+        <ingredient name="cloth" count="1"/>
+	<ingredient name="bottledRiverWater" count="1"/>
+</recipe>
 
 <recipe name="10mmBullet" count="1" craft_area="workbench">
 	<ingredient name="bulletTip" count="1"/>
@@ -2399,6 +2423,7 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 </recipe>
 
 <recipe name="signShopColdBeer" count="1">
+	<ingredient name="nail" count="4"/>
 	<ingredient name="wood" count="5"/>
 </recipe>
 
@@ -2450,6 +2475,14 @@ Unfortunately auto-calc only seems to work on the first (top) ingredient in the 
 <recipe name="streetLight01Switch" count="1" craft_area="workbench">
 	<ingredient name="forgedSteel" count="5"/>
 	<ingredient name="electricParts" count="13"/>
+</recipe>
+
+<recipe name="casinoCoin" count="1" craft_area="workbench">
+	<ingredient name="oldCash" count="5"/>
+</recipe>
+
+<recipe name="oldCash" count="5" craft_area="workbench">
+	<ingredient name="casinoCoin" count="1"/>
 </recipe>
 
 </recipes>
