@@ -1406,7 +1406,7 @@ WEAPON ATTACHABLES
         <property name="HoldType" value="28" />
         <property name="Stacknumber" value="1" />
         <property name="Candrop" value="false" />
-        <property name="UserHidden" value="true" />
+        <property name="IsDeveloper" value="true" />
         <property class="Action0">
             <!-- AttackAction -->
             <property name="Class" value="Melee" />
@@ -1422,7 +1422,7 @@ WEAPON ATTACHABLES
     <item id="75" name="vomitZombieProjectile">
         <property name="Meshfile" value="Items/Weapons/Ranged/Vomit/vomitBulbPrefab" />
         <property name="Material" value="organic" />
-        <property name="UserHidden" value="true" />
+        <property name="IsDeveloper" value="true" />
         <property class="Action1">
             <!-- UseAction -->
             <property name="Class" value="Projectile" />
@@ -2493,7 +2493,7 @@ WEAPON ATTACHABLES
         <property name="Stacknumber" value="250" />
         <property name="RepairAmount" value="25" />
         <property name="FuelValue" value="1" />
-        <property name="Weight" value="1" />
+        <property name="Weight" value="2" />
         <property name="Group" value="Resources" />
         <property class="Preview">
             <property name="Zoom" value="28" />
@@ -2734,7 +2734,7 @@ WEAPON ATTACHABLES
         <property name="RepairTools" value="stick" />
         <property name="Degradation" value="250" param1="true" />
         <property name="FuelValue" value="40" />
-        <property class="Action0">xxx
+        <property class="Action0">
             <!-- AttackAction -->
             <property name="Class" value="Launcher" />
             <property name="Delay" value="0.8" />
@@ -2755,6 +2755,10 @@ WEAPON ATTACHABLES
             <property name="Zoom_max_out" value="45" />
             <property name="Zoom_max_in" value="45" />
         </property>
+		<property class="Attributes">
+            <property name="DegradationRate" value="1,1" />
+             <property name="DegradationMax" value="30,600" />
+        </property>        
         <property name="Group" value="Ammo/Weapons" />
         <property class="Preview">
             <property name="Zoom" value="28" />
@@ -8898,7 +8902,7 @@ WEAPON ATTACHABLES
 		<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab" />
         <property name="Material" value="cloth" />
         <property name="HoldType" value="45" />
-        <property name="Weight" value="8" />
+        <property name="Weight" value="0" />
         <property name="Group" value="Resources" />
     </item>           
 

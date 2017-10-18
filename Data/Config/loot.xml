@@ -586,6 +586,7 @@
 	
 	<lootgroup name="junk">	
 	    <item name="ironArrowHead"/>
+	    <item name="steelArrowHead" prob="0.05" />
 		<item name="candyTin"/>
 		<item name="emptyJar" count="1"/>
 		<item name="canEmpty" count="1"/>
@@ -971,10 +972,8 @@
     
     	<item group="pistol+ammo"/>
     	<item group="shotgun+ammo"/>
-    	<item name="9mmBullet" count="15,60"/>
     	<item name="shamSandwich" count="1,5"/>
-        <item name="shotgunShell" count="1,2"/>
-        
+        <item group="ammo" />
     </lootcontainer>	
 	
     <!-- lootcontainer 18 pig -->
@@ -990,7 +989,7 @@
 
     <!-- lootcontainer 20 air conditioners-->
     <lootcontainer id="20" count="0,2" size="3,1" sound_open="UseActions/open_mailbox" sound_close="UseActions/close_mailbox" open_time="4" loot_quality_template="baseTemplate">
-		<item group="metalpipe"/>xxx
+		<item group="metalpipe"/>
     </lootcontainer>
 
 

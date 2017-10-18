@@ -148,11 +148,7 @@
 	
     <entitygroup name="AnimalsBig">
         <entity name="animalStag" />
-    </entitygroup>
-    
-    <entitygroup name="AnimalsBig">
-        <entity name="animalStag" />
-    </entitygroup>    
+    </entitygroup>   
     
     <entitygroup name="AnimalsAll" >        
     	<entity name="animalRabbit" />
