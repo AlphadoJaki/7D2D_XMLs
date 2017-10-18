@@ -4,6 +4,9 @@
    biome
      maxcount: int - the sum of all spawned entities in the group may not exceed this number
      daytime: Any,Day,Night - determines the time of day the entity spawns
+     <property name="TotalAlive"         value="3" />
+     total alive means how many are alive at once.
+     <property name="TotalPerWave"       value="10,20" />Total per wave means a random number between the first and second. The total alive will replenish the dead ranks until TotalPerWave's random number is met.
   -->
 
 
@@ -33,44 +36,44 @@
     <biome name="forest">
         <spawn maxcount="3" respawndelay="4" time="Any"   entitygroup="ZombiesAll" />
         
-        <spawn maxcount="1" respawndelay="5" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="15" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0" />
     </biome>
 	
     <biome name="pine_forest">
         <spawn maxcount="3" respawndelay="4" time="Any"   entitygroup="ZombiesAll" />
         
-        <spawn maxcount="1" respawndelay="5" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="15" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0" />
     </biome>	
 
     <biome name="plains">
         <spawn maxcount="3" respawndelay="4" time="Any"   entitygroup="ZombiesAll" />
         
-        <spawn maxcount="1" respawndelay="5" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="15" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0" />
 
     </biome>
 
     <biome name="desert">
         <spawn maxcount="3" respawndelay="4" time="Any"   entitygroup="ZombiesAll" />
         
-        <spawn maxcount="1" respawndelay="5" time="Any"   entitygroup="AnimalsSmall" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="8" time="Any"   entitygroup="AnimalsSmall" spawnDeadChance="0" />
     </biome>
 
     <biome name="wasteland">
         <spawn maxcount="6" respawndelay="4" time="Day"   entitygroup="ZombiesAll" />
         <spawn maxcount="6" respawndelay="4" time="Night" entitygroup="ZombiesWastelandNight" />	
-        <spawn maxcount="1" respawndelay="5" time="Any"   entitygroup="AnimalsSmall" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="15" time="Any"   entitygroup="AnimalsSmall" spawnDeadChance="0" />
     </biome>
 
     <biome name="burnt_forest">
         <spawn maxcount="2" respawndelay="4" time="Any"   entitygroup="ZombiesBurntForest" />
         
-        <spawn maxcount="1" respawndelay="5" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0.1" />
+        <spawn maxcount="1" respawndelay="15" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0" />
 		</biome>
 		
     <biome name="snow">
 		<spawn maxcount="2" respawndelay="4" time="Any" entitygroup="SnowZombies" />
 		
-       	<spawn maxcount="1" respawndelay="5" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0.1" />
+       	<spawn maxcount="1" respawndelay="8" time="Any" entitygroup="AnimalsAll" spawnDeadChance="0" />
 	</biome>		
 	
 
@@ -391,237 +394,50 @@
   </entityspawner>
 
 
-	
 
-    
-    <!-- If you want dynamic spawners for each day, create a spawner that is named DynamicSpawner -->
-	
-    <entityspawner name="DynamicSpawningNavezgane" dynamic="true">
-		<day value="1">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="10" />
-		  <property name="TotalPerWave"       value="20" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="2" />
-		</day>
-		<day value="2">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="12" />
-		  <property name="TotalPerWave"       value="25" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="2" />
-		</day>
-		<day value="3">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="15" />
-		  <property name="TotalPerWave"       value="30" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="2" />		
-		</day>
-		<day value="4">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="20" />
-		  <property name="TotalPerWave"       value="35" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="3" />		
-		</day>
-		<day value="5">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="25" />
-		  <property name="TotalPerWave"       value="40" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="4" />		
-		</day>
-		<day value="6">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"       value="45" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />
-		  <property name="NumberOfWaves"      value="4" />		
-		</day>
-		<day value="7">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="35" />
-		  <property name="TotalPerWave"       value="50" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />		
-		  <property name="NumberOfWaves"      value="5" />		
-		</day>
-		<day value="8">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="40" />
-		  <property name="TotalPerWave"       value="55" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />		
-		  <property name="NumberOfWaves"      value="5" />		
-		</day>
-		<day value="9">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="45" />
-		  <property name="TotalPerWave"       value="60" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />		
-		  <property name="NumberOfWaves"      value="6" />		
-		</day>
-		<day value="*">
-		  <property name="EntityGroupName"    value="ZombiesNight" />
-		  <property name="Time"               value="Night" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="50" />
-		  <property name="TotalPerWave"       value="65" />
-		  <property name="DelayToNextWave"    value="120" />
-		  <property name="AttackPlayerAtOnce" value="true" />		
-		</day>
-    </entityspawner>
 
-	<entityspawner name="HordeMeterDynamicSpawnDay" dynamic="true">
-		<day value="1">
-			<property name="EntityGroupName"    value="ZombiesAll" />
-			<property name="Time"               value="Day" />
-			<property name="DelayBetweenSpawns" value="1" />
-			<property name="TotalAlive"         value="10" />
-			<property name="TotalPerWave"       value="5" />
-		</day>
-		<day value="2">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="10" />
-		  <property name="TotalPerWave"       value="20" />
-		</day>
-		<day value="3">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="15" />
-		  <property name="TotalPerWave"       value="30" />
-		</day>
-		<day value="4">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="20" />
-		  <property name="TotalPerWave"       value="35" />
-		</day>
-		<day value="5">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="25" />
-		  <property name="TotalPerWave"       value="40" />
-		</day>
-		<day value="6">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"       value="45" />
-		</day>
-		<day value="7">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"       value="50" />
-		</day>
-		<day value="8">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"       value="55" />
-		</day>
-		<day value="9">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"       value="60" />
-		</day>
-		<day value="*">
-		  <property name="EntityGroupName"    value="ZombiesAll" />
-		  <property name="Time"               value="Day" />
-		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="30" />
-		  <property name="TotalPerWave"         value="60" />
-		</day>		
-	</entityspawner>
-
-	<entityspawner name="HordeMeterDynamicSpawnNight" dynamic="true">
-		<day value="*">
-			<property name="EntityGroupName"    value="ZombiesNight" />
-			<property name="Time"               value="Night" />
-			<property name="DelayBetweenSpawns" value="1" />
-			<property name="TotalAlive"         value="30" />
-			<property name="TotalPerWave"       value="60" />
-		</day>
-	</entityspawner>
 	
 	<entityspawner name="RoamingHordeSpawnDay" dynamic="true" wrapMode="wrap">
 		<day value="1">
 			<property name="EntityGroupName"    value="ZombiesAll" />
 			<property name="Time"               value="Any" />
-			<property name="DelayBetweenSpawns" value="1" />
-			<property name="TotalAlive"         value="0" />
-			<property name="TotalPerWave"       value="1,5" />
+			<property name="DelayBetweenSpawns" value="3" />
+			<property name="TotalAlive"         value="3" />
+			<property name="TotalPerWave"       value="3" />
 		</day>
 		<day value="2">
 		  <property name="EntityGroupName"    value="ZombiesAll" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
-		  <property name="TotalPerWave"       value="5,10" />
+		  <property name="TotalAlive"         value="5" />
+		  <property name="TotalPerWave"       value="5" />
 		</day>
 		<day value="3">
 		  <property name="EntityGroupName"    value="ZombiesAll" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalAlive"         value="15" />
 		  <property name="TotalPerWave"       value="10,15" />
 		</day>
 		<day value="4">
 		  <property name="EntityGroupName"    value="ZombiesAll" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="10" />
+		  <property name="TotalAlive"         value="15" />
 		  <property name="TotalPerWave"       value="10,20" />
 		</day>
 		<day value="5">
 		  <property name="EntityGroupName"    value="ZombiesAll" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
-		  <property name="TotalPerWave"       value="10,30" />
+		  <property name="TotalAlive"         value="15" />
+		  <property name="TotalPerWave"       value="15,30" />
 		</day>
 		<day value="6">
 		  <property name="EntityGroupName"    value="ZombieDogGroup" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalAlive"         value="10" />
 		  <property name="TotalPerWave"       value="10,20" />
 		</day>
 		<day value="7">
@@ -629,7 +445,7 @@
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
 		  <property name="TotalAlive"         value="0" />
-		  <property name="TotalPerWave"       value="30,40" />
+		  <property name="TotalPerWave"       value="0" />
 		</day>								
 	</entityspawner>
 	
@@ -638,56 +454,56 @@
 			<property name="EntityGroupName"    value="ZombiesNight" />
 			<property name="Time"               value="Any" />
 			<property name="DelayBetweenSpawns" value="1" />
-			<property name="TotalAlive"         value="3" />
+			<property name="TotalAlive"         value="4" />
 			<property name="TotalPerWave"       value="4" />
 		</day>
 		<day value="2">
 		  <property name="EntityGroupName"    value="ZombiesNight" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalAlive"         value="7" />
 		  <property name="TotalPerWave"       value="7" />
 		</day>
 		<day value="3">
 		  <property name="EntityGroupName"    value="ZombiesNight" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="8" />
+		  <property name="TotalAlive"         value="10" />
 		  <property name="TotalPerWave"       value="10" />
 		</day>
 		<day value="4">
 		  <property name="EntityGroupName"    value="ZombiesNight" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalAlive"         value="15" />
 		  <property name="TotalPerWave"       value="15" />
 		</day>
 		<day value="5">
 		  <property name="EntityGroupName"    value="ZombiesNight" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalAlive"         value="12" />
 		  <property name="TotalPerWave"       value="20" />
 		</day>
 		<day value="6">
 		  <property name="EntityGroupName"    value="ZombiesNight" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="0" />
-		  <property name="TotalPerWave"       value="0,10" />
+		  <property name="TotalAlive"         value="15" />
+		  <property name="TotalPerWave"       value="20" />
 		</day>
 		
 		<day value="7">
 		  <property name="EntityGroupName"    value="ZombiesHoard" />
 		  <property name="Time"               value="Any" />
 		  <property name="DelayBetweenSpawns" value="1" />
-		  <property name="TotalAlive"         value="25" />
-		  <property name="TotalPerWave"       value="20,40" />
+		  <property name="TotalAlive"         value="0" />
+		  <property name="TotalPerWave"       value="0" />
 		</day>		
 
 	</entityspawner>
 	
-	<entityspawner name="NightHorde" dynamic="true" wrapMode="wrap">
+	<entityspawner name="NightHorde" dynamic="true" wrapMode="wrap"> <!-- these are feral hordes who will find the player for sure -->
 		<day value="*">
 			<property name="ResetToday"         value="true" />
 			<property name="EntityGroupName"    value="ZombiesNight" />
@@ -699,15 +515,15 @@
 			<property name="ResetToday"         value="true" />
 			<property name="EntityGroupName"    value="ZombiesNight" />
 			<property name="DelayBetweenSpawns" value="1" />
-			<property name="TotalAlive"         value="25" />
-			<property name="TotalPerWave"       value="100" />
+			<property name="TotalAlive"         value="15" />
+			<property name="TotalPerWave"       value="50" />
 		</day>		
 		<day value="14">
 			<property name="ResetToday"         value="true" />
 			<property name="EntityGroupName"    value="ZombiesWastelandNight" />
 			<property name="DelayBetweenSpawns" value="1" />
 			<property name="TotalAlive"         value="25" />
-			<property name="TotalPerWave"       value="125" />
+			<property name="TotalPerWave"       value="100" />
 		</day>
 		<day value="21">
 			<property name="ResetToday"         value="true" />
@@ -758,47 +574,89 @@
 		</day>
 	</entityspawner>
 	
-
-	<!-- Supply Crates For Small deathmatch Level -->
-    <entityspawner name="SpawnSupplyCratesDMSM">
-
-		<day value="*">
-			<property name="StartSound"			value="SupplyDrops/Supply_Crate_Plane" />
-		
-			<property name="EntityGroupName"    value="SupplyCrates_General" />
-			<property name="Time"               value="Day" />
-
-			<property name="DelayBetweenSpawns" value="1" /> <!-- in full seconds -->
-			<property name="TotalAlive"         value="4" />
-
-			<property name="TotalPerWave"       value="4" />
-			<property name="DelayToNextWave"    value="60" /> <!-- in full seconds -->
-			<property name="NumberOfWaves"      value="10" />
-
-			<property name="SpawnOnGround"      value="false" />
-			<property name="IgnoreTrigger"      value="true" />
-		</day>		
-	  
-    </entityspawner>	
-	
-    <entityspawner name="SpawnSupplyCratesDMLG">
-
-		<day value="*">
-			<property name="StartSound"			value="SupplyDrops/Supply_Crate_Plane" />
-		
-			<property name="EntityGroupName"    value="SupplyCrates_General" />
-			<property name="Time"               value="Day" />
-
-			<property name="DelayBetweenSpawns" value="1" /> <!-- in full seconds -->
+	<!-- these are what the scouts summon if they see you -->
+	<entityspawner name="HordeMeterDynamicSpawnDay" dynamic="true">
+		<day value="1">
+			<property name="EntityGroupName"    value="ZombiesAll" />
+			<property name="Time"               value="Any" />
+			<property name="DelayBetweenSpawns" value="1" />
 			<property name="TotalAlive"         value="10" />
-
-			<property name="TotalPerWave"       value="10" />
-			<property name="DelayToNextWave"    value="60" /> <!-- in full seconds -->
-			<property name="NumberOfWaves"      value="10" />
-
-			<property name="SpawnOnGround"      value="false" />
-			<property name="IgnoreTrigger"      value="true" />
+			<property name="TotalPerWave"       value="5" />
+		</day>
+		<day value="2">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="10" />
+		  <property name="TotalPerWave"       value="20" />
+		</day>
+		<day value="3">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="15" />
+		  <property name="TotalPerWave"       value="30" />
+		</day>
+		<day value="4">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="20" />
+		  <property name="TotalPerWave"       value="35" />
+		</day>
+		<day value="5">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="25" />
+		  <property name="TotalPerWave"       value="40" />
+		</day>
+		<day value="6">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="30" />
+		  <property name="TotalPerWave"       value="45" />
+		</day>
+		<day value="7">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="30" />
+		  <property name="TotalPerWave"       value="50" />
+		</day>
+		<day value="8">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="30" />
+		  <property name="TotalPerWave"       value="55" />
+		</day>
+		<day value="9">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="30" />
+		  <property name="TotalPerWave"       value="60" />
+		</day>
+		<day value="*">
+		  <property name="EntityGroupName"    value="ZombiesAll" />
+		  <property name="Time"               value="Any" />
+		  <property name="DelayBetweenSpawns" value="1" />
+		  <property name="TotalAlive"         value="30" />
+		  <property name="TotalPerWave"         value="60" />
 		</day>		
-	  
-    </entityspawner>	
+	</entityspawner>
+
+	<entityspawner name="HordeMeterDynamicSpawnNight" dynamic="true">
+		<day value="*">
+			<property name="EntityGroupName"    value="ZombiesNight" />
+			<property name="Time"               value="Any" />
+			<property name="DelayBetweenSpawns" value="1" />
+			<property name="TotalAlive"         value="30" />
+			<property name="TotalPerWave"       value="60" />
+		</day>
+	</entityspawner>
+		
+		
 </spawning>

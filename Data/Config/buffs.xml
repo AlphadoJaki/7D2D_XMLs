@@ -114,7 +114,7 @@
 
 <buffs>
 	
-	<buff id="bleeding" duration="60" name="Bleeding" type="bleeding" description="You are bleeding out. Use a bandage to stop the bleeding." icon="buff_icon_critical_hit">
+	<buff id="bleeding" duration="60" name="Bleeding" type="bleeding" actions="debuff(fullBuff)" description="You are bleeding out. Use a bandage to stop the bleeding." icon="buff_icon_critical_hit">
 		<modify id="0" stat="stamina" amount="-1" rate="1"/>
 		<modify id="1" stat="health" amount="-1" rate="1"/>
 	</buff>
@@ -200,7 +200,7 @@
 	
 	<buff id="steroids" duration="2400t" actions="addimmunity(sickness)" name="Steroids" description="Reduces swelling and supresses the symptoms of infection." icon="buff_icon_medicine"/>
 	
-	<buff id="cured" duration="2400t" name="Cured" description="You are immune to further infection." actions="increment(@wellness, 0.25, 100, 0, 0)" icon="buff_icon_medicine"/>
+	<buff id="cured" duration="2400t" name="Cured" description="You are immune to further infection." actions="increment(@wellness, 0.125, 100, 0, 0)" icon="buff_icon_medicine"/>
 	
 	<buff id="smelly" duration="30" name="Smelly" smell="largeSmell" description="You stink." icon="buff_icon_dysentery"/>
 	
@@ -262,10 +262,16 @@
 	</buff>	
 	
 	<buff id="hungry" buffif="+starve > 1" mutex="hungry2" debuffif="+full > 1" name="Hungry" actions="increment(@wellness, -0.5, 150, 0, 0)" description="You are hungry." icon="buff_icon_hunger"/>
-	<buff id="hungry2" buffif="+starve > 1200" debuffif="+full > 1" name="Starving" actions="increment(@wellness, -0.5, 30, 0, 0);debuff(hungry)" description="You are starving." icon="buff_icon_hunger"/>
+	<buff id="hungry2" buffif="+starve > 1200" debuffif="+full > 1" name="Starving" actions="increment(@wellness, -0.5, 30, 0, 0);debuff(hungry)" description="You are starving." icon="buff_icon_hunger">
+		<modify id="0" stat="stamina" amount="-3" rate="1"/>
+		<modify id="1" stat="health" amount="-1" rate="1"/>
+	</buff>
 	
 	<buff id="thirsty" buffif="+thirst > 1" mutex="thirsty2" debuffif="+hydrated > 5" name="Thirsty" actions="increment(@wellness, -0.1, 30, 0, 0)" description="You are thirsty." icon="buff_icon_thirst"/>
-	<buff id="thirsty2" buffif="+thirst > 600" debuffif="+hydrated > 5" name="Dehydrated" actions="increment(@wellness, -0.5, 15, 0, 0);debuff(thirsty)" description="You are very thirsty." icon="buff_icon_thirst"/>
+	<buff id="thirsty2" buffif="+thirst > 600" debuffif="+hydrated > 5" name="Dehydrated" actions="increment(@wellness, -0.5, 15, 0, 0);debuff(thirsty)" description="You are very thirsty." icon="buff_icon_thirst">
+		<modify id="0" stat="stamina" amount="-3" rate="1"/>
+		<modify id="1" stat="health" amount="-3" rate="1"/>
+    </buff>			
 
 	<buff id="cannotBreath" stack="reset" duration="20" name="Cannot Breathe" description="" mutex="cannotBreath,drowning" onexpired="drowning" icon="buff_icon_oxygen" />
 
@@ -276,5 +282,9 @@
 	<buff id="smell" duration="0" name="Emitting Smell" description="You are carrying something that smells and attracts zombies. Store it in a container." icon="buff_icon_smell" />
 	
 	<buff id="wellnessSmallGain" duration="800t" name="Wellness Improved" description="Your wellness has improved" stack="discard" actions="increment(@wellness, 1, 0, 0, 1)" icon="buff_icon_smell" />
+
+	<buff id="fullBuff" mutex="bleeding" buffif="food > 0.5" debuffif="food lequal 0.5" name="Healing" description="You have enough food to slowly heal." icon="buff_icon_natural_healing">
+		<modify id="0" stat="health" amount="1" rate="60" />
+	</buff>
 	
 </buffs>

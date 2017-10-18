@@ -3,38 +3,49 @@
 
    <!-- For items with weapon hold type=="X" we have a ray cast delay of Y -->
     <animation>
-        <hold_type id="0" newmodel="false" ray_cast="0.16" holster="0" unholster="0.2" />        <!-- hand player -->
-        <hold_type id="1" newmodel="false" ray_cast="0.16" holster="0" unholster="0.2" />        <!-- pistol -->
-        <hold_type id="2" newmodel="false" ray_cast="0.40" holster="0.5" unholster="0.5" />        <!-- 150ms for type "fireaxe and clubs -->
-        <hold_type id="3" newmodel="false" ray_cast="1.00" holster="0.5" unholster="0.5" />        <!-- yucca juice -->
-        <hold_type id="4" newmodel="false" ray_cast="0.55" holster="0.5" unholster="0.5" />        <!-- 280ms for type "pickaxe" -->
-        <hold_type id="5" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- shotgun -->
-        <hold_type id="6" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- mp5 -->
-        <hold_type id="7" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!--venison -->
-        <hold_type id="9" newmodel="false" ray_cast="0.4" holster="0.5" unholster="1.0" />        <!-- hand zombie -->
-        <hold_type id="12" newmodel="false" ray_cast="0.46" holster="0.5" unholster="0.5" />        <!-- torch  -->
-        <hold_type id="13" newmodel="false" ray_cast="0.2" holster="0.5" unholster="0.5" />        <!-- flashlight  -->
-        <hold_type id="14" newmodel="false" ray_cast="2.0" holster="0.5" unholster="0.5" />        <!-- canned food -->
-        <hold_type id="15" newmodel="false" ray_cast="2.0" holster="0.5" unholster="0.5" />        <!-- medium food hold -->
-        <hold_type id="16" newmodel="false" ray_cast="0.20" holster="0.5" unholster="0.5" />        <!-- stick -->
-        <hold_type id="17" newmodel="false" ray_cast="0.4" holster="0.5" unholster="0.5" />        <!-- fireaxe -->
-        <hold_type id="18" newmodel="false" ray_cast="0.5" holster="0.5" unholster="0.5" />        <!-- shovel -->
-        <hold_type id="27" newmodel="false" ray_cast="0.8" holster="0.5" unholster="0.5" />        <!-- stingHornet -->
-        <hold_type id="22" newmodel="false" ray_cast="2.0" holster="0.5" unholster="0.5" />        <!-- can sham, salmon etc -->
-        <hold_type id="23" newmodel="false" ray_cast="2.0" holster="0.5" unholster="0.5" />        <!-- bowl food -->
-        <hold_type id="24" newmodel="false" ray_cast="0.3" holster="0.5" unholster="1.0" />        <!-- hand zombie 02 crawler -->
-        <hold_type id="25" newmodel="false" ray_cast="0.3" holster="0.5" unholster="0.5" />        <!-- pipe bomb -->
-        <hold_type id="29" newmodel="false" ray_cast="0.3" holster="0.5" unholster="0.5" />        <!-- wrench -->
-        <hold_type id="30" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- hunting rifle -->
-        <hold_type id="31" newmodel="false" ray_cast="2.0" holster="0.5" unholster="0.5" />        <!-- parcel -->
-        <hold_type id="32" newmodel="false" ray_cast="0.37" holster="0.5" unholster="0.5" />        <!-- stone axe -->
-        <hold_type id="33" newmodel="false" ray_cast="0.75" holster="0.5" unholster="0.5" />        <!-- sledgehammer -->
-        <hold_type id="35" newmodel="false" ray_cast="0.3" holster="0.5" unholster="0.5" />        <!-- dog dig -->
-        <hold_type id="36" newmodel="false" ray_cast="0.43" holster="0.5" unholster="0.5" />        <!-- knife -->
-        <hold_type id="37" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- nailgun -->
-        <hold_type id="38" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- cobblestones -->
-        <hold_type id="39" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- blunderbuss -->
-        <hold_type id="44" newmodel="false" ray_cast="0" holster="0.5" unholster="0.5" />        <!-- magnum -->
+        <hold_type id="0" newmodel="false" ray_cast="0.16"  unholster="0.2" />        <!-- 0 hand player -->
+        <hold_type id="1" newmodel="false" ray_cast="0.16" holster=".28" unholster="0.2" />        <!-- 1 pistol -->
+        <hold_type id="2" newmodel="false" ray_cast="0.40" holster=".28" unholster="0.2" />        <!-- 2 clubs -->
+        <hold_type id="3" newmodel="false" ray_cast="1.00" holster=".28" unholster="0.2" />        <!-- 3 jars -->
+        <hold_type id="4" newmodel="false" ray_cast="0.64" holster=".28" unholster="0.2" />        <!-- 4 hoe -->
+        <hold_type id="5" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />           <!-- 5 shotgun -->
+        <hold_type id="6" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />           <!-- 6 mp5 -->
+        <hold_type id="7" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />           <!-- 7 blocks and venison? -->
+        <hold_type id="8" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />           <!-- 8 not used -->
+        <hold_type id="9" newmodel="false" ray_cast="0.4" holster=".28" unholster="1.0" />         <!-- 9 hand zombie -->
+        <hold_type id="10" newmodel="false" ray_cast="0" holster=".28" unholster="1.0" />          <!-- 10 rocket launcher -->
+        <hold_type id="11" newmodel="false" ray_cast="0" holster=".28" unholster="1.0" />          <!-- 11 sniper rifle -->
+        <hold_type id="12" newmodel="false" ray_cast="0.46" holster=".28" unholster="0.2" />       <!--12  torch  -->
+        <hold_type id="13" newmodel="false" ray_cast="0.2" holster=".28" unholster="0.2" />        <!-- 13 flashlight  -->
+        <hold_type id="14" newmodel="false" ray_cast="2.0" holster=".28" unholster="0.2" />        <!-- 14 canned food and yucca fruit-->
+        <hold_type id="15" newmodel="false" ray_cast="2.0" holster=".28" unholster="0.2" />        <!-- 15 corn and potato -->
+        <hold_type id="16" newmodel="false" ray_cast="0.20" holster=".28" unholster="0.2" />       <!-- 16 first aid, small rock, pill bottles stick -->
+        <hold_type id="17" newmodel="false" ray_cast="0.4" holster=".28" unholster="0.2" />        <!-- 17 fireaxe -->
+        <hold_type id="18" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 18 shovel and auger blade -->
+        <hold_type id="19" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 19 chainsaw -->
+        <hold_type id="20" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 20 auger -->
+        <hold_type id="21" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 21 flat hand hold -->
+        <hold_type id="22" newmodel="false" ray_cast="0.5" holster=".28" unholster="0.2" />        <!-- 22 sham -->
+        <hold_type id="23" newmodel="false" ray_cast="2.0" holster=".28" unholster="0.2" />        <!-- 23 stews, bowl -->
+        <hold_type id="24" newmodel="false" ray_cast="0.3" holster=".28" unholster="1.0" />        <!-- 24 hand zombie 02 crawler -->
+        <hold_type id="25" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" />        <!-- 25 pipe bomb -->
+        <hold_type id="26" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" />        <!-- 26 crossbow -->
+        <hold_type id="27" newmodel="false" ray_cast="0.8" holster=".28" unholster="0.2" />        <!-- 27 wooden bow -->
+        <hold_type id="28" newmodel="false" ray_cast="0.8" holster=".28" unholster="0.2" />        <!-- 28 hornet stinger -->
+        <hold_type id="29" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" />        <!-- wrench -->
+        <hold_type id="30" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- hunting rifle -->
+        <hold_type id="31" newmodel="false" ray_cast="2.0" holster=".28" unholster="0.2" />        <!-- parcel -->
+        <hold_type id="32" newmodel="false" ray_cast="0.2" holster=".28" unholster="0.2" />        <!-- stone axe -->
+        <hold_type id="33" newmodel="false" ray_cast="0.75" holster=".28" unholster="0.2" />       <!-- sledgehammer -->
+        <hold_type id="34" newmodel="false" ray_cast="0.75" holster=".28" unholster="0.2" />       <!-- not used -->
+        <hold_type id="35" newmodel="false" ray_cast="0.3" holster=".28" unholster="0.2" />        <!-- dog -->
+        <hold_type id="36" newmodel="false" ray_cast="0.43" holster=".28" unholster="0.2" />       <!-- knife -->
+        <hold_type id="37" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- nailgun -->
+        <hold_type id="38" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- cobblestones -->
+        <hold_type id="39" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- blunderbuss -->
+        <hold_type id="44" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- magnum -->
+        <hold_type id="45" newmodel="false" ray_cast="0" holster=".28" unholster="0.2" />          <!-- sack -->
+        <hold_type id="46" newmodel="false" ray_cast=".5" holster=".28" unholster="0.2" />         <!-- bear hand -->
     </animation>
     <!-- 
          Add noisy sounds here 
@@ -201,6 +212,7 @@
 	
 	<groups> <!--http://www.colorpicker.com/-->
 		<!--Red-->
+		<group name="Basics" color="690101" alpha="1.0"/>
 		<group name="Ammo/Weapons" color="690101" alpha="1.0"/>
 		<group name="Tools/Traps" color="690101" alpha="1.0"/> 
 		<!--Orange-->

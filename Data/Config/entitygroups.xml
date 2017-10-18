@@ -130,10 +130,11 @@
     </entitygroup>
 
   <entitygroup name="ZombiesCave">
-    <entity name="zombie05" prob="0.1"/>
-    <entity name="zombie06" prob="0.1"/>
-    <entity name="zombie07" prob="0.1"/>
+    <entity name="animalBear" prob="0.1"/>
     <entity name="zombiecrawler" prob="0.05"/>
+    <entity name="zombie05" prob="0.05"/>
+    <entity name="zombie06" prob="0.05"/>
+    <entity name="zombie07" prob="0.05"/>
     <entity name="zombieferal" prob="0.01"/>
   </entitygroup>
 
@@ -149,10 +150,15 @@
         <entity name="animalStag" />
     </entitygroup>
     
-    <entitygroup name="AnimalsAll" >
-    	<entity name="animalRabbit" prob="0.8" />
+    <entitygroup name="AnimalsBig">
+        <entity name="animalStag" />
+    </entitygroup>    
+    
+    <entitygroup name="AnimalsAll" >        
+    	<entity name="animalRabbit" />
         <entity name="animalStag" />
         <entity name="animalPig" />
+        <entity name="animalBear" prob="0.1" />
     </entitygroup>    
 	
     <entitygroup name="HornetGroup">

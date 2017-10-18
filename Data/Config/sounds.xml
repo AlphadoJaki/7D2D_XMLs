@@ -53,7 +53,7 @@ sounddebug tells you some limited information
 		</submaster>   
 	</master>
 
-  <master name="wellness" volume="0.2">
+  <master name="wellness" volume="0.3">
     <assign filter="wellness_increase" />
     <assign filter="wellness_decrease" />
   </master>
@@ -95,6 +95,7 @@ sounddebug tells you some limited information
   </master>
 
   <master name="zombiesense" volume="0.2" rate="7.0" maxvoices="4">
+    <assign filter="hulksense" />
     <assign filter="zombiefemalesense" />
     <assign filter="zombiemalesense" />
     <assign filter="hornetsense" />
@@ -104,6 +105,7 @@ sounddebug tells you some limited information
     <assign filter="zombiefemalesnowsense" />
     <assign filter="zombieferalsense" />
     <assign filter="zombieburntsense" />
+	<assign filter="bearsense" />
   </master>
 
   <master name="zombiealert" volume="0.2" rate="7.0" maxvoices="4">
@@ -117,6 +119,7 @@ sounddebug tells you some limited information
     <assign filter="zombiefemalesnowalert" />
     <assign filter="zombieferalalert" />
     <assign filter="zombieburntalert" />
+	<assign filter="bearalert" />
   </master>
 
   <master name="zombieattack" volume="0.2" rate="3.0" maxvoices="3">
@@ -130,6 +133,7 @@ sounddebug tells you some limited information
     <assign filter="zombiefemalesnowattack" />
     <assign filter="zombieferalattack" />
     <assign filter="zombieburntattack" />
+	<assign filter="bearattack" />
   </master>
 
   <master name="zombiepain" volume="0.2" rate="2.0" maxvoices="3">
@@ -143,6 +147,7 @@ sounddebug tells you some limited information
     <assign filter="zombiefemalesnowpain" />
     <assign filter="zombieferalpain" />
     <assign filter="zombieburntpain" />
+	<assign filter="bearpain" />
   </master>
 
   <master name="zombiedeath" volume="0.2" rate="2.0" maxvoices="3">
@@ -156,6 +161,13 @@ sounddebug tells you some limited information
     <assign filter="zombiefemalesnowdeath" />
     <assign filter="zombieferaldeath" />
     <assign filter="zombieburntdeath" />
+	<assign filter="beardeath" />
+  </master>
+  
+  
+   <master name="giveup" volume="0.3" rate="7.0" maxvoices="4">
+    <assign filter="zombiedoggiveup" />
+    <assign filter="beargiveup" />
   </master>
 
   <master name="horentfly" volume="0.2" rate="7.0" maxvoices="3">
@@ -183,6 +195,18 @@ sounddebug tells you some limited information
     <assign filter="auger_fire_end" />
     <assign filter="auger_idle" />
   </master>
+  
+  
+    <master name="minibike" volume="0.25" maxvoices="2">
+    <assign filter="Vehicles/Minibike/minibike_start_" />
+    <assign filter="Vehicles/Minibike/minibike_shutoff_" />
+    <assign filter="Vehicles/Minibike/minibike_empty_" />
+    <assign filter="Vehicles/Minibike/minibike_idle_lp_" />
+    <assign filter="Vehicles/Minibike/minibike_accel_" />
+    <assign filter="Vehicles/Minibike/minibike_decel_" />
+    <assign filter="Vehicles/Minibike/minibike_run_lp_" />
+  </master>
+  
 
   <master name="switchweapon" volume=".25">
     <assign filter="weapon_holster" />
