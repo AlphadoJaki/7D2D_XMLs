@@ -80,7 +80,7 @@
 			<property name="slot_type" value="battery"/>
 			<property name="mesh" value="battery"/>
 			<property name="transform" value="battery"/>
-			<property name="part_damage_reduction" value="0.5"/>
+			<!-- part_damage_reduction intentionally not set -->
 			<property name="parent_part" value="chassis"/>
 		</property>
 		
@@ -120,7 +120,7 @@
 			<property name="parent_part" value="handlebars"/>
 			<property name="mesh" value="horn"/>
 			<property name="transform" value="horn"/>
-			<property name="sound_honk" value="Vehicles/Minibike/minibike_horn1"/>
+			<property name="sound_honk" value="vehicle/minibike/minibike_horn"/>
 		</property>
 		
 		<property class="storage">
