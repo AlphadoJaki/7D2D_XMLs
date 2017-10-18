@@ -557,10 +557,6 @@
         <ingredient name="stick" count="1" grid="-1, 1"/>
     </recipe>
 
-    <recipe name="coal" count="5" scrapable="False" craft_time="5" learn_exp_gain="10" craft_exp_gain="5" >
-        <ingredient name="coalOre" count="1" grid="0, 0"/>
-    </recipe>
-
     <recipe name="cobblestoneFrame" count="1" scrapable="False" craft_time="5" learn_exp_gain="60" craft_exp_gain="2" >
         <ingredient name="stick" count="1" grid="-1, -1"/>
         <ingredient name="yuccaFibers" count="1" grid="0, -1"/>
@@ -834,11 +830,19 @@
         <ingredient name="rockSmall" count="1" grid="1, 0"/>
     </recipe>
 
-    <recipe name="gunPowder" count="10" scrapable="False" craft_time="1" learn_exp_gain="20" craft_exp_gain="10" >
+    <recipe name="gunPowder" count="1" scrapable="False" craft_time="1" learn_exp_gain="20" craft_exp_gain="5" >
         <ingredient name="coal" count="1" grid="0, -1"/>
         <ingredient name="potassiumNitratePowder" count="1" grid="0, 0"/>
     </recipe>
 
+	<recipe name="coal" count="5" scrapable="False" craft_time="5" learn_exp_gain="10" craft_exp_gain="5" >
+        <ingredient name="coalOre" count="1" grid="0, 0"/>
+    </recipe>
+	
+	<recipe name="potassiumNitratePowder" count="5" scrapable="False" craft_time="5" learn_exp_gain="20" craft_exp_gain="5" >
+        <ingredient name="potassiumNitrate" count="1" grid="0, 0"/>
+    </recipe>
+	
     <recipe name="gunPowderCharge" count="1" scrapable="False" craft_time="5" learn_exp_gain="90" craft_exp_gain="45" >
         <ingredient name="gunPowder" count="1" grid="-1, -1"/>
         <ingredient name="gunPowder" count="1" grid="0, -1"/>
@@ -1442,10 +1446,6 @@
         <ingredient name="woodPlank" count="1" grid="0, -2"/>
         <ingredient name="woodPlank" count="1" grid="0, -1"/>
         <ingredient name="woodPlank" count="1" grid="0, 0"/>
-    </recipe>
-
-    <recipe name="potassiumNitratePowder" count="5" scrapable="False" craft_time="5" learn_exp_gain="20" craft_exp_gain="5" >
-        <ingredient name="potassiumNitrate" count="1" grid="0, 0"/>
     </recipe>
 
     <recipe name="potatoSeed" count="4" scrapable="False" craft_time="5" learn_exp_gain="20" craft_exp_gain="5" >

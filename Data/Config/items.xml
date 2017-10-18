@@ -2430,9 +2430,9 @@ WEAPON ATTACHABLES
         <property name="Meshfile" value="Items/Crafting/coal" />
         <property name="Material" value="coal" />
         <property name="HoldType" value="21" />
-        <property name="Stacknumber" value="250" />
-        <property name="FuelValue" value="40" />
-        <property name="DropScale" value="3" />
+        <property name="Stacknumber" value="500" />
+        <property name="FuelValue" value="100" />
+        <property name="DropScale" value="8" />
         <property name="Group" value="Resources" />
         <property class="Preview">
             <property name="Zoom" value="28" />
@@ -2512,7 +2512,7 @@ WEAPON ATTACHABLES
         <property name="Meshfile" value="Items/Food/cornmeal" />
         <property name="Material" value="metal" />
         <property name="HoldType" value="21" />
-        <property name="Stacknumber" value="250" />
+        <property name="Stacknumber" value="500" />
         <property name="Group" value="Resources" />
         <property class="Preview">
             <property name="Zoom" value="28" />

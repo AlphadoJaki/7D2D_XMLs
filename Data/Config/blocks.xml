@@ -58,8 +58,8 @@
     <property name="Shape" value="Terrain" />
     <property name="Mesh" value="terrain" />
     <property name="Texture" value="300" />
-    <drop event="Destroy" name="potassiumNitrate" count="1" prob="1.0" />
-    <drop event="Fall" name="potassiumNitrate" count="1" prob="1.0" />
+    <drop event="Destroy" name="potassiumNitratePowder" count="5" prob="1.0" />
+    <drop event="Fall" name="potassiumNitrate" count="1" prob="1.0" stick_chance="1" />
     <property name="DropScale" value="2" />
   </block>
   <block id="7" name="ironOre">
@@ -286,13 +286,14 @@
     <property name="DropScale" value="2" />
     <property name="Map.Color" value="58,53,48" />
   </block>
-  <block id="27" name="coalOre">
+  <block id="27" name="coalOre">xxx
     <property name="Material" value="coal" />
     <property name="Shape" value="Terrain" />
     <property name="Mesh" value="terrain" />
     <property name="Texture" value="34" />
     <property name="FuelValue" value="400" />
     <property name="DropScale" value="2" />
+    <drop event="Destroy" name="coal" count="5" />
     <drop event="Fall" name="coalOre" count="1" prob="1.0" />
   </block>
   <block id="28" name="terrainFiller">
@@ -1515,8 +1516,8 @@
   </block>
   <block id="378" name="tubeHalfConreteNoDistort">
     <property name="Material" value="stone" />
-    <property name="Shape" value="TubeHalf" />
-    <!--<property name="Model" value="Pole0.5m" /> -->
+    <property name="Shape" value="New" />
+    <property name="Model" value="Pole0.5m" />
     <property name="Texture" value="8" />
     <drop event="Destroy" name="destroyedStone" count="1" />
     <drop event="Fall" name="destroyedStone" count="1" prob="1.0"  stick_chance=".75" />    
@@ -2756,6 +2757,7 @@
     <property name="Shape" value="Ext3dModel" />
     <property name="Mesh" value="models" />
     <property name="Model" value="Furniture/chair01" param1="main_mesh" />
+    <property name="Place" value="TowardsPlacer" />
     <property name="FuelValue" value="32" />
     <property name="CanPickup" value="true" />
     <property name="Group" value="Decor" />
@@ -6704,24 +6706,24 @@
   </block>
   <block id="921" name="tubeHalfPoleWoodFull">
     <property name="Material" value="wood" />
-    <property name="Shape" value="TubeHalf" />
-    <!--<property name="Model" value="Pole0.5m" />-->
+    <property name="Shape" value="New" />
+    <property name="Model" value="Pole0.5m" />
     <property name="Texture" value="21,21,241,241,241,241" />
     <drop event="Destroy" name="scrapIron" count="1,2" prob="1" />
     <drop event="Fall" name="scrapMetalPile" count="1" prob="1.0"  stick_chance=".75" /> 
   </block>
   <block id="922" name="tubeHalfMetal1">
     <property name="Material" value="metal" />
-    <property name="Shape" value="TubeHalf" />
-    <!--<property name="Model" value="Pole0.5m" />-->
+    <property name="Shape" value="New" />
+    <property name="Model" value="Pole0.5m" />
     <property name="Texture" value="282" />
     <drop event="Destroy" name="scrapIron" count="1,2" prob="1" />
     <drop event="Fall" name="scrapMetalPile" count="1" prob="1.0"  stick_chance=".75" />    
   </block>
   <block id="923" name="tubeHalfMetal2">
     <property name="Material" value="metal" />
-    <property name="Shape" value="TubeHalf" />
-   <!--<property name="Model" value="Pole0.5m" />-->
+    <property name="Shape" value="New" />
+    <property name="Model" value="Pole0.5m" />
     <property name="Texture" value="194" />
     <drop event="Destroy" count="0" />
   </block>
@@ -7556,7 +7558,9 @@
   </block>
   <block id="1042" name="cobblestoneWedge">
     <property name="Material" value="concrete" />
-    <property name="Shape" value="Wedged" />
+    <property name="Shape" value="New" />
+	<property name="Mesh" value="opaque" />
+	<property name="Model" value="wedge" />
     <property name="Texture" value="26" />   
     <property name="DowngradeBlock" value="cobblestoneWedgeBroke01" />
     <drop event="Destroy" count="0" />
@@ -11362,7 +11366,7 @@
     <!--property name="IsTerrainDecoration" value="true"   DOES NOT WORK ON THIS SHAPE!!! -->
     <property class="UpgradeBlock">
       <property name="ToBlock" value="reinforcedScrapIronSpike" />
-      <property name="Item" value="scrapIron" />
+      <property name="Item" value="woodPlank" />
       <property name="ItemCount" value="4" />
       <property name="UpgradeHitCount" value="4" />
     </property>

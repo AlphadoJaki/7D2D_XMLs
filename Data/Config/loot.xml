@@ -743,6 +743,7 @@
 		<item name="pickaxeIron"/>
 		<item name="shovel"/>
 		<item name="fireaxe"/>
+		<item name="padlock"/>
 		<item name="hoe"/>
 		<item name="wrench"/>
 		<item name="repairKit" count="1,4"/>

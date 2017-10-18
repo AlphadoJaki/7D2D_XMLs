@@ -158,11 +158,11 @@ Description of Options:
         <biome name="snow" biomemapcolor="#FFFFFF">
           <weather>
           		<Temperature min="-10" max="20" prob="1"/>
-          		<Fog min="0" max="0" prob=".5"/>
-          		<Fog min="100" max="100" prob=".5"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="100" prob=".5"/>
           		<CloudThickness min="95" max="100" prob=".5"/>
-          		<Precipitation min="0" max="0" prob=".25"/>
+          		<Precipitation min="0" max="0" prob=".0"/>
           		<Precipitation min="50" max="100" prob=".75"/>          		
           		<Wind min="20" max="40" prob="0.9"/>
           		<Wind min="40" max="100" prob="0.1"/>
@@ -248,12 +248,12 @@ Description of Options:
       <biome name="forest" biomemapcolor="#008D00" >
           <weather>
           		<Temperature min="-10" max="101" prob="1"/>
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain removing this second chance for it to not rain since it never rains any more-->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>          		          	       
@@ -325,12 +325,12 @@ Description of Options:
       <biome name="pine_forest" biomemapcolor="#004000" >
           <weather>
           		<Temperature min="-10" max="101" prob="1"/>
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>  
@@ -418,12 +418,12 @@ Description of Options:
       <biome name="plains" biomemapcolor="#00FF00" >
           <weather>
           		<Temperature min="40" max="104" prob="1"/>          		          		          	
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>            		          		          		          		
@@ -506,12 +506,12 @@ Description of Options:
           <weather>
           		<Temperature min="35" max="120" prob="1"/>
           		<CloudThickness min="5" max="50" prob="1"/>          		
-          		<Fog min="0" max="0" prob=".8"/>
-          		<Fog min="100" max="100" prob=".2"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".3"/>
           		<CloudThickness min="10" max="70" prob=".6"/>
           		<CloudThickness min="100" max="100" prob=".1"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>            		          
@@ -604,12 +604,12 @@ Description of Options:
           <weather>
           		<Temperature min="35" max="120" prob="1"/>
           		<CloudThickness min="5" max="50" prob="1"/>          		
-          		<Fog min="0" max="0" prob=".8"/>
-          		<Fog min="100" max="100" prob=".2"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".3"/>
           		<CloudThickness min="10" max="70" prob=".6"/>
           		<CloudThickness min="100" max="100" prob=".1"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>            		          
@@ -733,12 +733,12 @@ Description of Options:
         <biome name="wasteland" biomemapcolor="#ffa800" >
           <weather>
           		<Temperature min="-10" max="120" prob="1"/>
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".8"/>
+          		<Fog min="100" max="100" prob=".2"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>  
@@ -923,12 +923,12 @@ Description of Options:
       <biome name="city" biomemapcolor="#808080" >
           <weather>
           		<Temperature min="-10" max="101" prob="1"/>
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".9"/>
+          		<Fog min="100" max="100" prob=".1"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>  
@@ -1009,12 +1009,12 @@ Description of Options:
 	  <biome name="wasteland_hub" biomemapcolor="#a0a0a0" >
           <weather>
           		<Temperature min="-10" max="101" prob="1"/>
-          		<Fog min="0" max="0" prob=".6"/>
-          		<Fog min="100" max="100" prob=".4"/>
+          		<Fog min="0" max="0" prob=".8"/>
+          		<Fog min="100" max="100" prob=".2"/>
           		<CloudThickness min="0" max="0" prob=".2"/>
           		<CloudThickness min="10" max="70" prob=".5"/>
           		<CloudThickness min="100" max="100" prob=".3"/> 
-          		<Precipitation min="0" max="0" prob=".25"/> <!-- it has to be at least 70% cloudy before it can rain -->
+          		<Precipitation min="0" max="0" prob=".0"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Precipitation min="50" max="100" prob=".75"/> <!-- it has to be at least 70% cloudy before it can rain -->
           		<Wind min="10" max="20" prob="0.9"/>
           		<Wind min="20" max="100" prob="0.1"/>  
