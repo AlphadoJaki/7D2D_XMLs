@@ -13,7 +13,6 @@
 		<entity name="zombiegal04" />
 		<entity name="fatzombie" />
 		<entity name="zombiecrawler" />
-		<entity name="spiderzombie" prob="0.05"/>
     </entitygroup>
 	
     <entitygroup name="ZombiesNight">
@@ -46,8 +45,7 @@
 		<entity name="zombiedog" />
 		<entity name="zombiecrawler" />
 		<entity name="fatzombiecop" />
-		<entity name="burntzombie" />
-		<entity name="spiderzombie" />		
+		<entity name="burntzombie" />		
     </entitygroup>	
     
     <entitygroup name="ZombiesWastelandNight">
@@ -65,7 +63,8 @@
 		<entity name="zombiecrawler" prob="0.05"/>
 		<entity name="fatzombiecop" prob="0.15"/>
 		<entity name="burntzombie" prob="0.05"/>
-		<entity name="spiderzombie" prob="0.2"/>
+		<entity name="zombieferal" prob="0.05"/>
+
     </entitygroup>	
     
     <entitygroup name="ZombiesWastelandNight2">
@@ -111,9 +110,9 @@
   </entitygroup>
 
   <entitygroup name="ZombiesBurntForest">
-    <entity name="burntzombie" prob="0.1"/>
-    <entity name="zombiedog" prob="0.02"/>
+    <entity name="burntzombie" prob="0.2"/>
     <entity name="zombiecrawler" prob="0.05"/>
+    <entity name="zombiedog" prob="0.01"/>
   </entitygroup>
     
     <entitygroup name="SnowZombies">
@@ -127,8 +126,16 @@
     </entitygroup>	
 	
     <entitygroup name="ZombiesFeral">
-		<entity name="burntzombie" />
+		<entity name="zombieferal" />
     </entitygroup>
+
+  <entitygroup name="ZombiesCave">
+    <entity name="zombie05" prob="0.1"/>
+    <entity name="zombie06" prob="0.1"/>
+    <entity name="zombie07" prob="0.1"/>
+    <entity name="zombiecrawler" prob="0.05"/>
+    <entity name="zombieferal" prob="0.01"/>
+  </entitygroup>
 
     <entitygroup name="AnimalsSmall">
         <entity name="animalRabbit" />

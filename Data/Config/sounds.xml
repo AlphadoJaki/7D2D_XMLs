@@ -53,6 +53,33 @@ sounddebug tells you some limited information
 		</submaster>   
 	</master>
 
+  <master name="wellness" volume="0.2">
+    <assign filter="wellness_increase" />
+    <assign filter="wellness_decrease" />
+  </master>
+
+  <master name="footstep_overlays" volume="0.2" localVolume="0.2">
+    <assign filter="zombieferalfootstep" />
+    <assign filter="zombiesnowfootstep" />
+    <assign filter="zombieburntfootstep" />
+  </master>
+  
+
+  <master name="gun_fires" volume="1.0" localVolume="1.0">
+    <assign filter="pump_shotgun_fire" />
+    <assign filter="sawed_off_shotgun_fire" />
+    <assign filter="blunderbuss_fire" />
+    <assign filter="44magnum_fire" />
+    <assign filter="hunting_rifle_fire" />
+    <assign filter="m136_fire" />
+    <assign filter="mp5_fire_start" />
+    <assign filter="mp5_fire_lp" />
+    <assign filter="mp5_fire_end" />
+    <assign filter="pistol_fire" />
+    <assign filter="sniperrifle_fire" />
+    <assign filter="bow_fire" />
+    <assign filter="crossbow_fire" />
+  </master>
 
   <master name="zombieroam" volume="0.1" rate="7.0" maxvoices="3">
     <assign filter="hulkroam" />
@@ -61,16 +88,22 @@ sounddebug tells you some limited information
     <assign filter="hornetroam" />
     <assign filter="spiderroam" />
     <assign filter="zombiedogroam" />
-    <assign filter="zombiesnowroam" />
+    <assign filter="zombiemalesnowroam" />
+    <assign filter="zombiefemalesnowroam" />
+    <assign filter="zombieferalroam" />
+    <assign filter="zombieburntroam" />
   </master>
 
   <master name="zombiesense" volume="0.2" rate="7.0" maxvoices="4">
     <assign filter="zombiefemalesense" />
     <assign filter="zombiemalesense" />
     <assign filter="hornetsense" />
-    <assign filter="hornetflylp1" />
+    <assign filter="spidersense" />
     <assign filter="zombiedogsense" />
-    <assign filter="zombiesnowsense" />
+    <assign filter="zombiemalesnowsense" />
+    <assign filter="zombiefemalesnowsense" />
+    <assign filter="zombieferalsense" />
+    <assign filter="zombieburntsense" />
   </master>
 
   <master name="zombiealert" volume="0.2" rate="7.0" maxvoices="4">
@@ -80,7 +113,10 @@ sounddebug tells you some limited information
     <assign filter="hornetalert" />
     <assign filter="spideralert" />
     <assign filter="zombiedogalert" />
-    <assign filter="zombiesnowalert" />
+    <assign filter="zombiemalesnowalert" />
+    <assign filter="zombiefemalesnowalert" />
+    <assign filter="zombieferalalert" />
+    <assign filter="zombieburntalert" />
   </master>
 
   <master name="zombieattack" volume="0.2" rate="3.0" maxvoices="3">
@@ -90,7 +126,10 @@ sounddebug tells you some limited information
     <assign filter="hornetattack" />
     <assign filter="spiderattack" />
     <assign filter="zombiedogattack" />
-    <assign filter="zombiesnowattack" />
+    <assign filter="zombiemalesnowattack" />
+    <assign filter="zombiefemalesnowattack" />
+    <assign filter="zombieferalattack" />
+    <assign filter="zombieburntattack" />
   </master>
 
   <master name="zombiepain" volume="0.2" rate="2.0" maxvoices="3">
@@ -100,7 +139,10 @@ sounddebug tells you some limited information
     <assign filter="hornetpain" />
     <assign filter="spiderpain" />
     <assign filter="zombiedogpain" />
-    <assign filter="zombiesnowpain" />
+    <assign filter="zombiemalesnowpain" />
+    <assign filter="zombiefemalesnowpain" />
+    <assign filter="zombieferalpain" />
+    <assign filter="zombieburntpain" />
   </master>
 
   <master name="zombiedeath" volume="0.2" rate="2.0" maxvoices="3">
@@ -110,7 +152,10 @@ sounddebug tells you some limited information
     <assign filter="hornetdeath" />
     <assign filter="spiderdeath" />
     <assign filter="zombiedogdeath" />
-    <assign filter="zombiesnowdeath" />
+    <assign filter="zombiemalesnowdeath" />
+    <assign filter="zombiefemalesnowdeath" />
+    <assign filter="zombieferaldeath" />
+    <assign filter="zombieburntdeath" />
   </master>
 
   <master name="horentfly" volume="0.2" rate="7.0" maxvoices="3">
@@ -199,7 +244,17 @@ sounddebug tells you some limited information
     <assign filter="open_file_cabinet"/>
     <assign filter="close_file_cabinet"/>
     <assign filter="open_medicine_cabinet"/>
-    <assign filter="close_medicine_cabinet"/>
+    <assign filter="close_medicine_cabinet"/> 
+    <assign filter="open_cash_register"/>
+    <assign filter="close_cash_register"/>   
+    <assign filter="open_shopping_basket"/>
+    <assign filter="close_shopping_basket"/>
+    <assign filter="open_shopping_cart"/>
+    <assign filter="close_shopping_cart"/>
+     <assign filter="open_pill_case"/>
+    <assign filter="close_pill_case"/>  
+     <assign filter="open_apache_artifact_chest"/>
+    <assign filter="close_apache_artifact_chest"/>
   </master>
 
   <master name="useactions" volume=".4" crouchVolume=".25">

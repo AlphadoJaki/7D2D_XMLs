@@ -174,9 +174,9 @@
 	</buff>
 
 	<!-- todo ideally this buff is only applied on a critical hit to the heart region and not applied to zombies. Armor would limit this too -->
-	<buff id="criticalBleedout" duration="10" name="Bleeding" type="bleeding" description="You are bleeding profusely. Use a bandage to stop the bleeding." icon="buff_icon_critical_hit">
-		<modify id="0" stat="stamina" amount="-15" rate="1" type="bleeding"/>
-		<modify id="1" stat="health" amount="-15" rate="1" type="bleeding"/>
+	<buff id="criticalBleedout" duration="50" name="Bleeding" type="bleeding" description="You are bleeding profusely. Use a bandage to stop the bleeding." icon="buff_icon_critical_hit">
+		<modify id="0" stat="stamina" amount="-1" rate="1" type="bleeding"/>
+		<modify id="1" stat="health" amount="-1" rate="1" type="bleeding"/>
 	</buff>				
 	
 	<buff id="CoffeeStaminaBoost" duration="180" name="Caffiene Buzz" type="staminaup" description="A nice rush of energy." icon="buff_icon_coffee" stack="extend">
@@ -194,7 +194,7 @@
 		<modify id="1" stat="health" amount="-5" rate="60"/>
 	</buff>			
 
-	<buff id="foodPoisoning" duration="30" name="Food Poisoning" type="sickness" actions="increment(@wellness, -0.1, 1, 0, 0)"  description="You feel sick to your stomach." icon="buff_icon_food_poisoning">
+	<buff id="foodPoisoning" duration="30" name="Food Poisoning" type="sickness" actions="increment(@wellness, -.5, 15, 0, 0)"  description="You feel sick to your stomach." icon="buff_icon_food_poisoning">
 		<modify id="0" stat="stamina" amount="-10" rate="1"/>
 	</buff>	 
 	
@@ -205,7 +205,7 @@
 	<buff id="smelly" duration="30" name="Smelly" smell="largeSmell" description="You stink." icon="buff_icon_dysentery"/>
 	
 	<buff id="infection" name="Infection Stage 1" type="sickness" mutex="cured,infection2,infection3,infection4" onexpired="infection2" duration="7200t" description="You are infected. Use antibiotics to heal the infection." icon="buff_icon_infection">
-		<modify id="0" stat="stamina" amount="-1" rate="1"/>
+		<modify id="0" stat="stamina" amount="-0.3" rate="1"/>
 	</buff>
 	
 	<buff id="infection2" name="Infection Stage 2" type="sickness" duration="7200t" actions="damage(25,2100t,0,3);increment(@wellness, -0.25, 100t, 0, 0)" onexpired="infection3" description="Your infection is progressing. Use antibiotics to heal the infection." icon="buff_icon_infection">
@@ -235,7 +235,7 @@
 		<modify id="0" stat="stamina" amount="-15" rate="1"/>	
 	</buff>	
 	
-	<buff id="brokenLeg" duration="7200t" name="Broken Leg" stack="reset" type="speedmodifier" actions="debuff(firstAid);debuff(splint)" description="Your leg is broken." icon="buff_icon_breakleg">
+	<buff id="brokenLeg" duration="7200t" name="Broken Leg" stack="reset" type="speedmodifier" actions="debuff(firstAid);debuff(splint);debuff(sprainedLeg)" description="Your leg is broken." icon="buff_icon_breakleg">
 		<modify id="0" stat="speedmodifier" setValue="0.40"/>
 	</buff>	
 	
@@ -253,14 +253,16 @@
 		<modify id="0" stat="speedmodifier" setValue="0.1"/>
 	</buff>	
 	
-	<buff id="burning" debuffif="+water > 5" duration="15" name="Burning" description="You are on Fire." actions="attach(ParticleEffects/p_onFire, @impact);damage(10,1,0,0)" icon="buff_icon_fire"/>
+	<buff id="burningSmall" mutex="burning" debuffif="+water > 1" ffcheck="true" duration="10" name="Burning" description="You are burning." actions="attach(ParticleEffects/p_onFire, @impact);damage(2,1,0,0)" icon="buff_icon_fire"/>
+	<buff id="burning" debuffif="+water > 1" duration="15" ffcheck="true" name="Fire" description="You are on fire." actions="debuff(burningSmall);attach(ParticleEffects/p_onFire, @impact);damage(10,1,0,0)" icon="buff_icon_fire"/>
+	
 	
 	<buff id="wellnessExample" duration="10" type="wellness" name="Gain Wellness" description="You are getting health." icon="buff_icon_stunned">
 		<modify id="0" stat="wellness" amount="5" rate="1"/>
 	</buff>	
 	
-	<buff id="hungry" buffif="+starve > 1" mutex="hungry2" debuffif="+full > 1" name="Hungry" actions="increment(@wellness, -0.1, 30, 0, 0)" description="You are hungry." icon="buff_icon_hunger"/>
-	<buff id="hungry2" buffif="+starve > 1200" debuffif="+full > 1" name="Starving" actions="increment(@wellness, -0.5, 10, 0, 0);debuff(hungry)" description="You are starving." icon="buff_icon_hunger"/>
+	<buff id="hungry" buffif="+starve > 1" mutex="hungry2" debuffif="+full > 1" name="Hungry" actions="increment(@wellness, -0.5, 150, 0, 0)" description="You are hungry." icon="buff_icon_hunger"/>
+	<buff id="hungry2" buffif="+starve > 1200" debuffif="+full > 1" name="Starving" actions="increment(@wellness, -0.5, 30, 0, 0);debuff(hungry)" description="You are starving." icon="buff_icon_hunger"/>
 	
 	<buff id="thirsty" buffif="+thirst > 1" mutex="thirsty2" debuffif="+hydrated > 5" name="Thirsty" actions="increment(@wellness, -0.1, 30, 0, 0)" description="You are thirsty." icon="buff_icon_thirst"/>
 	<buff id="thirsty2" buffif="+thirst > 600" debuffif="+hydrated > 5" name="Dehydrated" actions="increment(@wellness, -0.5, 15, 0, 0);debuff(thirsty)" description="You are very thirsty." icon="buff_icon_thirst"/>
