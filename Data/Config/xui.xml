@@ -1,5 +1,4 @@
 <xui>
-	<include_window_file file="XUi/windows"/>
 	<ruleset name="default" scale="1.255">
 	
 		<window_group name="crafting" controller="XUiC_CraftingWindowGroup">

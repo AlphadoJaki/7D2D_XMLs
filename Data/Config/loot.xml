@@ -492,7 +492,7 @@
 	</lootgroup>	
 	
 	<lootgroup name="herbalRecipes" count="1">
-		<item name="herbalAntibioticsRecipe"/>	
+		<item name="herbalAntibioticsRecipe"/>
 	</lootgroup>	
 	
 	<lootgroup name="gasPumps" >
@@ -500,7 +500,7 @@
 	</lootgroup>	
 	
 	<lootgroup name="commonBooks" count="1">
-	    <item name="book" prob="20"/>	
+	    <item name="book" prob="20"/>
 		<item name="crossbowSchematic"/>			
 		<item name="hammerSchematic"/>	
 		<item name="huntingKnifeBook"/>
@@ -660,7 +660,7 @@
 	    <item name="blackDenimPants"/> 
         <item name="redDenimPants"/> 
         <item name="brownDenimPants"/>  
-		<item name="cowboyHat"/>xxx add color variants
+		<item name="cowboyHat"/>
         <item name="ballCap"/>
         <item name="miningHelmet"/> 
         <item name="denimPants"/> 
@@ -1302,8 +1302,9 @@
     
 	<!-- mountain man loot  -->
     
-    <lootcontainer id="63"  count="0" size="8,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest"> 
+    <lootcontainer id="63"  count="0,1" size="8,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest"> 
 		<item group="herbalRecipes" count="1"/>	
+		<item name="herbalAntibiotics" count="1,2"/>	
     </lootcontainer>  
     
 	<!-- gas pump loot  -->
