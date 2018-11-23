@@ -23,7 +23,7 @@ List of hacks to be removed:
 		<stack_type value="ignore"/>
 		<duration value="5"/>
 		<effect_group>
-			<requirement name="EntityTypeCompare" entity_type="Player"/>
+			<requirement name="EntityTagCompare" tags="player"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_electric_shock" local_offset="0,0.75,0"/>
 			<triggered_effect trigger="onSelfBuffFinish" action="RemoveParticleEffectFromEntity" particle="p_electric_shock" />
@@ -33,13 +33,13 @@ List of hacks to be removed:
 			<passive_effect name="HealthChangeOT" operation="base_add" value="-.3" />
 
 				<triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="not player">
-					<requirement name="EntityTypeCompare" entity_type="Player"/>
+					<requirement name="EntityTagCompare" tags="player"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="not Zombie">
-					<requirement name="EntityTypeCompare" entity_type="Zombie" invert="true"/>
+					<requirement name="EntityTagCompare" tags="zombie" invert="true"/>
 				</triggered_effect>
 				<triggered_effect trigger="onSelfBuffUpdate" action="LogMessage" message="not Animal">
-					<requirement name="EntityTypeCompare" target="self" entity_type="Animal" invert="true"/>
+					<requirement name="EntityTagCompare" tags="animal" invert="true"/>
 				</triggered_effect>
 -->
 
@@ -183,7 +183,6 @@ List of hacks to be removed:
 
 				<triggered_effect trigger="onSelfHoldingItemCreated" action="LogMessage" message="HoldingItemCreated"/>
 				-->
-
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddJournalEntry" journal="survivalTip"/>
 
@@ -843,19 +842,19 @@ List of hacks to be removed:
 
 <!--
 		<effect_group>
-			<requirement name="EntityTypeCompare" entity_type="Player" invert="true"/>
-			<requirement name="EntityTypeCompare" entity_type="Zombie" invert="true"/>
-			<requirement name="EntityTypeCompare" entity_type="Animal" invert="true"/>
+			<requirement name="EntityTagCompare" tags="player" invert="true"/>
+			<requirement name="EntityTagCompare" tags="zombie" invert="true"/>
+			<requirement name="EntityTagCompare" tags="animal" invert="true"/>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffInjuryBleeding"/>
 
 			<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="not player">
-				<requirement name="EntityTypeCompare" entity_type="Player" invert="true"/>
+				<requirement name="EntityTagCompare" tags="player" invert="true"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="not Zombie">
-				<requirement name="EntityTypeCompare" entity_type="Zombie" invert="true"/>
+				<requirement name="EntityTagCompare" tags="zombie" invert="true"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffStart" action="LogMessage" message="not Animal">
-				<requirement name="EntityTypeCompare" entity_type="Animal" invert="true"/>
+				<requirement name="EntityTagCompare" tags="animal" invert="true"/>
 			</triggered_effect>
 		</effect_group>
 -->
@@ -938,7 +937,7 @@ List of hacks to be removed:
 		<effect_group>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GTE" value=".2197"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2315"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegBroken"/>
@@ -947,7 +946,7 @@ List of hacks to be removed:
 		<effect_group>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2315"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2472"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegBroken"/>
@@ -956,7 +955,7 @@ List of hacks to be removed:
 		<effect_group>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2472"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".259"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="75"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="5"/>
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegBroken"/>
@@ -977,7 +976,7 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GTE" value=".204"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2197"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="player1painlg1">
@@ -994,7 +993,7 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2197"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2315"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="50"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="player1painlg1">
@@ -1011,7 +1010,7 @@ List of hacks to be removed:
 			<requirement name="NotHasBuff" buff="buffDontBreakMyLeg"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="GT" value=".2315"/>
 			<requirement name="CVarCompare" cvar="impactSpeed" operation="LTE" value=".2472"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="75"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="75"/>
 			<requirement name="ProgressionLevel" progression_name="perkParkour" target="self" operation="LT" value="4"/>
 				<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffLegSprained"/>
 				<triggered_effect trigger="onSelfBuffStart" action="PlaySound" target="self" sound="player1painlg1">
@@ -1357,7 +1356,7 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 
 			<triggered_effect name="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffInjuryStunned1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -1612,7 +1611,7 @@ List of hacks to be removed:
 		<duration value="10"/>
 
 		<effect_group>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="100"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
 			<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffBurningElement"/>
 		</effect_group>
 
@@ -1624,7 +1623,6 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffStart" action="AttachParticleEffectToEntity" particle="p_torch_wall" />
 			<triggered_effect trigger="onSelfBuffRemove" action="RemoveParticleEffectFromEntity" particle="p_torch_wall"/>
 			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_torch_wall" />
-
 		</effect_group>
 <!--
 			<triggered_effect trigger="onSelfBuffStart" action="PlaySound" sound="forge_fire_die">
@@ -1687,6 +1685,10 @@ List of hacks to be removed:
 		<duration value="3600"/>
 		<update_rate value="90"/>
 		<effect_group>
+
+		<!-- Added: Custom read-only variable "_difficulty" -->
+			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffNearDeathProtection"/>
+
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaCounter" operation="set" value="7200"/>
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaReduction" operation="set" value="@NearDeathTraumaCounter"/>
 			<triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" target="self" cvar="NearDeathTraumaReduction" operation="divide" value="40"/>
@@ -1731,7 +1733,6 @@ List of hacks to be removed:
 
 	<!-- In the early game it was deemed too easy get in a death loop. -->
 	<buff name="buffNearDeathRegen" icon="ui_game_symbol_near_death_trauma" icon_color="0,255,0" hidden="true">
-		<damage_type value="disease"/>
 		<stack_type value="ignore"/>
 		<duration value="100"/>
 		<effect_group>
@@ -1782,6 +1783,20 @@ List of hacks to be removed:
 			<requirement name="StatComparePercCurrentToMax" stat="health" operation="GTE" value="@NearDeathRegen"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffNearDeathRegen"/>
 				<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffNearDeathRegen"/>
+		</effect_group>
+	</buff>
+
+	<buff name="buffNearDeathProtection" icon="ui_game_symbol_near_death_trauma" icon_color="0,255,0" remove_on_death="false" hidden="true">
+		<stack_type value="replace"/>
+		<duration value="10"/>
+		<effect_group>
+			<triggered_effect trigger="onSelfRespawn" action="RemoveBuff" target="self" buff="buffNearDeathProtection"/>
+			<triggered_effect trigger="onSelfEnteredGame" action="RemoveBuff" target="self" buff="buffNearDeathProtection"/>
+			<triggered_effect trigger="onSelfTeleported" action="RemoveBuff" target="self" buff="buffNearDeathProtection"/>
+
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffIllInfection0,buffIllInfection1,buffInjuryBleeding,buffDrowning1,buffDrowning2,buffArmorShredding,buffLegSprained,buffLegBroken,buffArmSprained"/>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffArmBroken,buffInjuryStunned1,buffInjuryStunned2,buffInjuryCrippled1,buffInjuryKnockdown1,buffInjuryKnockdown1,buffInjuryUnconscious,buffStayDownKO"/>
+			<passive_effect name="BuffResistance" operation="base_add" value="2" tags="buffInjuryConcussion,buffShocked,buffBurningElement,buffBurningEnvironment,buffBurningFlamingArrow,buffBurningMolotov,buffBurning"/>
 		</effect_group>
 	</buff>
 
@@ -1889,7 +1904,7 @@ List of hacks to be removed:
 			<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -1908,7 +1923,7 @@ List of hacks to be removed:
 			<passive_effect name="WaterChangeOT" operation="base_subtract" value=".1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1931,7 +1946,7 @@ List of hacks to be removed:
 			<passive_effect name="HealthMaxModifierOT" operation="base_subtract" value="0.2" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllDysentery2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1945,7 +1960,7 @@ List of hacks to be removed:
 		<duration value="90"/>
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1967,7 +1982,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value="0.1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -1989,7 +2004,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value=".2" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllFoodPoisoning2">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2028,7 +2043,7 @@ List of hacks to be removed:
 			<passive_effect name="StaminaMaxModifierOT" operation="base_subtract" value=".1" />
 
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffIllPneumonia1">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="@illnessChance"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="@illnessChance"/>
 			</triggered_effect>
 
 			<triggered_effect trigger="onSelfBuffStart" action="AddBuff" target="self" buff="buffIllnessIndicatorTrigger"/>
@@ -2485,26 +2500,26 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Infection 0">
 			<requirement name="HasBuff" buff="buffIllInfection0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection0"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 1">
 			<requirement name="HasBuff" buff="buffIllInfection1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="30"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection1"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 2">
 			<requirement name="HasBuff" buff="buffIllInfection2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllInfection1"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 3">
 			<requirement name="HasBuff" buff="buffIllInfection3"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection3"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllInfection2"/>
 		</effect_group>
@@ -2512,19 +2527,19 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Dysentery 0">
 			<requirement name="HasBuff" buff="buffIllDysentery0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery0"/>
 		</effect_group>
 
 		<effect_group name="Cure Dysentery 1">
 			<requirement name="HasBuff" buff="buffIllDysentery1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="30"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery1"/>
 		</effect_group>
 
 		<effect_group name="Cure Dysentery 2">
 			<requirement name="HasBuff" buff="buffIllDysentery2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllDysentery1"/>
 		</effect_group>
@@ -2532,19 +2547,19 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Food Poisoning 0">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning0"/>
 		</effect_group>
 
 		<effect_group name="Cure Food Poisoning 1">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="30"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning1"/>
 		</effect_group>
 
 		<effect_group name="Cure Food Poisoning 2">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllFoodPoisoning1"/>
 		</effect_group>
@@ -2552,13 +2567,13 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Pneumonia 0">
 			<requirement name="HasBuff" buff="buffIllPneumonia0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia0"/>
 		</effect_group>
 
 		<effect_group name="Cure Pneumonia 1">
 			<requirement name="HasBuff" buff="buffIllPneumonia1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia1"/>
 		</effect_group>
 
@@ -2577,26 +2592,26 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Infection 0">
 			<requirement name="HasBuff" buff="buffIllInfection0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection0"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 1">
 			<requirement name="HasBuff" buff="buffIllInfection1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection1"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 2">
 			<requirement name="HasBuff" buff="buffIllInfection2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="13"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="13"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllInfection1"/>
 		</effect_group>
 
 		<effect_group name="Cure Infection 3">
 			<requirement name="HasBuff" buff="buffIllInfection3"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="7"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="7"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllInfection3"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllInfection2"/>
 		</effect_group>
@@ -2604,19 +2619,19 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Dysentery 0">
 			<requirement name="HasBuff" buff="buffIllDysentery0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery0"/>
 		</effect_group>
 
 		<effect_group name="Cure Dysentery 1">
 			<requirement name="HasBuff" buff="buffIllDysentery1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery1"/>
 		</effect_group>
 
 		<effect_group name="Cure Dysentery 2">
 			<requirement name="HasBuff" buff="buffIllDysentery2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="13"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="13"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllDysentery2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllDysentery1"/>
 		</effect_group>
@@ -2624,19 +2639,19 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Food Poisoning 0">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning0"/>
 		</effect_group>
 
 		<effect_group name="Cure Food Poisoning 1">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="15"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="15"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning1"/>
 		</effect_group>
 
 		<effect_group name="Cure Food Poisoning 2">
 			<requirement name="HasBuff" buff="buffIllFoodPoisoning2"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="13"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="13"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllFoodPoisoning2"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="AddBuff" target="self" buff="buffIllFoodPoisoning1"/>
 		</effect_group>
@@ -2644,13 +2659,13 @@ List of hacks to be removed:
 
 		<effect_group name="Cure Pneumonia 0">
 			<requirement name="HasBuff" buff="buffIllPneumonia0"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia0"/>
 		</effect_group>
 
 		<effect_group name="Cure Pneumonia 1">
 			<requirement name="HasBuff" buff="buffIllPneumonia1"/>
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="10"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="10"/>
 				<triggered_effect trigger="onSelfBuffUpdate" action="RemoveBuff" target="self" buff="buffIllPneumonia1"/>
 		</effect_group>
 	</buff>
@@ -2842,14 +2857,23 @@ icon="ui_game_symbol_pack_mule"
 		</effect_group>
 	</buff>
 
+	<buff name="buffYuccaJuiceSmoothie" name_key="drinkYuccaJuiceSmoothie" description_key="drinkYuccaJuiceSmoothieDesc" icon="ui_game_symbol_coffee" tags="drug">
+		<stack_type value="replace"/>
+		<duration value="1800"/>
+		<effect_group>
+			<passive_effect name="HypothermalResist" operation="base_add" value="30"/>
+		</effect_group>
+	</buff>
+
 	<buff name="buffBeer" name_key="buffDrunk1Name" description_key="buffDrunk1Desc" tooltip_key="buffDrunk1Tooltip" icon="ui_game_symbol_beer">
+		<damage_type value="disease"/>
 		<stack_type value="replace"/>
 		<duration value="30"/>
 		<effect_group>
-		<requirement name="HoldingItemHasTags" tags="fists" />
 		<passive_effect name="EntityDamage" operation="perc_add" value="3">
 			<requirement name="HoldingItemHasTags" tags="fists" />
 		</passive_effect>
+
 		<passive_effect name="StaminaChangeOT" operation="perc_add" value="0.5">
 			<requirement name="NotHasBuff" buff="buffHealWaterMax"/>
 		</passive_effect>
@@ -2857,7 +2881,7 @@ icon="ui_game_symbol_pack_mule"
 			<requirement name="NotHasBuff" buff="buffHealWaterMax"/>
 		</passive_effect>
 
-		<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.5" effect_name="Drunk"/>
+		<triggered_effect trigger="onSelfBuffStart" action="ModifyScreenEffect" intensity="0.3" effect_name="Drunk"/>
 		<triggered_effect trigger="onSelfBuffFinish" action="ModifyScreenEffect" intensity="0" effect_name="Drunk"/>
 		<passive_effect name="BuffResistance" operation="base_add" value="1" tags="buffInjuryStunned1"/>
 		</effect_group>
@@ -2913,7 +2937,7 @@ icon="ui_game_symbol_pack_mule"
 		<stack_type value="duration"/>
 		<duration value="240"/>
 		<effect_group>
-			<passive_effect name="PlayerExpGain" operation="perc_add" value="20" />
+			<passive_effect name="PlayerExpGain" operation="perc_add" value=".2" />
 		</effect_group>
 	</buff>
 
@@ -2928,7 +2952,7 @@ icon="ui_game_symbol_pack_mule"
 		</effect_group>
 	</buff>
 
-	<buff name="buffDrugSteroids" name_key="buffDrugSteroidsName" description_key="buffDrugSteroidsDesc" tooltip_key="buffDrugSteroidsTooltip" icon="ui_game_symbol_steroids" tags="drug">
+	<buff name="buffDrugSteroids" name_key="buffDrugSteroidsName" description_key="buffDrugSteroidsDesc" icon="ui_game_symbol_steroids" tags="drug">
 		<stack_type value="replace"/>
 		<duration value="600"/>
 		<effect_group>
@@ -2942,7 +2966,7 @@ icon="ui_game_symbol_pack_mule"
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffDrugSteroidsSideEffect"/>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffDrugSteroidsSideEffect">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
@@ -2971,11 +2995,11 @@ icon="ui_game_symbol_pack_mule"
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffDrugRecogSideEffect"/>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffDrugRecogSideEffect">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
-	<buff name="buffDrugRecogSideEffect" name_key="buffDrugRecogSideEffectName" description_key="buffDrugRecogSideEffectDesc" tooltip_key="buffDrugRecogSideEffectTooltip" icon="ui_game_symbol_gunslinger" icon_color="255,128,0" tags="drug">
+	<buff name="buffDrugRecogSideEffect" name_key="buffDrugRecogSideEffectName" description_key="buffDrugRecogSideEffectDesc" icon="ui_game_symbol_gunslinger" icon_color="255,128,0" tags="drug">
 		<damage_type value="disease"/>
 		<stack_type value="ignore"/>
 		<update_rate value="4"/>
@@ -2986,10 +3010,10 @@ icon="ui_game_symbol_pack_mule"
 				<triggered_effect trigger="onSelfBuffRemove" action="AddBuff" target="self" buff="buffPerkAbilityUpdate"/>
 
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Blur" intensity="0" fade="2.0">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="50"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="50"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffUpdate" action="ModifyScreenEffect" effect_name="Blur" intensity=".75" fade="2.0">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 			</triggered_effect>
 			<triggered_effect trigger="onSelfBuffRemove" action="ModifyScreenEffect" effect_name="Blur" intensity="0" fade="1.5"/>
 		</effect_group>
@@ -3014,11 +3038,11 @@ icon="ui_game_symbol_pack_mule"
 		<effect_group>
 			<triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" target="self" buff="buffDrugFortBitesSideEffect"/>
 			<triggered_effect trigger="onSelfBuffFinish" action="AddBuff" target="self" buff="buffDrugFortBitesSideEffect">
-				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="25"/>
+				<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="25"/>
 			</triggered_effect>
 		</effect_group>
 	</buff>
-	<buff name="buffDrugFortBitesSideEffect" name_key="buffDrugFortBitesSideEffectName" description_key="buffDrugFortBitesSideEffectDesc" tooltip_key="buffDrugFortBitesSideEffectTooltip" icon="ui_game_symbol_defense" icon_color="255,128,0" tags="drug">
+	<buff name="buffDrugFortBitesSideEffect" name_key="buffDrugFortBitesSideEffectName" description_key="buffDrugFortBitesSideEffectDesc" icon="ui_game_symbol_defense" icon_color="255,128,0" tags="drug">
 		<damage_type value="disease"/>
 		<stack_type value="ignore"/>
 		<duration value="600"/>
@@ -4060,10 +4084,17 @@ value (Float,@cvar,#gameVariable) : Leading with @/# will parse the value of an 
 Read only cvars start with an underscore:
 
 _degreesabsorbed : amount of degrees absorbed by armor; always positive; the deviation from 70F
-_coretemp : difference from 70 degrees F
-_sheltered : 0-1 value of how enclosed the area you are in is
-_shaded : similar to sheltered but only checks above
-_wetness : total wetness from rain and standing in water 1 = 100% wet.
+_coretemp			: difference from 70 degrees F
+_sheltered		: 0-1 value of how enclosed the area you are in is
+_shaded			: similar to sheltered but only checks above
+_wetness			: total wetness from rain and standing in water 1 = 100% wet.
+_underwater		:
+_difficulty		: game difficulty setting
+_biomeradiation	:
+_encumberedslots	:
+_encumbrance		:
+_fallSpeed		:
+_crouching		:
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
@@ -4102,7 +4133,7 @@ REQUIREMENTS / CONDITIONS:
 		HasBuff: 				target, buff
 		NotHasBuff: 			target, buff
 		IsMale				target
-		EntityTypeCompare: 		target, entity_type		//		This matches entityclasses.xml <property name="EntityType"/>
+		EntityTagCompare: 		tags (list of tags); has_all_tags(bool); target  //		This matches entityclasses.xml <property name="EntityType"/>
 		RequirementItemTier: 	target, tier, operation, value
 		ProgressionLevel     	target, progression_name="attStrength" (or a perk name, whatever), operation, value
 		PlayerLevel			target, operation, value
@@ -4242,8 +4273,10 @@ MinEvents / Triggers
 	onOtherEnteredRange, //Hook Up
 	onOtherLeftRange, //Hook Up
 
-	onSelfEquipStart
+	onSelfEquipStart ; can only work on an item/mod
 	onSelfEquipStop
+	onSelfItemActivate ; can only work on an item/mod
+	onSelfItemDeactivate
 
 	onReloadStart
 	onReloadUpdate
@@ -4269,9 +4302,6 @@ MinEvents / Triggers
 	onSelfSwimStop
 	onSelfSwimRun
 	onSelfSwimIdle
-
-	onSelfItemActivate
-	onSelfItemDeactivate
 
 	onSelfHoldingItemCreated    ;when you equip a belt item in the active slot?
 	onSelfItemCrafted, //Hook Up

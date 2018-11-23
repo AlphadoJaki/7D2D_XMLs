@@ -14011,6 +14011,7 @@ NOT the TextureNumber.
 	<property name="Mesh" value="models"/>
 	<property name="Path" value="solid"/>
 	<property name="Model" value="Appliances/retro_fridge_ver1" param1="main_mesh"/>
+	<property name="Collide" value="melee,bullet,arrow,rocket,movement"/>
 	<property name="DisplayType" value="blockMulti" />
 	<property name="MultiBlockDim" value="1,2,1"/>
 	<property name="ImposterExchange" value="imposterBlock" param1="27"/>
@@ -17218,11 +17219,10 @@ NOT the TextureNumber.
 <block name="tire">
 	<property name="Material" value="Mplastics"/>
 	<property name="Weight" value="16"/>
-	<property name="Shape" value="Ext3dModel"/>
 	<property name="Texture" value="282"/>
-	<property name="Mesh" value="models"/>
 	<property name="IsTerrainDecoration" value="true"/>
-	<property name="Model" value="OutdoorDecor/tire" param1="main_mesh"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="Entities/OutdoorDecor/tire02Prefab"/>
 	<property name="Collide" value="melee,bullet,arrow,rocket"/>
 	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
 	<drop event="Harvest" name="resourceScrapPolymers" count="4,8" tag="salvageHarvest"/>
@@ -18779,6 +18779,13 @@ NOT the TextureNumber.
 	<property name="Model" value="Entities/Animals/Boar/sleeperPose/idleSleepBoar"/>
 	<property name="Pose" value="5"/>
 	<property name="SpawnGroup" value="BoarGroup"/>
+</block>
+
+<block name="sleeperGraceAnimal">
+	<property name="Extends" value="sleeperBoarAnimal"/>
+	<property name="CreativeMode" value="Dev"/>
+	<property name="CustomIcon" value="sleeperBoarAnimal"/> <property name="CustomIconTint" value="ffb0b0"/>
+	<property name="SpawnGroup" value="GraceGroup"/>
 </block>
 
 <block name="sleeperVultureAnimal">
@@ -22058,51 +22065,48 @@ NOT the TextureNumber.
 	<property name="SortOrder2" value="0050"/> <!-- SortDoors -->
 </block>
 
-<block name="jailDoor">
-	<property name="Class" value="DoorSecure"/>
+<block name="jailBars">
 	<property name="Material" value="Msteel"/>
-	<property name="PassThroughDamage" value="true"/>
 	<property name="Shape" value="ModelEntity"/>
-	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
-	<property name="Tag" value="Door"/>
-	<property name="Place" value="Door"/>
-	<property name="PlaceEverywhere" value="true"/>
-	<property name="Model" value="Entities/Doors/jail_doorPrefab"/> <property name="ModelOffset" value="0,.5,0"/>
-	<property name="DisplayType" value="blockHardenedMulti" />
+	<property name="Model" value="Entities/Doors/jail_barsPrefab"/>
 	<property name="MultiBlockDim" value="1,2,1"/>
+	<property name="Collide" value="movement,melee,rocket"/> <!-- -rocket -->
+	<property name="Place" value="TowardsPlacerInverted"/>
+	<property name="DisplayType" value="blockHardenedMulti" />
 	<property name="ImposterExclude" value="true"/>
-	<!--
-	<property name="Mesh-Damage-1" value="Door/Door_DMG0"/>
-	<property name="Mesh-Damage-2" value="Door/Door_DMG1"/>
-	<property name="Mesh-Damage-3" value="Door/Door_DMG2"/>
-	<property name="Mesh-Damage-4" value="Door/Door_DMG3"/>
-	<property name="Mesh-Damage-5" value="Door/Door_DMG4"/>
-	<property name="OpenSound" value="open_door_metal"/>
-	<property name="CloseSound" value="close_door_metal"/>
-	-->
-	<property name="OpenSound" value="open_door_jail"/>
-	<property name="CloseSound" value="close_door_jail"/>
-	<property class="RepairItems"> <property name="resourceForgedSteel" value="12"/> </property>
-	<!--
-	<property class="UpgradeBlock">
-		<property name="ToBlock" value="commercialDoor1_v2"/>
-		<property name="Item" value="resourceWood"/>
-		<property name="ItemCount" value="10"/>
-		<property name="UpgradeHitCount" value="4"/>
-	</property>
-	<property name="CustomUpgradeSound" value="place_block_wood"/>
-	-->
-	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
-	<drop event="Harvest" name="" count="0" tag="salvageHarvest"/>
-	<drop event="Destroy" count="0"/>
-	<drop event="Destroy" name="resourceSpring" count="0,2" prob="1" tag="salvageHarvest"/>
-	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" prob="1" tag="salvageHarvest"/>
+	<property name="DescriptionKey" value="jailBarsDesc"/>
 	<drop event="Harvest" name="resourceScrapIron" count="20,60" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
 	<drop event="Fall" name="scrapMetalPile" count="1" prob="0.75" stick_chance="1"/>
 	<property name="Group" value="Building"/>
 	<property name="FilterTags" value="fdecor,fdoors"/>
 	<property name="SortOrder1" value="7060"/>
 	<property name="SortOrder2" value="0070"/> <!-- SortDoors -->
+</block>
+
+<block name="jailDoorStatic">
+	<property name="Extends" value="jailBars"/>
+	<property name="Model" value="Entities/Doors/jail_door_staticPrefab"/>
+
+	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+	<drop event="Harvest" name="" count="0" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="20,60" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Destroy" name="resourceSpring" count="0,2" prob="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" prob="1" tag="salvageHarvest"/>
+</block>
+
+<block name="jailDoorStaticCentered">
+	<property name="Extends" value="jailBars"/>
+	<property name="CustomIcon" value="jailDoorStatic"/>
+	<property name="Model" value="Entities/Doors/jail_door_static_centeredPrefab"/>
+
+	<drop event="Harvest" name="terrStone" count="0" tool_category="Disassemble"/>
+	<drop event="Harvest" name="" count="0" tag="salvageHarvest"/>
+	<drop event="Harvest" name="resourceScrapIron" count="20,60" tag="allHarvest"/>
+	<drop event="Destroy" count="0"/>
+	<drop event="Destroy" name="resourceSpring" count="0,2" prob="1" tag="salvageHarvest"/>
+	<drop event="Destroy" name="resourceMechanicalParts" count="0,2" prob="1" tag="salvageHarvest"/>
 </block>
 
 <block name="secureDoorWooden">
@@ -25048,11 +25052,14 @@ NOT the TextureNumber.
 	<property name="LootList" value="106"/>
 </block>
 
-<!-- Note:
-
-Check ModelOffset of
-"jailDoor"
-once that is converted -->
+<block name="wallHungSink"> <!-- TEMP XML, NEEDS EDITING -->
+	<property name="Extends" value="scrapIronNoUpgradeMaster" param1="SortOrder1,SortOrder2"/>
+	<property name="Shape" value="ModelEntity"/>
+	<property name="Model" value="Entities/Plumbing/wall_hung_sinkPrefab"/>
+	<property name="IsTerrainDecoration" value="true"/>
+	<property name="DescriptionKey" value="decorativeBlockGroupDesc"/>
+	<property name="FilterTags" value="fdecor,fother"/>
+</block>
 
 <block name="mushroom3Harvest"> <!-- deprecated, replace with plantedMushroom3Harvest -->
 	<property name="Extends" value="plantedMushroom3Harvest"/>

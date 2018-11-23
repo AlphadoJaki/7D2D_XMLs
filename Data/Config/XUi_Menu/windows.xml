@@ -1031,7 +1031,10 @@
 
 						<videooption name="VSync" type="ComboBoxList&lt;System.String&gt;" values="Off,On,Half" value_wrap="false" />
 
-						<videooption name="Gamma" type="ComboBoxFloat" value_increment="0.1" value_wrap="false" format_string="0%" />
+						<rect>
+							<videooption name="Gamma" type="ComboBoxFloat" value_increment="0.1" value_wrap="false" format_string="0%" />
+							<simplebutton name="btnDefaultGamma" depth="3" pos="575, 0" pivot="left" width="150" height="32" font_size="28" caption_key="xuiDefault" />
+						</rect>
 					</grid>
 				</rect>
 				

@@ -191,6 +191,9 @@
 			<prefab name="gas_station3" max_count="1"/>
 			<prefab name="gas_station4" max_count="1"/>
 			<prefab name="gas_station5" max_count="1"/>
+			<prefab name="gas_station6" max_count="1"/>
+      <prefab name="gas_station6" max_count="1"/>
+      <prefab name="gas_station7" max_count="1"/>
 			<prefab name="diner_01" max_count="2"/>
 			<prefab name="diner_02" max_count="2"/>
 			<prefab name="fastfood_01" max_count="2"/>
@@ -333,12 +336,12 @@
 		<prefab_rule name="wildernessGroup">
 			<prefab rule="traderGroup" min_count="5" max_count="10"/>
 			<prefab name="cabin_01" />
-			<prefab name="cabin_02_sm" />
-			<prefab name="cabin_03_lg" />
-			<prefab name="cabin_04_md" />
-			<prefab name="cabin_05_lg" />
-			<prefab name="cabin_06_lg" />
-			<prefab name="cabin_snow_hidden_01"/>
+			<prefab name="cabin_02" />
+			<prefab name="cabin_03" />
+			<prefab name="cabin_04" />
+			<prefab name="cabin_05" />
+			<prefab name="cabin_06" />
+			<prefab name="cabin_07"/>
 			<prefab name="ranger_station1" />
 			<prefab name="snowy_ski_lodge" />
 			<prefab name="survivor_site_01" />

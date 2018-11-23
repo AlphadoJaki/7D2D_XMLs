@@ -119,6 +119,7 @@
 
 		<item_display_info display_type="armor" display_group="groupAttire" >
 			<display_entry name="PhysicalDamageResist" title_key="statPhysicalDamageResist"/>
+			<display_entry name="BuffResistance" title_key="statBuffResistance" display_type="Percent" tags="buffIllInfection0,buffInjuryBleeding,buffInjuryStunned1"/>
 			<display_entry name="dStaminaChangeOT" title_key="statStaminaChangeOT" display_type="Decimal"/>
 			<display_entry name="Mobility" title_key="statMobility" display_type="Percent" show_inverted="true"  negative_preferred="false"/>
 			<display_entry name="HypothermalResist" title_key="statHypothermalResist"/>
@@ -216,6 +217,7 @@
 			<display_entry name="waterAmount" title_key="statWaterAmount"/>
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
 			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
+			<display_entry name="dHypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="FoodPoisoningRisk" title_key="statFoodPoisoningRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
 

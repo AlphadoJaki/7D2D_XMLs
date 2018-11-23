@@ -672,8 +672,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<!--Do double damage to living enemies-->
 		<effect_group tiered="false">
 			<requirements compare_type="or">
-				<requirement name="EntityTypeCompare" target="other" type="Animal"/>
-				<requirement name="EntityTypeCompare" target="other" type="Player"/>
+				<requirement name="EntityTagCompare" target="other" tags="player,animal"/>
 			</requirements>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
@@ -685,10 +684,10 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<!-- Increases damage against irradiated enemies, all melee only -->
 		<effect_group tiered="false">
 
-			<!--<requirement name="EntityTypeCompare" target="other" type="Zombie"/> Need a way to tell if radiated or not, check for a buff? -->
+			<!--<requirement name="EntityTagCompare" target="other" tags="zombie"/> Need a way to tell if radiated or not, check for a buff? -->
 			<requirements>
 				<requirement name="HasBuff" target="self" buff="needsARadiationRegenBuff"/>
-				<requirement name="EntityTypeCompare" target="other" type="Zombie"/>
+				<requirement name="EntityTagCompare" target="other" tags="zombie"/>
 			</requirements>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
@@ -699,7 +698,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<!--Do double damage to evil / undead-->
 		<effect_group tiered="false">
-			<requirement name="EntityTypeCompare" target="other" type="Zombie"/>
+			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -710,7 +709,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<property name="CustomIcon" value="candle"/>
 		<effect_group tiered="false">
-			<requirement name="EntityTypeCompare" target="other" type="Zombie"/>
+			<requirement name="EntityTagCompare" target="other" tags="zombie"/>
 			<passive_effect name="EntityDamage" operation="perc_add" value="1"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -775,7 +774,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		<property name="Stacknumber" value="1"/>
 		<!-- Increases bleeding damage, blade weapons -->
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="10"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 			<triggered_effect trigger="onSelfDamagedOther" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -786,7 +785,7 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 
 		<!-- Increases stun chance; increases stamina use, axe, hammer, club -->
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" min_max="1,100" operation="LTE" value="10"/>
+			<requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LTE" value="10"/>
 			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryStunned1"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -838,11 +837,11 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</item_property_overrides>
 
 		<effect_group tiered="false">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="20"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="20"/>
 				<triggered_effect trigger="onSelfPrimaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 		<effect_group tiered="false" name="Power Attack">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="40"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="40"/>
 				<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffInjuryBleeding"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
@@ -866,15 +865,19 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 	</item_modifier>
 
 	<item_modifier name="modMeleeClubBurningShaft" installable_tags="club" modifier_tags="fire" type="attachment" rarity="0.5">
-		<property name="CustomIcon" value="resourceScrapIron"/>
+		<property name="Stacknumber" value="1"/>
+		<property name="CustomIcon" value="meleeToolTorch"/>
 
 		<effect_group tiered="false" name="Power Attack">
-			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="1,100" operation="LTE" value="30"/>
-			<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" target="other" buff="buffBurningElement"/>
+			<requirement name="RandomRoll" seed_type="Random" target="self" min_max="0,100" operation="LTE" value="30"/>
+			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffBurningElement"/>
 		</effect_group>
 
 		<effect_group tiered="false" name="SpecialEffects">
-			<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0.3,0" parent_transform="GunJoint"/>
+			<passive_effect name="HypothermalResist" operation="base_add" value="4"/>
+			<triggered_effect trigger="onSelfHoldingItemCreated" action="AttachParticleEffectToEntity" particle="p_torch_wall" local_offset="0,0.3,0" parent_transform="Gunjoint"/>
+			<triggered_effect trigger="onSelfEquipStop" action="RemoveParticleEffectFromEntity" particle="p_torch_wall" local_offset="0,0.3,0" parent_transform="Gunjoint"/>
+			<triggered_effect trigger="onSelfDied" action="RemoveParticleEffectFromEntity" particle="p_torch_wall" local_offset="0,0.3,0" parent_transform="Gunjoint"/>
 		</effect_group>
 		<property name="PickupJournalEntry" value="augmentGunsTip"/>
 	</item_modifier>
@@ -1108,14 +1111,15 @@ Use 762 ammo in smaller caliber guns. 98% chance for the gun to explode on firin
 		</effect_group>
 
 		<effect_group tiered="false">
-			<requirement name="IsItemActive"/>
 
 			<passive_effect name="WalkSpeed" operation="perc_subtract" value=".35"/>
 			<passive_effect name="RunSpeed" operation="perc_subtract" value=".35"/>
 			<passive_effect name="JumpStrength" operation="perc_add" value="3.2"/>
 			<passive_effect name="StaminaLoss" operation="perc_subtract" value=".75" tags="jumping"/>
 
-			<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="true"/>
+			<triggered_effect trigger="onSelfJump" action="PlaySound" sound="m136_fire" play_in_head="true">
+				<requirement name="IsItemActive"/>
+			</triggered_effect>
 			<triggered_effect trigger="onSelfJump" action="AddBuff" buff="buffJumpJetsAirborne"/>
 		</effect_group>
 	</item_modifier>

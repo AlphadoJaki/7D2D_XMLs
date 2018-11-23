@@ -1427,6 +1427,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceOil" count="2"/>
 	<ingredient name="resourceMechanicalParts" count="2"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunMuzzleBrake" count="1" craft_area="workbench" tags="learnable">
@@ -1435,6 +1436,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceOil" count="2"/>
 	<ingredient name="resourceMechanicalParts" count="2"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunSoundSuppressorSilencer" count="1" craft_area="workbench" tags="learnable">
@@ -1443,6 +1445,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceOil" count="2"/>
 	<ingredient name="resourceMechanicalParts" count="2"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunLaserSight" count="1" craft_area="workbench" tags="learnable">
@@ -1451,14 +1454,16 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="2"/>
 	<ingredient name="resourceMechanicalParts" count="2"/>
 	<ingredient name="resourceElectricParts" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunFlashlight" count="1" craft_area="workbench" tags="learnable">
 	<ingredient name="modGunFlashlightSchematic" count="1"/>
 	<ingredient name="resourceScrapPolymers" count="10"/>
-		<ingredient name="resourceGlue" count="2"/>
+	<ingredient name="resourceGlue" count="2"/>
 	<ingredient name="resourceHeadlight" count="1"/>
 	<ingredient name="resourceElectricParts" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunScopeSmall" count="1" craft_area="workbench" tags="learnable">
@@ -1467,6 +1472,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="2"/>
 	<ingredient name="resourceBrokenGlass" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunScopeMedium" count="1" craft_area="workbench" tags="learnable">
@@ -1475,6 +1481,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="3"/>
 	<ingredient name="resourceBrokenGlass" count="15"/>
 	<ingredient name="resourceScrapPolymers" count="8"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunScopeLarge" count="1" craft_area="workbench" tags="learnable">
@@ -1483,6 +1490,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceBrokenGlass" count="20"/>
 	<ingredient name="resourceScrapPolymers" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modGunReflexSight" count="1" craft_area="workbench" tags="learnable">
@@ -1491,6 +1499,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceElectricParts" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunTriggerGroupSemi" count="1" craft_area="workbench" tags="learnable">
@@ -1499,6 +1508,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunTriggerGroupBurst" count="1" craft_area="workbench" tags="learnable">
@@ -1507,6 +1517,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunTriggerGroupAutomatic" count="1" craft_area="workbench" tags="learnable">
@@ -1515,6 +1526,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="10"/>
 	<ingredient name="resourceScrapPolymers" count="5"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modGunRodAndSpring" count="1" craft_area="workbench" tags="learnable">
@@ -1523,6 +1535,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <!--from here down on weapon mods needs parts changed-->
@@ -1533,6 +1546,16 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
+</recipe>
+
+<recipe name="modGunForegrip" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="modGunForegripSchematic" count="1"/>
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceGlue" count="5"/>
+	<ingredient name="resourceMechanicalParts" count="5"/>
+	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunRetractingStock" count="1" craft_area="workbench" tags="learnable">
@@ -1541,6 +1564,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunDuckbill" count="1" craft_area="workbench" tags="learnable">
@@ -1549,6 +1573,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunChoke" count="1" craft_area="workbench" tags="learnable">
@@ -1557,6 +1582,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modGunMagazineExtender" count="1" craft_area="workbench" tags="learnable">
@@ -1565,6 +1591,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modShotgunSawedOffBarrel" count="1" craft_area="workbench" tags="learnable">
@@ -1573,6 +1600,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <!--
@@ -1582,6 +1610,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="9"/>
 </recipe>
 -->
 
@@ -1591,6 +1620,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modGunBowPolymerString" count="1" craft_area="workbench" tags="learnable">
@@ -1599,6 +1629,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modGunMeleeTheHunter" count="1" craft_area="workbench" tags="learnable">
@@ -1607,6 +1638,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <!--
@@ -1616,6 +1648,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="9"/>
 </recipe>
 -->
 
@@ -1626,6 +1659,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="9"/>
 </recipe>
 -->
 
@@ -1635,6 +1669,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modMeleeSerratedBlade" count="1" craft_area="workbench" tags="learnable">
@@ -1643,6 +1678,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modMeleeWeightedHead" count="1" craft_area="workbench" tags="learnable">
@@ -1651,6 +1687,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modMeleeStructuralBrace" count="1" craft_area="workbench" tags="learnable">
@@ -1659,6 +1696,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="1"/>
 </recipe>
 
 <recipe name="modMeleeErgonomicGrip" count="1" craft_area="workbench" tags="learnable">
@@ -1667,6 +1705,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modMeleeFortifyingGrip" count="1" craft_area="workbench" tags="learnable">
@@ -1675,6 +1714,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modMeleeClubBarbedWire" count="1" craft_area="workbench" tags="learnable">
@@ -1683,6 +1723,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modMeleeClubMetalSpikes" count="1" craft_area="workbench" tags="learnable">
@@ -1691,6 +1732,15 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="5"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
 	<ingredient name="resourceSpring" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
+</recipe>
+
+<recipe name="modMeleeClubBurningShaft" count="1" craft_area="workbench" tags="learnable">
+	<ingredient name="modMeleeClubBurningShaftSchematic" count="1"/>
+	<ingredient name="resourceForgedSteel" count="5"/>
+	<ingredient name="resourceGlue" count="5"/>
+	<ingredient name="meleeToolTorch" count="1"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modArmorBandolier" count="1" craft_area="workbench" tags="learnable">
@@ -1699,6 +1749,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceGlue" count="3"/>
 	<ingredient name="resourceScrapPolymers" count="2"/>
 	<ingredient name="resourceCloth" count="10"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modArmorInsulatedLiner" count="1" craft_area="workbench" tags="learnable">
@@ -1832,7 +1883,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="1"/>
 	<ingredient name="resourceScrapPolymers" count="30"/>
 	<ingredient name="resourceMechanicalParts" count="4"/>
-	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
 </recipe>
 
 <recipe name="modArmorAdvancedMuffledConnectors" count="1" craft_area="workbench" tags="learnable">
@@ -1841,7 +1892,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="2"/>
 	<ingredient name="resourceScrapPolymers" count="60"/>
 	<ingredient name="resourceMechanicalParts" count="5"/>
-	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modArmorImpactBracing" count="1" craft_area="workbench" tags="learnable">
@@ -1850,7 +1901,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 	<ingredient name="resourceDuctTape" count="2"/>
 	<ingredient name="resourceSpring" count="20"/>
 	<ingredient name="resourceMechanicalParts" count="20"/>
-	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="3"/>
+	<requirement name="ProgressionLevel" progression_name="perkYeahScience" operation="GTE" value="2"/>
 </recipe>
 
 <recipe name="modArmorWaterPurifier" count="1" craft_area="workbench" tags="learnable">
@@ -2164,7 +2215,7 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 </recipe>
 
 <recipe name="foodHoboStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">
-	<ingredient name="foodRottingFlesh" count="5"/>
+	<ingredient name="foodRottingFlesh" count="10"/>
 	<ingredient name="foodCropPotato" count="2"/>
 	<ingredient name="foodCropCorn" count="2"/>
 	<ingredient name="drinkJarBoiledWater" count="1"/>
@@ -2839,12 +2890,6 @@ either via a direct cvar change or via RecipeTagUnlock passive effect. cvar is n
 <recipe name="vaultHatch_v1" count="1" craft_area="workbench">
 	<ingredient name="resourceForgedSteel" count="12"/>
 	<ingredient name="resourceSpring" count="2"/>
-</recipe>
-
-<recipe name="jailDoor" count="1" craft_area="workbench">
-	<ingredient name="resourceForgedSteel" count="12"/>
-	<ingredient name="resourceSpring" count="2"/>
-	<ingredient name="resourceMechanicalParts" count="2"/>
 </recipe>
 
 <recipe name="foodVegetableStew" count="1" craft_area="campfire" craft_tool="toolCookingPot" tags="learnable">

@@ -1320,9 +1320,7 @@ If you do not declare them, the decorations of the main biome are used.
 		<blockontop blockname="carsRandomHelper" prob="0.0015" rotatemax="3"/>
 		<blockontop blockname="tire" rotatemax="3" prob="0.001"/>
 		<blockontop blockname="cinderBlocks03" rotatemax="3" prob="0.0007"/>
-		<blockontop blockname="rock01" prob="0.0007"/>
-		<blockontop blockname="rock02" prob="0.0007"/>
-		<blockontop blockname="rock04"  prob="0.0007"/>
+		<blockontop blockname="goreBlockAnimal" prob="0.0004"/>
 	</poi>
 	<poi name="Country Road Asphalt" poimapcolor="#2" blockname="terrAsphalt">
 		<decal texture="0" face="0" prob="0.005"/>
@@ -1344,10 +1342,10 @@ If you do not declare them, the decorations of the main biome are used.
 		<blockontop blockname="cntStreetRandomLootHelper" prob="0.001" rotatemax="7"/>
 		<blockontop blockname="carsRandomHelper" prob="0.0015" rotatemax="3"/>
 		<blockontop blockname="tire" rotatemax="3" prob="0.001"/>
-		<blockontop blockname="cinderBlocks03" rotatemax="3" prob="0.0007"/>
 		<blockontop blockname="rock01" prob="0.0007"/>
 		<blockontop blockname="rock02" prob="0.0007"/>
 		<blockontop blockname="rock04" prob="0.0007"/>
+		<blockontop blockname="goreBlockAnimal" prob="0.0004"/>
 		<!--blockontop blockname="terrOrePotassiumNitrate" prob="0.02" offset="-1"/-->
 	</poi>
 	<poi name="Road Gravel" poimapcolor="#3" blockname="terrGravel">
@@ -1367,6 +1365,7 @@ If you do not declare them, the decorations of the main biome are used.
 		<decal texture="13" face="0" prob="0.005"/>
 		<decal texture="14" face="0" prob="0.005"/>
 		<decal texture="15" face="0" prob="0.005"/>
+		<blockontop blockname="goreBlockAnimal" prob="0.0004"/>
 		<blockontop blockname="cntStreetRandomLootHelper" prob="0.001" rotatemax="7"/>
 		<blockontop blockname="carsRandomHelper" prob="0.0005" rotatemax="3"/>
 		<!--blockontop blockname="terrOrePotassiumNitrate" prob="0.02" offset="-1"/-->

@@ -4177,7 +4177,7 @@
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_fire_zombiebbq_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="a_fire_embersmoke_sm_lp"> <AudioSource name="Sounds/AudioSource_Creatures"/>
+<SoundDataNode name="a_fire_embersmoke_sm_lp"> <AudioSource name="Sounds/AudioSource_Amb_XSmall"/>
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_fire_embersmoke_sm_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 

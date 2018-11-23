@@ -647,51 +647,60 @@
     </configuration>
   </configurations>
 
-  <!--This is an updated version of configurations which needs tested-->
   <configs>
-    <configuration id="0">
+    <configuration id ="0">
       <threat_level name="Exploration">
-        <arrangement length="8">
-          <layer name="Primary" num="1" start="0" end="6"/>
-          <layer name="PrimarySupporting" num="1" start="1" end="7"/>
-          <layer name="Secondary" num="1" start="1" end="7"/>
-          <layer name="LongEffects" num="1" start="2" end="6"/>
-        </arrangement>
-        
-        <segment name="seg1" value="LayerOn" start="0" end="3"/>
-        <segment name="seg2" value="Loop" start="3" end="6"/>
-        <segment name="seg3" value="LayerOff" start="6" end="8"/>
-      </threat_level>
+        <segment name="seg1" length="3">
+          <layer name="Primary" num="1">
+            <placement name="Begin" value="0"/>
+            <placement name="Loop" value="1,2"/>
+          </layer>
+          <layer name="PrimarySupporting" num="1">
+            <placement name="Begin" value ="1"/>
+            <placement name="Loop" value="2"/>
+          </layer>
+          <layer name="Secondary" num="1">
+            <placement name="Begin" value="2"/>
+          </layer>
+          <layer name ="LongEffects" num="1">
+            <placement name="Begin" value="2"/>
+          </layer>
+        </segment>
 
-      <threat_level name="Suspense">
-        <arrangement length="1">
-          <layer name="Primary" num="1" start="0" end="0"/>
-        </arrangement>
-        
-        <segment name="seg1" value="Loop" start="0" end="0"/>
-      </threat_level>
+        <segment name="seg2" length="3">
+          <layer name="Primary" num="1">
+            <placement name="Loop" value="3,4,5"/>
+          </layer>
+          <layer name="PrimarySupporting" num="1">
+            <placement name="Loop" value="3,4,5"/>
+          </layer>
+          <layer name="Secondary" num="1">
+            <placement name="Loop" value="3,4,5"/>
+          </layer>
+          <layer name ="LongEffects" num="1">
+            <placement name="Loop" value="3,4,5"/>
+          </layer>
+        </segment>
 
-      <threat_level name="CombatReady">
-        <arrangement length="1">
-          <layer name="Primary" num="1" start="0" end="0"/>
-        </arrangement>
-        
-        <segment name="seg1" value="Loop" start="0" end="0"/>
-      </threat_level>
-
-      <threat_level name="Combat">
-        <arrangement length="5">
-          <layer name ="Primary" num="1" start="0" end="2"/>
-          <layer name ="PrimarySupporting" num="1" start="0" end="2"/>
-          <layer name ="Secondary" num="1" start="0" end="2"/>
-          <layer name ="LongEffects" num="1" start="0" end="2"/>
-          <layer name="ShortEffects" num="1" start="0" end="2"/>
-        </arrangement>
-
-        <segment name="seg1" value="LayerOn" start="0" end="1"/>
-        <segment name="seg2" value="Loop" start="1" end="2"/>
-        <segment name="seg3" value="LayerOn" start="2" end="3"/>
+        <segment name="seg3" length="3">
+          <layer name="Primary" num="1">
+            <placement name="Loop" value="6"/>
+            <placement name="End" value="7"/>
+          </layer>
+          <layer name="PrimarySupporting" num="1">
+            <placement name="Loop" value ="6,7"/>
+            <placement name="Loop" value="8"/>
+          </layer>
+          <layer name="Secondary" num="1">
+            <placement name="Loop" value="6"/>
+            <placement name="End" value="7"/>
+          </layer>
+          <layer name ="LongEffects" num="1">
+            <placement name="End" value="6"/>
+          </layer>
+        </segment>
       </threat_level>
     </configuration>
+    
   </configs>
 </root>

@@ -2735,9 +2735,9 @@
 		</rect>
 	</window>
 
-	<window name="windowResponses" pos="-650,0" width="600" height="240" anchor="RightCenter">
+	<window name="windowResponses" pos="-650,0" width="600" height="240" anchor="RightCenter" cursor_area="true">
 		<sprite depth="1" name="background" sprite="ui_game_text_body_back" />
-		<grid name="items" pos="3,-15" rows="6" cols="1" width="590" height="200" cell_width="590" cell_height="40" repeat_content="true" arrangement="vertical" controller="DialogResponseList">
+		<grid name="items" pos="3,-6" rows="6" cols="1" width="590" height="200" cell_width="590" cell_height="40" repeat_content="true" arrangement="vertical" controller="DialogResponseList">
 			<response_entry id="0" />
 		</grid>
 	</window>
@@ -3858,7 +3858,7 @@
 		</grid>
 	</window>
 
-	<window name="chatoutput" pos="20, -250" depth="100" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2" cursor_area="true">
+	<window name="chatoutput" pos="20, -250" depth="100" width="500" height="250" anchor="LeftTop" controller="ChatOutput" fadeout_wait_time="5" fadeout_duration="2">
 		<textlist name="txtOutput" pos="8,-214" width="484" height="210" list_style="chat" pivot="bottomleft" depth="2" font_size="26" />
 	</window>
 
