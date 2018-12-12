@@ -13,6 +13,7 @@
 
 <!-- Overrides the probability on a per item basis -->
 <!-- Level is the percentage to Max Level for the player. Max level is found in progression.xml -->
+<!-- https://docs.google.com/spreadsheets/d/1MHeXohG2uKJEUKI82fPMjZN2PYBgsJJzO_-L6t-ddQw -->
 <lootprobtemplates>
 	<lootprobtemplate name="baseProbTemplate">
 		<loot level="1,100" prob="0.25"/>
@@ -21,32 +22,180 @@
 		<loot level="301,999999" prob="1"/>
 	</lootprobtemplate>
 
-	<lootprobtemplate name="rareBookTemplate">
-		<loot level="1,40" prob="0.1"/>
-		<loot level="41,80" prob="0.138"/>
-		<loot level="81,120" prob="0.176"/>
-		<loot level="121,160" prob="0.214"/>
-		<loot level="161,200" prob="0.252"/>
-		<loot level="201,240" prob="0.29"/>
-		<loot level="241,280" prob="0.328"/>
-		<loot level="281,320" prob="0.366"/>
-		<loot level="321,360" prob="0.404"/>
-		<loot level="361,400" prob="0.442"/>
-		<loot level="401,440" prob="0.48"/>
-		<loot level="441,480" prob="0.518"/>
-		<loot level="481,520" prob="0.556"/>
-		<loot level="521,560" prob="0.594"/>
-		<loot level="561,600" prob="0.632"/>
-		<loot level="601,640" prob="0.67"/>
-		<loot level="641,680" prob="0.708"/>
-		<loot level="681,720" prob="0.746"/>
-		<loot level="721,760" prob="0.784"/>
-		<loot level="761,800" prob="0.822"/>
-		<loot level="801,840" prob="0.86"/>
-		<loot level="841,880" prob="0.898"/>
-		<loot level="881,920" prob="0.936"/>
-		<loot level="921,960" prob="0.974"/>
-		<loot level="961,999999" prob="1"/>
+	<lootprobtemplate name="probTemplate1.0">
+		<loot level="1,8" prob="0.1"/>
+		<loot level="9,16" prob="0.11"/>
+		<loot level="17,25" prob="0.12"/>
+		<loot level="26,34" prob="0.12"/>
+		<loot level="35,44" prob="0.13"/>
+		<loot level="45,54" prob="0.14"/>
+		<loot level="55,65" prob="0.15"/>
+		<loot level="66,76" prob="0.16"/>
+		<loot level="77,88" prob="0.17"/>
+		<loot level="89,101" prob="0.18"/>
+		<loot level="102,114" prob="0.19"/>
+		<loot level="115,128" prob="0.2"/>
+		<loot level="129,142" prob="0.22"/>
+		<loot level="143,157" prob="0.23"/>
+		<loot level="158,173" prob="0.24"/>
+		<loot level="174,190" prob="0.26"/>
+		<loot level="191,208" prob="0.27"/>
+		<loot level="209,226" prob="0.29"/>
+		<loot level="227,245" prob="0.3"/>
+		<loot level="246,266" prob="0.32"/>
+		<loot level="267,287" prob="0.34"/>
+		<loot level="288,309" prob="0.36"/>
+		<loot level="310,333" prob="0.38"/>
+		<loot level="334,358" prob="0.4"/>
+		<loot level="359,384" prob="0.42"/>
+		<loot level="385,411" prob="0.45"/>
+		<loot level="412,440" prob="0.47"/>
+		<loot level="441,470" prob="0.5"/>
+		<loot level="471,501" prob="0.52"/>
+		<loot level="502,534" prob="0.55"/>
+		<loot level="535,569" prob="0.58"/>
+		<loot level="570,606" prob="0.61"/>
+		<loot level="607,644" prob="0.65"/>
+		<loot level="645,684" prob="0.68"/>
+		<loot level="685,727" prob="0.72"/>
+		<loot level="728,771" prob="0.76"/>
+		<loot level="772,818" prob="0.79"/>
+		<loot level="819,867" prob="0.84"/>
+		<loot level="868,918" prob="0.88"/>
+		<loot level="919,972" prob="0.93"/>
+		<loot level="973,999999" prob="1"/>
+	</lootprobtemplate>
+
+	<lootprobtemplate name="probTemplate0.75">
+		<loot level="1,8" prob="0.076"/>
+		<loot level="9,16" prob="0.081"/>
+		<loot level="17,25" prob="0.086"/>
+		<loot level="26,34" prob="0.093"/>
+		<loot level="35,44" prob="0.099"/>
+		<loot level="45,54" prob="0.105"/>
+		<loot level="55,65" prob="0.112"/>
+		<loot level="66,76" prob="0.12"/>
+		<loot level="77,88" prob="0.127"/>
+		<loot level="89,101" prob="0.135"/>
+		<loot level="102,114" prob="0.144"/>
+		<loot level="115,128" prob="0.153"/>
+		<loot level="129,142" prob="0.162"/>
+		<loot level="143,157" prob="0.172"/>
+		<loot level="158,173" prob="0.182"/>
+		<loot level="174,190" prob="0.192"/>
+		<loot level="191,208" prob="0.204"/>
+		<loot level="209,226" prob="0.216"/>
+		<loot level="227,245" prob="0.228"/>
+		<loot level="246,266" prob="0.241"/>
+		<loot level="267,287" prob="0.255"/>
+		<loot level="288,309" prob="0.269"/>
+		<loot level="310,333" prob="0.284"/>
+		<loot level="334,358" prob="0.3"/>
+		<loot level="359,384" prob="0.317"/>
+		<loot level="385,411" prob="0.335"/>
+		<loot level="412,440" prob="0.353"/>
+		<loot level="441,470" prob="0.373"/>
+		<loot level="471,501" prob="0.393"/>
+		<loot level="502,534" prob="0.414"/>
+		<loot level="535,569" prob="0.436"/>
+		<loot level="570,606" prob="0.46"/>
+		<loot level="607,644" prob="0.485"/>
+		<loot level="645,684" prob="0.51"/>
+		<loot level="685,727" prob="0.537"/>
+		<loot level="728,771" prob="0.566"/>
+		<loot level="772,818" prob="0.596"/>
+		<loot level="819,867" prob="0.628"/>
+		<loot level="868,918" prob="0.661"/>
+		<loot level="919,972" prob="0.695"/>
+		<loot level="973,999999" prob="0.75"/>
+	</lootprobtemplate>
+
+	<lootprobtemplate name="probTemplate0.5">
+		<loot level="1,8" prob="0.05"/>
+		<loot level="9,16" prob="0.054"/>
+		<loot level="17,25" prob="0.058"/>
+		<loot level="26,34" prob="0.062"/>
+		<loot level="35,44" prob="0.066"/>
+		<loot level="45,54" prob="0.07"/>
+		<loot level="55,65" prob="0.075"/>
+		<loot level="66,76" prob="0.08"/>
+		<loot level="77,88" prob="0.085"/>
+		<loot level="89,101" prob="0.09"/>
+		<loot level="102,114" prob="0.096"/>
+		<loot level="115,128" prob="0.102"/>
+		<loot level="129,142" prob="0.108"/>
+		<loot level="143,157" prob="0.114"/>
+		<loot level="158,173" prob="0.121"/>
+		<loot level="174,190" prob="0.128"/>
+		<loot level="191,208" prob="0.136"/>
+		<loot level="209,226" prob="0.144"/>
+		<loot level="227,245" prob="0.152"/>
+		<loot level="246,266" prob="0.161"/>
+		<loot level="267,287" prob="0.17"/>
+		<loot level="288,309" prob="0.18"/>
+		<loot level="310,333" prob="0.19"/>
+		<loot level="334,358" prob="0.2"/>
+		<loot level="359,384" prob="0.212"/>
+		<loot level="385,411" prob="0.223"/>
+		<loot level="412,440" prob="0.235"/>
+		<loot level="441,470" prob="0.248"/>
+		<loot level="471,501" prob="0.262"/>
+		<loot level="502,534" prob="0.276"/>
+		<loot level="535,569" prob="0.291"/>
+		<loot level="570,606" prob="0.307"/>
+		<loot level="607,644" prob="0.323"/>
+		<loot level="645,684" prob="0.34"/>
+		<loot level="685,727" prob="0.358"/>
+		<loot level="728,771" prob="0.378"/>
+		<loot level="772,818" prob="0.397"/>
+		<loot level="819,867" prob="0.419"/>
+		<loot level="868,918" prob="0.441"/>
+		<loot level="919,972" prob="0.464"/>
+		<loot level="973,999999" prob="0.5"/>
+	</lootprobtemplate>
+
+	<lootprobtemplate name="probTemplate0.5to1.0">
+		<loot level="1,8" prob="0.501"/>
+		<loot level="9,16" prob="0.505"/>
+		<loot level="17,25" prob="0.509"/>
+		<loot level="26,34" prob="0.513"/>
+		<loot level="35,44" prob="0.518"/>
+		<loot level="45,54" prob="0.523"/>
+		<loot level="55,65" prob="0.528"/>
+		<loot level="66,76" prob="0.533"/>
+		<loot level="77,88" prob="0.539"/>
+		<loot level="89,101" prob="0.545"/>
+		<loot level="102,114" prob="0.551"/>
+		<loot level="115,128" prob="0.558"/>
+		<loot level="129,142" prob="0.565"/>
+		<loot level="143,157" prob="0.572"/>
+		<loot level="158,173" prob="0.579"/>
+		<loot level="174,190" prob="0.587"/>
+		<loot level="191,208" prob="0.596"/>
+		<loot level="209,226" prob="0.605"/>
+		<loot level="227,245" prob="0.614"/>
+		<loot level="246,266" prob="0.623"/>
+		<loot level="267,287" prob="0.634"/>
+		<loot level="288,309" prob="0.644"/>
+		<loot level="310,333" prob="0.655"/>
+		<loot level="334,358" prob="0.667"/>
+		<loot level="359,384" prob="0.68"/>
+		<loot level="385,411" prob="0.693"/>
+		<loot level="412,440" prob="0.706"/>
+		<loot level="441,470" prob="0.721"/>
+		<loot level="471,501" prob="0.736"/>
+		<loot level="502,534" prob="0.751"/>
+		<loot level="535,569" prob="0.768"/>
+		<loot level="570,606" prob="0.785"/>
+		<loot level="607,644" prob="0.804"/>
+		<loot level="645,684" prob="0.823"/>
+		<loot level="685,727" prob="0.843"/>
+		<loot level="728,771" prob="0.864"/>
+		<loot level="772,818" prob="0.886"/>
+		<loot level="819,867" prob="0.91"/>
+		<loot level="868,918" prob="0.934"/>
+		<loot level="919,972" prob="0.96"/>
+		<loot level="973,999999" prob="1"/>
 	</lootprobtemplate>
 
 	<lootprobtemplate name="GradeALoot">
@@ -578,19 +727,10 @@ A single player on default diff can have a GS of up to 480 without perks.
 
 <lootgroup name="toiletLoot" count="1">
 	<item group="weaponsPistol+ammo" count="1" prob="0.05"/>
-	<item name="drinkJarRiverWater" count="1,2" prob="0.55"/>
+	<item name="drinkJarRiverWater" count="1,2" prob="1"/>
 </lootgroup>
 
-<lootgroup name="weaponsAnyShotguns">
-	<item name="gunPumpShotgun"/>
-</lootgroup>
-
-<lootgroup name="weaponsAnyShotguns+ammo" count="all">
-	<item group="weaponsAnyShotguns"/>
-	<item name="ammoShotgunShell" count="1,6"/>
-</lootgroup>
-
-<lootgroup name="weaponsLongShotgun+ammo" count="all">
+<lootgroup name="weaponsShotgun+ammo" count="all">
 	<item name="gunPumpShotgun"/>
 	<item name="ammoShotgunShell" count="1,6"/>
 </lootgroup>
@@ -620,20 +760,20 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="ammo762mmBulletFMJ" count="1,10"/>
 </lootgroup>
 
-<lootgroup name="ammoRocket">
-	<item name="ammoRocketHE"/>
-	<item name="ammoRocketFrag"/>
+<lootgroup name="ammoRocket" count="1">
+	<item name="ammoRocketHE" count="2,6"/>
+	<item name="ammoRocketFrag" count="2,6"/>
 </lootgroup>
 <lootgroup name="weaponsRocketLauncher+ammo" count="all">
 	<item name="gunRocketLauncher"/>
-	<item group="ammoRocket" count="2,6"/>
+	<item group="ammoRocket"/>
 </lootgroup>
 
 <lootgroup name="weaponsBasicGuns+ammo">
-	<item group="weaponsPistol+ammo" prob="0.03"/>
-	<item group="weaponsAnyShotguns+ammo" prob="0.03"/>
-	<item group="weaponsHuntingRifle+ammo" prob="0.03"/>
-	<item name="gunCompoundBow" prob="0.03"/>
+	<item group="weaponsPistol+ammo" prob="1"/>
+	<item group="weaponsShotgun+ammo" prob="1"/>
+	<item group="weaponsHuntingRifle+ammo" prob="1"/>
+	<item name="gunCompoundBow" prob="1"/>
 </lootgroup>
 
 <lootgroup name="weaponsMelee">
@@ -782,7 +922,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 <lootgroup name="grills">
 	<item name="toolCookingGrill"  prob=".5"/>
 	<item name="foodRottingFlesh" count="1,2" prob="1"/>
-	<item name="resourceFemur" count="1,2" prob=".5"/>
+	<item name="resourceFemur" count="1,3" prob=".5"/>
 	<item name="meleeToolHuntingKnife" prob=".1"/>
 </lootgroup>
 
@@ -934,7 +1074,6 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="magazinePerkLivingOffTheLand"/>
 	<item name="magazinePerkPainTolerance"/>
 	<item name="magazinePerkHealingFactor"/>
-	<item name="magazinePerkFullyHydrated"/>
 	<item name="magazinePerkSlowMetabolism"/>
 	<item name="magazinePerkSelfMedicated"/>
 	<item name="magazinePerkRuleOneCardio"/>
@@ -957,7 +1096,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 </lootgroup>
 
 <lootgroup name="dyes" count="1">
-	<item name="modDyeWhite"/>
+	<!-- <item name="modDyeWhite"/> -->
 	<item name="modDyeRed"/>
 	<item name="modDyeGreen"/>
 	<item name="modDyeBlue"/>
@@ -969,8 +1108,8 @@ A single player on default diff can have a GS of up to 480 without perks.
 <lootgroup name="books" count="1">
 	<item name="resourcePaper" count="10,25" prob="0.66"/>
 	<item group="commonBooks" prob="0.33"/>
-	<item group="paintMagazines" prob="0.03"/>
-	<item group="rareBooks" loot_prob_template="rareBookTemplate"/> <!-- .2 => 1.0 -->
+	<!-- <item group="paintMagazines" prob="0.03"/> -->
+	<item group="rareBooks" loot_prob_template="probTemplate1.0"/> <!-- .2 => 1.0 -->
 	<item group="perkMagazines" prob="1"/>
 </lootgroup>
 
@@ -1122,6 +1261,15 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item group="treasureMaps" count="1" prob="0.092"/>
 	<item name="resourceFemur" count="1,2" prob="0.05"/>
 	<item name="resourceScrapPolymers" count="1,2" prob="0.3"/>
+</lootgroup>
+
+<lootgroup name="brassResource">
+	<item name="resourceCandleStick" count="1,3"/>
+	<item name="resourceRadiator"/>
+	<item name="resourceScrapBrass" count="50,150"/>
+	<item name="resourceBulletCasing" count="20,80"/>
+	<item name="resourceDoorKnob" count="3,8"/>
+	<item name="resourceTrophy1" count="3,8"/>
 </lootgroup>
 
 <lootgroup name="rareAutomotive">
@@ -1284,7 +1432,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="meleeToolShovelSteel"/>
 	<!-- <item name="toolCalipers" prob="0.09"/> -->
 	<item name="toolAndDieSet" prob="0.09"/>
-	<item name="gunToolNailgun"/>
+	<item name="gunToolNailgun" loot_prob_template="probTemplate1.0"/>
 </lootgroup>
 
 <lootgroup name="tools" count="1">
@@ -1296,7 +1444,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="meleeToolClawHammer"/>
 	<item name="meleeToolWrench" prob="0.7"/>
 	<item name="resourceRepairKit" count="1,4"/>
-	<item name="gunToolNailgun"/>
+	<item name="gunToolNailgun" loot_prob_template="probTemplate0.5"/>
 	<item group="rareTools"/>
 	<item name="resourceForgedIron" count="1,4" prob="0.41"/>
 	<item name="resourceForgedSteel" count="1,4" prob="0.22"/>
@@ -1319,9 +1467,9 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="toolAnvil" count="1"/>
 	<item name="ironDoor1_v1"/>
 	<item name="meleeToolSledgehammer"/>
-	<item name="gunToolNailgun"/>
+	<item name="gunToolNailgun" loot_prob_template="probTemplate1.0"/>
 	<!-- <item name="toolCalipers" prob="0.67"/> -->
-	<item name="toolAndDieSet" prob="0.67"/>
+	<item name="toolAndDieSet" loot_prob_template="probTemplate0.75"/>
 	<item group="rareTools"/>
 	<item group="automotive" prob="2"/>
 	<item name="resourceForgedIron" count="1,4" prob="0.31"/> <!-- together 3% per crate -->
@@ -1333,7 +1481,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item group="dyes" prob="0.2"/>
 	<item name="meleeToolPaintTool" prob="0.4"/>
 	<item name="meleeToolWireTool"/>
-	<item name="paintMagazineMasonry" prob="0.4"/>
+	<!-- <item name="paintMagazineMasonry" prob="0.4"/> -->
 </lootgroup>
 
 <lootgroup name="rareMedicine" count="1">
@@ -1505,6 +1653,10 @@ A single player on default diff can have a GS of up to 480 without perks.
 
 <lootgroup name="weaponTestLoot" count="all">
 <!--
+Gazz, the descending chance thing is in and should function just fine, so the attr names are mods=""
+and mod_chance=""
+the loot group AND loot entry allow usage
+if the loot entry for mods is empty then it will use the lootgroup mods and mod_chance
 -->
 	<item name="gunPistol" mods="barrelAttachments,sideAttachments,smallTopAttachments,scope,trigger" mod_chance=".50"/>
 	<item name="gunPistol" mods="barrelAttachments,sideAttachments,smallTopAttachments,scope,trigger" mod_chance=".50"/>
@@ -1881,7 +2033,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item group="trophyGroup"/>
 	<item group="ammo"/>
 	<item group="books" count="1"/>
-	<item name="paintMagazineWallCoverings"/>
+	<!-- <item name="paintMagazineWallCoverings"/> -->
 	<item group="medicine"/>
 	<item group="weaponsPistol+ammo" prob="1.5"/>
 	<item name="meleeToolFlashlight02"/>
@@ -2004,7 +2156,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item name="resourceAcid" count="1,4" prob="0.01"/>
 	<item group="dyes" prob="0.008"/>
 	<item name="meleeToolPaintTool" prob="0.005"/>
-	<item name="paintMagazineMetal" prob="0.03"/>
+	<!-- <item name="paintMagazineMetal" prob="0.03"/> -->
 	<item group="electricalDevices" prob="0.01"/>
 	<item group="ammo"/>
 </lootcontainer>
@@ -2018,7 +2170,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item group="ammo"/>
 	<item group="books" count="1"/>
 	<item name="resourceGlue" />
-	<item name="paintMagazineWallCoverings"/>
+	<!-- <item name="paintMagazineWallCoverings"/> -->
 	<item group="medicine"/>
 	<item group="weaponsPistol+ammo" prob="1.5"/>
 	<item name="meleeToolFlashlight02"/>
@@ -2042,11 +2194,13 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <!-- Supply Crate General, the normal airdrop -->
 <lootcontainer id="34" count="4" size="8,4" destroy_on_close="true" sound_open="SupplyDrops/open_supply_crate" sound_close="SupplyDrops/close_supply_crate" loot_quality_template="baseTemplate">
-	<item group="cannedfood" count="2,3" prob="2"/>
-	<item group="weaponsMilitaryGuns+ammo" prob="1.2"/>
-	<item group="rareBooks"/>
-	<item group="airdropMedicine" count="1,4"/>
+	<item group="cannedfood" count="3,5" prob="2"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item group="weaponsBasicGuns+ammo" prob=".6"/>
+	<item group="rareBooks" prob="0.2"/>
+	<item group="airdropMedicine" count="1,4" prob="0.2"/>
 	<item name="meleeToolFlashlight02" prob="0.2"/>
+	<item group="ammo" count="2" prob="0.2"/>
 </lootcontainer>
 
 <!-- tree hollowed stump, place where people stash things, -->
@@ -2062,7 +2216,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item group="medicine"/>
 </lootcontainer>
 
-<!-- suitcase -->
+<!-- suitcase / luggage -->
 <lootcontainer id="36" count="0,2" size="4,3" sound_open="UseActions/open_suitcase" sound_close="UseActions/close_suitcase" loot_quality_template="baseTemplate">
 	<item name="drinkJarBoiledWater" count="1,2" prob="0.15"/>
 	<item group="cannedfood" prob="0.5"/>
@@ -2077,7 +2231,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 <!-- Bath tub filled with... don't ask. -->
 <lootcontainer id="37" count="1,2" size="5,4" destroy_on_close="false" sound_open="UseActions/open_corpse" sound_close="UseActions/close_corpse" loot_quality_template="baseTemplate">
 	<item name="foodRottingFlesh" prob="5"/>
-	<item name="resourceFemur" count="1,2" prob="2"/>
+	<item name="resourceFemur" count="2,4" prob="2"/>
 	<item name="resourceCloth" count="1,3"/>
 	<item name="resourceGlue"/>
 	<item name="resourceBulletCasing"/>
@@ -2103,31 +2257,31 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 </lootcontainer> -->
 
 <!-- military munitions ammo box -->
-<lootcontainer id="40" count="1" size="8,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" open_time="15" loot_quality_template="baseTemplate">
-	<item group="weaponsMilitaryGuns+ammo" prob="0.35"/>
-	<item group="militaryAmmo" prob="1"/>
-	<item group="militaryArmor" prob="0.1"/>
+<lootcontainer id="40" count="1" size="8,4" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" open_time="10" loot_quality_template="baseTemplate">
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item group="militaryAmmo" prob="1.7"/>
+	<item group="militaryArmor" prob="0.2"/>
 </lootcontainer>
 
 <!-- cntLootChestHero, fancy chest -->
 <lootcontainer id="41" count="1,2" size="8,9" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="treasureTemplate">
-	<item group="weaponsMilitaryGuns+ammo" prob="0.8"/>
-	<item group="weaponsBasicGuns+ammo"/>
-	<item group="weaponsMagnum+ammo" prob="0.2"/>
-	<item name="gunCompoundBow" prob="0.3"/>
-	<item group="rareOres" count="2,5"/>
-	<item group="rareBooks" count="1,2" prob="0.5"/>
-	<item group="ironArmor" count="1,2" prob="0.5"/>
-	<item group="steelArmor" count="1,2" prob="0.5"/>
-	<item group="militaryArmor" count="1,2" prob="0.5"/>
-	<item group="modAllT1" prob=".1"/>
-	<item group="modAllT2" prob=".1"/>
-	<item group="modAllT3" prob=".1"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item group="weaponsBasicGuns+ammo" prob="0.5"/>
+	<item group="weaponsMagnum+ammo" loot_prob_template="probTemplate0.5"/>
+	<item name="gunCompoundBow" loot_prob_template="probTemplate0.75"/>
+	<item group="rareOres" count="2,5" prob="0.5"/>
+	<item group="rareBooks" count="1,2" prob="0.25"/>
+	<item group="ironArmor" count="1,2" prob="0.25"/>
+	<item group="steelArmor" count="1,2" prob="0.25"/>
+	<item group="militaryArmor" count="1,2" prob="0.25"/>
+	<item group="modAllT1" loot_prob_template="probTemplate1.0"/>
+	<item group="modAllT2" loot_prob_template="probTemplate1.0"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.75"/>
 </lootcontainer>
 
 <!-- gun safe -->
 <lootcontainer id="42" count="2,6" size="8,8" sound_open="UseActions/open_safe" sound_close="UseActions/close_safe" open_time="1" loot_quality_template="baseTemplate">
-	<item group="weaponsBasicGuns+ammo" prob="0.9"/>
+	<item group="weaponsBasicGuns+ammo" loot_prob_template="probTemplate0.5to1.0"/>
 	<item name="oldCash" count="10,45" prob="0.1"/>
 	<item group="ammo" count="3,5"/>
 	<item group="ammoSteel" count="1,2"/>
@@ -2141,7 +2295,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 	<item group="clothes" prob="28"/>
 	<item group="hats" prob="10"/>
 	<item group="ammo" prob="0.02"/>
-	<item group="weaponsLongShotgun+ammo" prob="0.02"/>
+	<item group="weaponsShotgun+ammo" prob="0.02"/>
 	<item group="books" count="1,2"/>
 	<item name="resourcePaper" count="1,2" prob="0.7"/>
 	<item name="oldCash" count="1,3" prob="0.3"/>
@@ -2200,18 +2354,20 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 <lootcontainer id="49" count="1,2" size="4,3" sound_open="UseActions/open_drawer" sound_close="UseActions/close_drawer" loot_quality_template="baseTemplate">
 	<item name="resourcePaper" count="2,8" prob="0.2"/>
 	<item group="books"/>
-	<item name="paintMagazineFaux" prob="0.05"/>
+	<!-- <item name="paintMagazineFaux" prob="0.05"/> -->
 </lootcontainer>
 
 <!-- shotgun Messiah -->
 <lootcontainer id="50" count="1,3" size="5,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="baseTemplate">
 	<item group="weaponsBasicGuns+ammo" prob="3"/>
-	<item group="weaponsMilitaryGuns+ammo"/>
-	<item name="resourceMechanicalParts" count="1,5" prob="0.1"/>
+	<item group="ammo"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item name="resourceMechanicalParts" count="1,5" prob="0.15"/>
 	<item name="resourceScrapPolymers" count="1,6" prob="0.15"/>
-	<item group="modAllT1" prob=".1"/>
-	<item group="modAllT2" prob=".1"/>
-	<item group="modAllT3" prob=".1"/>
+	<item name="resourceRepairKit" prob="0.15"/>
+	<item group="modAllT1" loot_prob_template="probTemplate1.0"/>
+	<item group="modAllT2" loot_prob_template="probTemplate0.75"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.5"/>
 </lootcontainer>
 
 <!-- pop n pills -->
@@ -2287,14 +2443,14 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <!-- Treasure chest -->
 <lootcontainer id="61" count="2,5" size="8,9" destroy_on_close="true" sound_open="UseActions/open_chest" sound_close="UseActions/close_chest" loot_quality_template="treasureTemplate">
-	<item group="weaponsMilitaryGuns+ammo"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
 	<item group="treasureAmmo"/>
 	<item name="casinoCoin" count="3000,8000"/>
 	<item group="rareOres" count="5,11"/>
 	<item name="oldCash" count="50,250" prob="0.5"/>
-	<item group="modAllT1" prob=".1"/>
-	<item group="modAllT2" prob=".1"/>
-	<item group="modAllT3" prob=".1"/>
+	<item group="modAllT1" loot_prob_template="probTemplate0.75"/>
+	<item group="modAllT2" loot_prob_template="probTemplate0.5"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.5"/>
 </lootcontainer>
 
 <!-- Dummy loot entry for NPC traders -->
@@ -2322,9 +2478,9 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 </lootcontainer>
 
 <!-- cntMorticianDrawer -->
-<lootcontainer id="67" count="0,2" size="5,3" sound_open="UseActions/open_dumpster" sound_close="UseActions/close_dumpster" loot_quality_template="baseTemplate">
+<lootcontainer id="67" count="1,2" size="5,3" sound_open="UseActions/open_dumpster" sound_close="UseActions/close_dumpster" loot_quality_template="baseTemplate">
 	<item name="foodRottingFlesh" count="1,2" prob="2"/>
-	<item name="resourceFemur" count="1,2" prob="0.5"/>
+	<item name="resourceFemur" count="2,4" prob="1"/>
 	<item group="junk"/>
 	<item group="books" prob="0.1"/>
 	<item name="resourceGoldNugget" count="1" prob="0.05"/>
@@ -2333,7 +2489,7 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 <!-- cntFurnaceDrawer -->
 <lootcontainer id="68" count="0,1" size="5,3" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="baseTemplate">
 	<item name="resourceCoal" count="2,12" prob="1"/>
-	<item name="resourceFemur" count="1,2" prob="0.1"/>
+	<item name="resourceFemur" count="1,3" prob="0.2"/>
 </lootcontainer>
 
 <!-- cntGreenDrawer -->
@@ -2343,82 +2499,82 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <!-- EntityLootContainerRegular, rare random drop off regular zombies -->
 <lootcontainer id="70" count="1,3" size="5,10" destroy_on_close="false" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="baseTemplate">
-	<item group="cannedfood" count="1,2" prob="2"/>
-	<item name="drinkJarBeer" count="1,3" prob=".8"/>
-	<item name="drinkJarBoiledWater" count="1,4" prob="1.5"/>
-	<item group="books" prob="1"/>
-	<item name="resourceCandleStick" count="1,2" prob="1"/>
-	<item name="resourceForgedIron" count="1,8" prob="0.5"/>
-	<item name="resourceForgedSteel" count="1,8" prob="0.5"/>
-	<item group="tools" prob="1"/>
-	<item group="rareTools" prob=".5"/>
-	<item group="ironArmor" prob=".5"/>
-	<item group="steelArmor" prob=".3"/>
-	<item group="militaryArmor" prob=".3"/>
-	<item group="clothes"/>
-	<item group="warmClothes" prob=".3"/>
-	<item group="ammo" prob="2"/>
-	<item group="ammoSteel" count="1,2"/>
-	<item group="weaponsPistol+ammo" prob="0.8"/>
-	<item group="weaponsMagnum+ammo" prob="0.15"/>
-	<item group="weaponsAnyShotguns+ammo" prob=".8"/>
-	<item group="weaponsHuntingRifle+ammo" prob=".5"/>
-	<item group="weaponsMilitaryGuns+ammo" prob=".15"/>
-	<item name="gunCompoundBow" prob="0.4"/>
-	<item name="nightvisionGoggles" prob="0.2"/>
-	<item name="casinoCoin" count="10,110" prob="1"/>
-	<item name="oldCash" count="20,100"/>
-	<item name="drugHerbalAntibiotics" count="1,2" prob="0.2"/>
-	<item group="rareMedicine" prob="0.3"/>
-	<item name="drugPainkillers" count="1,2" prob=".5"/>
-	<item name="drugVitamins" count="1,2" prob=".7"/>
-	<item group="treasureMaps" count="1" prob="0.1"/>
-	<item group="questChallenge" count="1" prob="0.1"/>
+	<item group="cannedfood" count="1,2" prob="13"/>
+	<item name="drinkJarBeer" count="1,3" prob="5"/>
+	<item name="drinkJarBoiledWater" count="1,4" prob="10"/>
+	<item group="books" prob="6"/>
+	<item group="brassResource" prob="6"/>
+	<item name="resourceForgedIron" count="2,10" prob="3"/>
+	<item name="resourceForgedSteel" count="2,10" prob="3"/>
+	<item group="tools" prob="6"/>
+	<item group="rareTools" prob="3"/>
+	<item group="ironArmor" prob="3"/>
+	<item group="steelArmor" prob="2"/>
+	<item group="militaryArmor" prob="2"/>
+	<item group="clothes" prob="6"/>
+	<item group="warmClothes" prob=".2"/>
+	<item group="ammo" count="1,2" prob="13"/>
+	<item group="ammoSteel" count="1,2" prob="6"/>
+	<item group="weaponsPistol+ammo" prob="5"/>
+	<item group="weaponsShotgun+ammo" prob="5"/>
+	<item group="weaponsHuntingRifle+ammo" prob="3"/>
+	<item group="weaponsMagnum+ammo" loot_prob_template="probTemplate0.5"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item name="gunCompoundBow" loot_prob_template="probTemplate0.5"/>
+	<item name="nightvisionGoggles" loot_prob_template="probTemplate1.0"/>
+	<item name="casinoCoin" count="200,410" prob="6"/>
+	<item name="oldCash" count="150,500" prob="6"/>
+	<item name="drugHerbalAntibiotics" count="1,2" prob="1.3"/>
+	<item group="rareMedicine" prob="2"/>
+	<item name="drugPainkillers" count="1,2" prob="3"/>
+	<item name="drugVitamins" count="1,2" prob="4.5"/>
+	<item group="treasureMaps" count="1" prob="0.6"/>
+	<item group="questChallenge" count="1" prob="0.6"/>
 
 </lootcontainer>
 
 <!-- EntityLootContainerStrong, rare random drop off strong zombies -->
 <lootcontainer id="71" count="2,3" size="5,10" destroy_on_close="false" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1" loot_quality_template="baseTemplate">
-	<item group="cannedfood" count="1,2" prob="1.5"/>
-	<item name="drinkJarBeer" count="1,3" prob=".8"/>
-	<item name="drinkJarBoiledWater" count="1,4" prob="1"/>
-	<item group="books" prob="1"/>
-	<item name="resourceCandleStick" count="1,2" prob="1"/>
-	<item name="resourceForgedIron" count="1,8" prob="0.5"/>
-	<item name="resourceForgedSteel" count="1,8" prob="0.5"/>
-	<item name="resourceMilitaryFiber" count="1,4" prob="0.04"/>
-	<item group="tools" prob="1"/>
-	<item group="rareTools" prob=".8"/>
-	<item group="ironArmor" prob=".5"/>
-	<item group="steelArmor" prob=".5"/>
-	<item group="militaryArmor" prob=".5"/>
-	<item name="armorSwatHelmet"/>
-	<item group="hazmatGear" prob=".5"/>
-	<item group="clothes"/>
-	<item group="warmClothes" prob=".3"/>
-	<item group="ammo" count="1,2" prob="2"/>
-	<item group="ammoSteel" count="2"/>
-	<item group="weaponsPistol+ammo" prob="0.8"/>
-	<item group="weaponsMagnum+ammo" prob="0.4"/>
-	<item group="weaponsAnyShotguns+ammo" prob=".8"/>
-	<item group="weaponsHuntingRifle+ammo" prob=".6"/>
-	<item group="weaponsMilitaryGuns+ammo" prob=".4"/>
-	<item name="meleeClubIron"/>
-	<item name="meleeToolHuntingKnife"/>
-	<item name="meleeToolMachete" prob="0.8"/>
-	<item name="gunCompoundBow" prob="0.5"/>
-	<item name="nightvisionGoggles" prob="0.3"/>
-	<item name="casinoCoin" count="10,110" prob="1"/>
-	<item name="oldCash" count="20,100"/>
-	<item name="drugHerbalAntibiotics" count="1,3" prob="0.2"/>
-	<item group="rareMedicine" prob="0.3"/>
-	<item name="drugPainkillers" count="2,3" prob=".5"/>
-	<item name="drugVitamins" count="2,3" prob=".7"/>
-	<item group="treasureMaps" count="1" prob="0.1"/>
-	<item group="questChallenge" count="1" prob="0.1"/>
-	<item group="modAllT1" prob=".5"/>
-	<item group="modAllT2" prob=".5"/>
-	<item group="modAllT3" prob=".5"/>
+	<item group="cannedfood" count="1,2" prob="3.7"/>
+	<item name="drinkJarBeer" count="1,3" prob="2"/>
+	<item name="drinkJarBoiledWater" count="2,5" prob="2.5"/>
+	<item group="books" prob="2.5"/>
+	<item group="brassResource" prob="2.5"/>
+	<item name="resourceForgedIron" count="1,8" prob="1.25"/>
+	<item name="resourceForgedSteel" count="1,8" prob="1.25"/>
+	<item name="resourceMilitaryFiber" count="3,6" prob="0.5"/>
+	<item group="tools" prob="2.5"/>
+	<item group="rareTools" prob=".2"/>
+	<item group="ironArmor" prob="1.25"/>
+	<item group="steelArmor" prob="1.25"/>
+	<item group="militaryArmor" prob="1.25"/>
+	<item name="armorSwatHelmet" prob="2.5"/>
+	<item group="hazmatGear" prob="1.25"/>
+	<item group="clothes" prob="2.5"/>
+	<item group="warmClothes" prob=".75"/>
+	<item group="ammo" count="1,2" prob="5"/>
+	<item group="ammoSteel" count="5"/>
+	<item group="weaponsPistol+ammo" prob="1.5"/>
+	<item group="weaponsMagnum+ammo" loot_prob_template="probTemplate0.5"/>
+	<item group="weaponsShotgun+ammo" prob="1.5"/>
+	<item group="weaponsHuntingRifle+ammo" prob="1"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item name="meleeClubIron" prob="0.5"/>
+	<item name="meleeToolHuntingKnife" prob="1.5"/>
+	<item name="meleeToolMachete" prob="1.5"/>
+	<item name="gunCompoundBow" loot_prob_template="probTemplate1.0"/>
+	<item name="nightvisionGoggles" loot_prob_template="probTemplate0.75"/>
+	<item name="casinoCoin" count="10,110" prob="2.5"/>
+	<item name="oldCash" count="20,100" prob="2.5"/>
+	<item name="drugHerbalAntibiotics" count="1,3" prob="0.5"/>
+	<item group="rareMedicine" prob="0.75"/>
+	<item name="drugPainkillers" count="2,3" prob="1.25"/>
+	<item name="drugVitamins" count="2,3" prob="1.75"/>
+	<item group="treasureMaps" count="1" prob="0.25"/>
+	<item group="questChallenge" count="1" prob="0.25"/>
+	<item group="modAllT1" loot_prob_template="probTemplate1.0"/>
+	<item group="modAllT2" loot_prob_template="probTemplate0.75"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.5"/>
 </lootcontainer>
 
 <!-- cntFetchQuestSatchel  -->
@@ -2617,9 +2773,9 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 
 <!-- cntLootCrateHero, Hero / Hidden Stash Cardboard Loot-->
 <lootcontainer id="95" count="1,2" size="5,4" sound_open="UseActions/open_cardboard" sound_close="UseActions/close_cardboard" loot_quality_template="treasureTemplate">
-	<item group="weaponsMilitaryGuns+ammo" prob="0.8"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
 	<item group="weaponsBasicGuns+ammo"/>
-	<item name="gunCompoundBow" prob="0.3"/>
+	<item name="gunCompoundBow" loot_prob_template="probTemplate0.5"/>
 	<item group="rareOres" count="2,5"/>
 	<item group="rareBooks" count="1,2" prob="0.5"/>
 	<item group="ironArmor" count="1,2" prob="0.5"/>
@@ -2657,22 +2813,22 @@ if the loot entry for mods is empty then it will use the lootgroup mods and mod_
 <!-- cntWeaponsBagSmall -->
 <lootcontainer id="100" count="1,2" size="5,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1.5" loot_quality_template="baseTemplate">
 	<item group="weaponsPistol+ammo" prob="1.5"/>
-	<item group="weaponsMagnum+ammo" prob=".5"/>
-	<item group="weaponsMP5+ammo" prob=".3"/>
-	<item group="modAllT1" prob=".1"/>
-	<item group="modAllT2" prob=".1"/>
-	<item group="modAllT3" prob=".1"/>
+	<item group="weaponsMagnum+ammo" loot_prob_template="probTemplate0.5"/>
+	<item group="weaponsMP5+ammo" loot_prob_template="probTemplate0.5"/>
+	<item group="modAllT1" loot_prob_template="probTemplate0.5"/>
+	<item group="modAllT2" loot_prob_template="probTemplate0.5"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.5"/>
 </lootcontainer>
 
 <!-- cntWeaponsBagLarge -->
 <lootcontainer id="101" count="1,2" size="5,3" sound_open="UseActions/open_backpack" sound_close="UseActions/close_backpack" open_time="1.5" loot_quality_template="baseTemplate">
 	<item group="weaponsBasicGuns+ammo" prob="1.5"/>
-	<item group="weaponsMilitaryGuns+ammo" prob="0.5"/>
-	<item name="gunCompoundBow" prob="0.2"/>
+	<item group="weaponsMilitaryGuns+ammo" loot_prob_template="probTemplate1.0"/>
+	<item name="gunCompoundBow" loot_prob_template="probTemplate0.5"/>
 	<item group="weaponsCrossbow+ammo" prob="0.1"/>
-	<item group="modAllT1" prob=".1"/>
-	<item group="modAllT2" prob=".1"/>
-	<item group="modAllT3" prob=".1"/>
+	<item group="modAllT1" loot_prob_template="probTemplate1.0"/>
+	<item group="modAllT2" loot_prob_template="probTemplate0.75"/>
+	<item group="modAllT3" loot_prob_template="probTemplate0.5"/>
 </lootcontainer>
 
 <!-- cntBuriedStashChest -->

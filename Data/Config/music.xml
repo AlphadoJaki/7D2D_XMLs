@@ -656,7 +656,7 @@
         <layer name ="Secondary" num="1"/>
         <layer name ="LongEffects" num="1"/>
         
-        <segment name="seg1" length="3">
+        <segment name="seg1" value="0,1,2">
           <layer name="Primary">
             <placement name="Begin" value="0"/>
             <placement name="Loop" value="1,2"/>
@@ -673,7 +673,7 @@
           </layer>
         </segment>
 
-        <segment name="seg2" length="3">
+        <segment name="seg2" value="3,4,5">
           <layer name="Primary">
             <placement name="Loop" value="3,4,5"/>
           </layer>
@@ -688,7 +688,7 @@
           </layer>
         </segment>
 
-        <segment name="seg3" length="3">
+        <segment name="seg3" value="6,7,8">
           <layer name="Primary">
             <placement name="Loop" value="6"/>
             <placement name="End" value="7"/>
@@ -710,7 +710,7 @@
       <threat_level name="Suspense">
         <layer name="Primary" num="1"/>
 
-        <segment name="seg1" length="1">
+        <segment name="seg1" value="0">
           <layer name="Primary">
             <placement name="Loop" value="0"/>
           </layer>
@@ -720,7 +720,7 @@
       <threat_level name="CombatReady">
         <layer name="Primary" num="1"/>
 
-        <segment name="seg1" length="1">
+        <segment name="seg1" value="0">
           <layer name="Primary">
             <placement name="Loop" value="0"/>
           </layer>
@@ -735,7 +735,7 @@
         <layer name ="LongEffects" num="1"/>
         <layer name ="ShortEffects" num="1"/>
 
-        <segment name="seg1" length="1">
+        <segment name="seg1" value="0">
           <layer name="Primary">
             <placement name="Begin" value="0"/>
           </layer>
@@ -749,12 +749,12 @@
             <placement name="Begin" value="0"/>
           </layer>
           <layer name ="ShortEffects">
-            <placement name="Begin" value="0"/>
+            <placement name="Loop" value="0"/>
           </layer>
 
         </segment>
 
-        <segment name="seg2" length="1">
+        <segment name="seg2" value="1">
           <layer name="Primary">
             <placement name="Loop" value="1"/>
           </layer>
@@ -772,7 +772,7 @@
           </layer>
         </segment>
 
-        <segment name="seg3" length="1">
+        <segment name="seg3" value="2">
           <layer name="Primary">
             <placement name="End" value="2"/>
           </layer>
@@ -786,7 +786,7 @@
             <placement name="End" value="2"/>
           </layer>
           <layer name ="ShortEffects">
-            <placement name="End" value="2"/>
+            <placement name="Loop" value="2"/>
           </layer>
         </segment>
       </threat_level>

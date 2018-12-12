@@ -147,7 +147,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepcloth"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="3" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepcloth1"/>
 	<AudioClip ClipName="Sounds/Step/stepcloth2"/>
 	<AudioClip ClipName="Sounds/Step/stepcloth3"/>
@@ -156,7 +156,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepdirt"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="5" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepdirt1"/>
 	<AudioClip ClipName="Sounds/Step/stepdirt2"/>
 	<AudioClip ClipName="Sounds/Step/stepdirt3"/>
@@ -182,7 +182,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepgrass"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="6" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepgrass1"/>
 	<AudioClip ClipName="Sounds/Step/stepgrass2"/>
 	<AudioClip ClipName="Sounds/Step/stepgrass3"/>
@@ -200,7 +200,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepmetal"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="2" range="7" volume="11" time="2" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="10" time="2" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepmetal1"/>
 	<AudioClip ClipName="Sounds/Step/stepmetal2"/>
 	<AudioClip ClipName="Sounds/Step/stepmetal3"/>
@@ -209,7 +209,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="steporganic"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="6" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/steporganic1"/>
 	<AudioClip ClipName="Sounds/Step/steporganic2"/>
 	<AudioClip ClipName="Sounds/Step/steporganic3"/>
@@ -218,7 +218,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepsand"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="4" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepsand1"/>
 	<AudioClip ClipName="Sounds/Step/stepsand2"/>
 	<AudioClip ClipName="Sounds/Step/stepsand3"/>
@@ -227,7 +227,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepsnow"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="2" range="7" volume="11" time="2" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="8" time="2" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepsnow1"/>
 	<AudioClip ClipName="Sounds/Step/stepsnow2"/>
 	<AudioClip ClipName="Sounds/Step/stepsnow3"/>
@@ -236,7 +236,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepstone"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="2" range="7" volume="11" time="1.5" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="10" time="1.5" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/StepStone1"/>
 	<AudioClip ClipName="Sounds/Step/StepStone2"/>
 	<AudioClip ClipName="Sounds/Step/StepStone3"/>
@@ -287,7 +287,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> <runningvolumescale value="2"/> </SoundDataNode>
 
 <SoundDataNode name="stepwood"> <AudioSource name="Sounds/AudioSource_Footsteps"/>
-	<Noise ID="2" range="7" volume="11" time="1.5" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="10" time="1.5" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Step/stepwood1"/>
 	<AudioClip ClipName="Sounds/Step/stepwood2"/>
 	<AudioClip ClipName="Sounds/Step/stepwood3"/>
@@ -478,11 +478,6 @@
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/auger_idle" AudioSourceName="Sounds/Weapons/Motorized/Auger/AugerAudioSourceLoop"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
-<SoundDataNode name="Auger_Reload">
-	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
-	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/Auger_Reload" AudioSourceName="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/>
-	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-
 <SoundDataNode name="Auger_Fire_Start"> <AudioSource name="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/>
 	<Noise ID="4" range="30" volume="60" time="2" heat_map_strength="0.2" heat_map_time="90"/>
 	<Sequence/>
@@ -490,6 +485,11 @@
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/auger_fire_lp" Loop="true"/>
 	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/auger_fire_end"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
+
+<SoundDataNode name="Auger_Reload">
+	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
+	<AudioClip ClipName="Sounds/Weapons/Motorized/Auger/Auger_Reload" AudioSourceName="Sounds/Weapons/Motorized/Auger/AugerAudioSource"/>
+	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
 
 	<!-- Chainsaw -->
 
@@ -545,7 +545,7 @@
 	<!-- Ranged -->
 
   <!-- Common -->
-  
+
   <SoundDataNode name="dryfire"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="1" range="1" volume="7" time="4" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Common/dryfire1"/>
@@ -638,27 +638,27 @@
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="44magnum_reload_part_01"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="44magnum_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="44magnum_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="44magnum_reload_part_04"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload_part_04"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="44magnum_reload_part_05"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/44magnum/44magnum_reload_part_05"/>
@@ -673,17 +673,17 @@
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/AK47/ak47_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="ak47_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/AK47/ak47_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="ak47_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/AK47/ak47_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="ak47_reload_part_04"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/AK47/ak47_reload_part_04"/>
@@ -700,7 +700,7 @@
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/></SoundDataNode>
 
 
-  
+
   <SoundDataNode name="ak47_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="5" range="60" volume="150" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/AK47/ak47_s_fire1"/>
@@ -781,11 +781,11 @@
 <SoundDataNode name="bow_fire_cancel"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/Bow/bow_fire_cancel"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="bow_reload_part_01"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/Bow/bow_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
     <SoundDataNode name="bow_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/Bow/bow_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
@@ -794,18 +794,18 @@
 	<!-- CrossBow -->
 
 <SoundDataNode name="crossbow_fire"> <AudioSource name="Sounds/AudioSource_Reloads"/>
-	<Noise ID="2" range="7" volume="20" time="3" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="5" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/CrossBow/crossbow_fire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
 <SoundDataNode name="crossbow_reload_part_01"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/CrossBow/crossbow_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
 <SoundDataNode name="crossbow_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/CrossBow/crossbow_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
 <SoundDataNode name="crossbow_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Bows/CrossBow/crossbow_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
@@ -817,7 +817,7 @@
 	<Noise ID="5" range="60" volume="180" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_fire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="hunting_rifle_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="5" range="60" volume="180" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_s_fire1"/>
@@ -830,22 +830,22 @@
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="hunting_rifle_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="hunting_rifle_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="hunting_rifle_reload_part_04"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_reload_part_04"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="hunting_rifle_reload_part_05"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/hunting_rifle/hunting_rifle_reload_part_05"/>
@@ -863,12 +863,12 @@
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/m136/m136_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
 <SoundDataNode name="m136_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/m136/m136_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
 <SoundDataNode name="m136_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/m136/m136_reload_part_03"/>
@@ -900,12 +900,12 @@
   <AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_fire3" DistantClip="Sounds/Weapons/Ranged/mp5/mp5_d_fire3" DistantSource="Sounds/AudioSource_WeaponFire"/>
   <AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_fire4" DistantClip="Sounds/Weapons/Ranged/mp5/mp5_d_fire4" DistantSource="Sounds/AudioSource_WeaponFire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/>  <MaxRepeatRate value="0.001"/></SoundDataNode>
-  
+
   <SoundDataNode name="mp5_fire_end"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="5" range="60" volume="150" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_fire_end"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/></SoundDataNode>
-  
+
   <SoundDataNode name="mp5_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="2" range="7" volume="70" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_s_fire1"/>
@@ -913,32 +913,32 @@
   <AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_s_fire3"/>
   <AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_s_fire4"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/></SoundDataNode>
-  
+
   <SoundDataNode name="mp5_reload_part_01"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="mp5_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
     <SoundDataNode name="mp5_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="mp5_reload_part_04"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload_part_04"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="mp5_reload_part_05"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload_part_05"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-	
+
 <SoundDataNode name="mp5_reload"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/mp5/mp5_reload"/>
@@ -956,7 +956,7 @@
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Pistol/Pistol_Fire3" DistantClip="Sounds/Weapons/Ranged/Pistol/pistol_d_fire3" DistantSource="Sounds/AudioSource_WeaponFire"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Pistol/Pistol_Fire4" DistantClip="Sounds/Weapons/Ranged/Pistol/pistol_d_fire4" DistantSource="Sounds/AudioSource_WeaponFire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="30"/> <MaxVoicesPerEntity value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-	
+
 <SoundDataNode name="pistol_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="3" range="4" volume="30" time="2" muffled_when_crouched="0.65" heat_map_strength="0.001" heat_map_time="1"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/Pistol/pistol_s_fire1"/>
@@ -1002,7 +1002,7 @@
 	<AudioClip ClipName="Sounds/Weapons/Ranged/pumpshotgun/pump_shotgun_fire3" DistantClip="Sounds/Weapons/Ranged/pumpshotgun/pump_shotgun_d_fire3" DistantSource="Sounds/AudioSource_WeaponFire"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/pumpshotgun/pump_shotgun_fire4" DistantClip="Sounds/Weapons/Ranged/pumpshotgun/pump_shotgun_d_fire4" DistantSource="Sounds/AudioSource_WeaponFire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="20"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
  <SoundDataNode name="pump_shotgun_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="5" range="60" volume="200" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/pumpshotgun/pump_shotgun_s_fire1"/>
@@ -1055,7 +1055,7 @@
 	<Noise ID="5" range="60" volume="180" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_fire"/>
 	<LocalCrouchVolumeScale value="1"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="20"/> <MaxVoicesPerEntity value="6"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
 <SoundDataNode name="sniperrifle_s_fire"> <AudioSource name="Sounds/AudioSource_WeaponFire"/> <NetworkAudioSource name="Sounds/AudioSource_WeaponFire_Network"/>
 	<Noise ID="5" range="60" volume="180" time="2" heat_map_strength="0.3" heat_map_time="120"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_s_fire1"/>
@@ -1068,17 +1068,17 @@
 	<Noise ID="2" range="7" volume="12" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_reload_part_01"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="sniperrifle_reload_part_02"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="12" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_reload_part_02"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="sniperrifle_reload_part_03"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="12" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_reload_part_03"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="1"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
-  
+
   <SoundDataNode name="sniperrifle_reload_part_04"> <AudioSource name="Sounds/AudioSource_Reloads"/>
 	<Noise ID="2" range="7" volume="12" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Weapons/Ranged/sniperrifle/sniperrifle_reload_part_04"/>
@@ -1638,7 +1638,7 @@
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.9"/> </SoundDataNode>
 
 <SoundDataNode name="player2jump"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="2" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2jump1"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2jump2"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2jump3"/>
@@ -1647,7 +1647,7 @@
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.0"/> </SoundDataNode>
 
 <SoundDataNode name="player2landSoft"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="2" range="7" volume="11" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="5" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landsoft1"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landsoft2"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landsoft3"/>
@@ -1656,7 +1656,7 @@
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.9"/> </SoundDataNode>
 
 <SoundDataNode name="player2landHard"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="3" range="14" volume="30" time="1" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<Noise ID="3" range="14" volume="10" time="1" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landHard1"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landHard2"/>
 	<AudioClip ClipName="Sounds/Player_Female/player2landHard3"/>
@@ -1752,7 +1752,7 @@
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.9"/> </SoundDataNode>
 
 <SoundDataNode name="player1jump"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="1" range="1" volume="7" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="1" range="1" volume="2" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1jump1"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1jump2"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1jump3"/>
@@ -1760,7 +1760,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.0"/> </SoundDataNode>
 
 <SoundDataNode name="player1landSoft"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="2" range="7" volume="11" time="1" muffled_when_crouched="0.5"/>
+	<Noise ID="2" range="7" volume="5" time="1" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landSoft1"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landSoft2"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landSoft3"/>
@@ -1770,7 +1770,7 @@
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.9"/> </SoundDataNode>
 
 <SoundDataNode name="player1landHard"> <AudioSource name="Sounds/AudioSource_Player"/>
-	<Noise ID="3" range="14" volume="30" time="1" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
+	<Noise ID="3" range="14" volume="10" time="1" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landHard1"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landHard2"/>
 	<AudioClip ClipName="Sounds/Player_Male/player1landHard3"/>
@@ -3758,12 +3758,12 @@
 
 
   <!-- ZPack (Zombie dropped packs)   -->
-  
+
   <SoundDataNode name="zpack_spawn"> <AudioSource name="Sounds/AudioSource_ZPack"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Loot/ZPack/zpack_spawn"/>
 	<LocalCrouchVolumeScale value="0.5"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="3"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="zpack_impact"> <AudioSource name="Sounds/AudioSource_ZPack"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Loot/ZPack/zpack_impact"/>
@@ -4112,7 +4112,7 @@
 
 
   <!-- Gyrocopter     -->
-  
+
   <SoundDataNode name="gyrocopter_start"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_start"/>
@@ -4122,7 +4122,7 @@
 	<Noise ID="2" range="7" volume="11" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_shutoff"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="gyrocopter_idle_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_idle_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
@@ -4130,11 +4130,11 @@
 <SoundDataNode name="gyrocopter_med_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_med_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="gyrocopter_blades_lp"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_blades_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="gyrocopter_damage"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" range="14" volume="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage1"/>
@@ -4144,7 +4144,7 @@
   <AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage5"/>
   <AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_damage6"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="gyrocopter_sputter"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="3" range="14" volume="30" time="3" muffled_when_crouched="0.65" heat_map_strength="0.05" heat_map_time="60"/>
 	<AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter1"/>
@@ -4157,7 +4157,7 @@
   <AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter8"/>
   <AudioClip ClipName="Sounds/Vehicles/Gyrocopter/gyrocopter_sputter9"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="2"/> <MaxRepeatRate value="0.01"/> </SoundDataNode>
-  
+
   <SoundDataNode name="gyrocopter_empty"> <AudioSource name="Sounds/AudioSource_Vehicle"/>
 	<Noise ID="1" range="1" volume="7" time="3" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/Vehicles/Motorbike/motorbike_empty_1"/>
@@ -4177,7 +4177,7 @@
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_fire_zombiebbq_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
-<SoundDataNode name="a_fire_embersmoke_sm_lp"> <AudioSource name="Sounds/AudioSource_Amb_XSmall"/>
+<SoundDataNode name="a_fire_embersmoke_sm_lp"> <AudioSource name="Sounds/AudioSource_Amb_Small"/>
 	<AudioClip ClipName="Sounds/Ambient_Loops/a_fire_embersmoke_sm_lp" Loop="true"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="18"/> <MaxRepeatRate value="0.001"/> </SoundDataNode>
 
@@ -5426,7 +5426,7 @@
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Neutral/trader_male_neutral_sale_declined_09"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Neutral/trader_male_neutral_sale_declined_10"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
-  
+
   <SoundDataNode name="traderneutralquestoffer"> <AudioSource name="Sounds/AudioSource_VO"/>
 	<Noise ID="1" range="1" volume="7" time="5" muffled_when_crouched="0.5"/>
 	<AudioClip ClipName="Sounds/VO/Trader/Male/Neutral/trader_male_neutral_quest_offer_01"/>
@@ -5486,8 +5486,8 @@
   <AudioClip ClipName="Sounds/VO/Trader/Male/Neutral/trader_male_neutral_quest_declined_09"/>
   <AudioClip ClipName="Sounds/VO/Trader/Male/Neutral/trader_male_neutral_quest_declined_10"/>
 	<LocalCrouchVolumeScale value="1.0"/> <CrouchNoiseScale value="0.5"/> <NoiseScale value="1"/> <MaxVoices value="10"/> <MaxRepeatRate value="1.111"/> </SoundDataNode>
-  
-  
+
+
 
 	<!-- Male Hate -->
 

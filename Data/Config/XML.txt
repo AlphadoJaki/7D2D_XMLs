@@ -761,6 +761,7 @@ That makes the system modular and gives me fewer headaches.
 	0360	wedge steep inside crnr base
 	0370		top
 	0390	GableQuarter
+	0391	Gable3Quarter
 	0400	g  inverted quarter	 
 	0410	gable 1m
 	0420	g   inverted steep
@@ -2233,13 +2234,14 @@ An entity will be aggro again if attacked after it has stopped pursueing.
 
 
 XP buckets for balancing:
-	<property name="ExperienceGain" value="700"/> <!-- XP grunt -->
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="550"/> <!-- XP grunt -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
-	<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
+
 
 Moved to here because HTML is particular about it's comments.
 

@@ -427,10 +427,10 @@
 		<block name="air"/>
 	</placeholder>
 
-	<placeholder name="chemSetRandomHelper">
-		<block name="chemSet1" prob="1"/>
-		<block name="chemSet2" prob="1"/>
-		<block name="chemSet3" prob="1"/>
+	<placeholder name="medicalPileRandomHelper">
+		<block name="medicalPileSmall" prob="1"/>
+		<block name="medicalPileMedium" prob="1"/>
+		<block name="medicalPileLarge" prob="1"/>
 	</placeholder>
 
 	<placeholder name="cntLockersShortRandomLootHelper">
@@ -496,6 +496,36 @@
 	<placeholder name="cntPillCaseRandomLootHelper">
 		<block name="cntPillCaseEmpty" prob=".66"/>
 		<block name="cntPillCaseClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntMedicineCabinetFaucetRandomLootHelper">
+		<block name="cntMedicineCabinetFaucetOpen" prob=".66"/>
+		<block name="cntMedicineCabinetFaucetClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntMedicineCabinetClosedRandomLootHelper">
+		<block name="cntMedicineCabinetOpen" prob=".66"/>
+		<block name="cntMedicineCabinetClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntLuggageMediumRandomLootHelper">
+		<block name="cntLuggageMediumOpen" prob=".66"/>
+		<block name="cntLuggageMediumClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntLuggageBigRandomLootHelper">
+		<block name="cntLuggageBigOpen" prob=".66"/>
+		<block name="cntLuggageBigClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntLuggagePileARandomLootHelper">
+		<block name="cntLuggagePileAOpen" prob=".66"/>
+		<block name="cntLuggagePileAClosed" prob=".33"/>
+	</placeholder>
+
+	<placeholder name="cntLuggagePileBRandomLootHelper">
+		<block name="cntLuggagePileBOpen" prob=".66"/>
+		<block name="cntLuggagePileBClosed" prob=".33"/>
 	</placeholder>
 
 	<placeholder name="treeSmallRandomHelper">

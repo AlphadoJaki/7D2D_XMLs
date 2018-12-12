@@ -71,7 +71,7 @@
 		<passive_effect name="HealthMaxModifierOT" operation="base_add" value=".00028"/> <!-- heal 1 point of MaxHealth / hour -->
 
 		<passive_effect name="DamageModifier" operation="perc_set" value="1" />
-		<passive_effect name="DamageModifier" operation="perc_add" value="0.5" tags="head"/>
+		<passive_effect name="DamageModifier" operation="perc_add" value="1" tags="head"/>
 
 		<!--
 		<passive_effect name="HarvestCount" operation="base_set" value="1" tags="cropHarvest"/>
@@ -109,19 +109,21 @@
 
 		<passive_effect name="StaminaChangeOT" operation="base_set" value="10" />
 
-		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="1.50" tags="running" />
-		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".75" match_all_tags="true" tags="swimming" />
+		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="1.5" tags="running"/>
+
+		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".75" tags="swimming" />
 <!--
 		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".75" match_all_tags="true" tags="swimming,walking" />
 		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value="1.35" match_all_tags="true" tags="swimming,running" />
-
 -->
-
 		<passive_effect name="StaminaChangeOT" operation="perc_subtract" value=".3" match_all_tags="true" tags="crouching,walking"/>
 		<!-- <passive_effect name="StaminaChangeOT" operation="base_set" value="-10" match_all_tags="true" tags="crouching,running" />
 		this is redundant because running is covered.
 		With a different value the base_set would override the previous one -->
 
+		<triggered_effect trigger="onSelfSecondaryActionRayHit" action="AddBuff" buff="buffPowerAttackStaminaStunt">
+			<requirement name="HoldingItemHasTags" tags="melee"/>
+		</triggered_effect>
 
 		<passive_effect name="StaminaLoss" operation="base_set" value="20" tags="jumping"/>
 		<passive_effect name="StaminaLoss" operation="base_set" value="40" tags="swimming"/>
@@ -275,11 +277,9 @@
 
 	<!-- Gameplay -->
 	<property name="MaxTurnSpeed" value="250"/>
-	<property name="WanderSpeed" value="0.08"/> <!-- just shambling around -->
-	<property name="ApproachSpeed" value="0.2"/> <!-- chasing a target -->
-	<property name="NightWanderSpeed" value="0.08"/>
-	<property name="NightApproachSpeed" value="1.1"/>
-	<property name="PanicSpeed" value="0.55"/>
+	<property name="MoveSpeed" value="0.08"/> <!-- just shambling around -->
+	<property name="MoveSpeedAggro" value="0.2, 1.25"/> <!-- chasing a target min/max (like day or night)-->
+	<property name="MoveSpeedPanic" value="0.55"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="JumpMaxDistance" value="3.3"/>
 
@@ -291,7 +291,7 @@
 	<!-- <property name="Buffs" value="zombieRadiatedBuff80"/> -->
 	<property name="Immunity" value="sickness;disease;wellness"/> <!-- bleeding; -->
 
-	<property name="ExperienceGain" value="700"/> <!-- XP grunt -->
+	<property name="ExperienceGain" value="550"/> <!-- XP grunt -->
 	<property name="LootDropProb" value="0.02"/> <!-- Whether it drops a loot bag on death or not. -->
 	<!-- <property name="LootListOnDeath" value="45"/> -->
 	<property name="LootDropEntityClass" value="EntityLootContainerRegular"/>
@@ -313,7 +313,7 @@
 <!-- Missing: zombieWight -->
 
 <entity_class name="zombieWightFeral" extends="zombieTemplateMale">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardFeralRagdoll"/>
 	<property name="SoundRandom" value="Enemies/Feral_Zombie/zombieferalroam"/>
 	<property name="SoundAlert" value="Enemies/Feral_Zombie/zombieferalalert"/>
@@ -331,25 +331,24 @@
 	<property name="PainResistPerHit" value=".65"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 	<property name="HandItem" value="meleeHandZombieCop"/>
 	<property name="JumpMaxDistance" value="4.8"/>
 
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
 		<passive_effect name="DistractionResistance" operation="base_set" value="0,0"/>
-		<passive_effect name="HealthMax" operation="base_set" value="450"/>
+		<passive_effect name="HealthMax" operation="base_set" value="532"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieWightRadiated" extends="zombieWightFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/feral_radiated"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
@@ -372,15 +371,15 @@
 
 	<!-- Gameplay -->
 	<!-- <property name="Buffs" value="zombieRadiatedBuff80"/> -->
-	<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="450"/>
+		<passive_effect name="HealthMax" operation="base_set" value="1010"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="9"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8.1"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -427,10 +426,8 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/Z_eye1"/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.06"/>
-	<property name="ApproachSpeed" value="0.2"/>
-	<property name="NightWanderSpeed" value="0.06"/>
-	<property name="NightApproachSpeed" value="1.0"/>
+	<property name="MoveSpeed" value="0.06"/>
+	<property name="MoveSpeedAggro" value="0.2, 1.1"/>
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="150"/>
@@ -439,37 +436,36 @@
 </entity_class>
 
 <entity_class name="zombieBoeFeral" extends="zombieBoe">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieBoeRadiated" extends="zombieBoeFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/boe_radiated"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 
@@ -479,7 +475,7 @@
 </entity_class>
 
 <entity_class name="zombieFootballPlayer" extends="zombieTemplateMale">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardFootballRagdoll"/>
 	<property name="SoundRandom" value="Enemies/Base_Zombie_Male2/zombiemale2roam"/>
 	<property name="SoundAlert" value="Enemies/Base_Zombie_Male2/zombiemale2alert"/>
@@ -495,14 +491,12 @@
 	<property name="HasDeathAnim" value="true"/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.75"/>
-	<property name="ApproachSpeed" value="1.15"/>
-	<property name="NightWanderSpeed" value="0.75"/>
-	<property name="NightApproachSpeed" value="1.15"/>
+	<property name="MoveSpeed" value="0.75"/>
+	<property name="MoveSpeedAggro" value=".6, 1.3"/>
 
 	<property name="HandItem" value="meleeHandZombieFootballPlayer"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="250"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
@@ -547,39 +541,40 @@
 </entity_class>
 
 <entity_class name="zombieFemaleFatFeral" extends="zombieFemaleFat">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStrongFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="380"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieFemaleFatRadiated" extends="zombieFemaleFatFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/fatLadyZS_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="722"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="6.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
 
@@ -601,36 +596,34 @@
 </entity_class>
 
 <entity_class name="zombieJoeFeral" extends="zombieJoe">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieJoeRadiated" extends="zombieJoeFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/joe_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
@@ -659,46 +652,46 @@
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStrong"/>
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="250"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 	</effect_group>
 </entity_class>
 
 
 <entity_class name="zombieMoeFeral" extends="zombieMoe">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStrongFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="600"/>
+		<passive_effect name="HealthMax" operation="base_set" value="475"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieMoeRadiated" extends="zombieMoeFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/moe_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="600"/>
+		<passive_effect name="HealthMax" operation="base_set" value="902"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="12"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -735,37 +728,35 @@
 </entity_class>
 
 <entity_class name="zombieArleneFeral" extends="zombieArlene">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 	<property name="ReplaceMaterial2" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieArleneRadiated" extends="zombieArleneFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/arlene_radiated"/>
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3.7"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -780,36 +771,34 @@
 </entity_class>
 
 <entity_class name="zombieLabFeral" extends="zombieLab">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardLabRagdoll"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieLabRadiated" extends="zombieLab">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardLabRagdoll"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/LabZombie_radiated"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3.7"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -819,7 +808,7 @@
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		<passive_effect name="HealthMax" operation="base_set" value="800"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="1"/> <!-- Boss damage -->
 		<passive_effect name="HealthChangeOT" operation="base_set" value="1.4"/> <!-- Boss regen, 1% -->
@@ -854,41 +843,39 @@
 </entity_class>
 
 <entity_class name="zombieScreamerFeral" extends="zombieScreamer">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="110"/>
+		<passive_effect name="HealthMax" operation="base_set" value="142"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieScreamerRadiated" extends="zombieScreamerFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/screamer_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="110"/>
+		<passive_effect name="HealthMax" operation="base_set" value="270"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2.2"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2.5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -918,36 +905,35 @@
 </entity_class>
 
 <entity_class name="zombieDarleneFeral" extends="zombieDarlene">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieDarleneRadiated" extends="zombieDarleneFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/darlene_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3.7"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -977,36 +963,35 @@
 </entity_class>
 
 <entity_class name="zombieMarleneFeral" extends="zombieMarlene">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieMarleneRadiated" extends="zombieMarlene">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/marlene_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3.7"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1029,37 +1014,36 @@
 </entity_class>
 
 <entity_class name="zombieYoFeral" extends="zombieYo">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieYoRadiated" extends="zombieYoFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/yo_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1082,40 +1066,38 @@
 </entity_class>
 
 <entity_class name="zombieSteveFeral" extends="zombieSteve">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
-<entity_class name="zombieSteveRadiated" extends="zombieSteve">
-	<property name="Tags" value="zombie,walker"/>
+<entity_class name="zombieSteveRadiated" extends="zombieSteveFeral">
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/steve_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="HandItem" value="meleeHandZombieFeral"/>
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1147,11 +1129,11 @@
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombie02Feral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="120"/>
+		<passive_effect name="HealthMax" operation="base_set" value="152"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -1177,19 +1159,18 @@
 </entity_class>
 
 <entity_class name="zombieBusinessManFeral" extends="zombieBusinessMan">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial2" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -1203,7 +1184,7 @@
 	<property name="ReplaceMaterial2" value="entities/zombies/materials/feral_eye"/>
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="450"/>
+		<passive_effect name="HealthMax" operation="base_set" value="900"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="1"/> <!-- Boss damage -->
 		<passive_effect name="HealthChangeOT" operation="base_set" value="1.4"/> <!-- Boss regen, 1% -->
@@ -1232,6 +1213,7 @@
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStrong"/>
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="300"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
@@ -1239,21 +1221,20 @@
 </entity_class>
 
 <entity_class name="zombieSnowFeral" extends="zombieSnow">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStrongFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="450"/>
+		<passive_effect name="HealthMax" operation="base_set" value="570"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -1297,11 +1278,9 @@
 	<property name="AITask-10" value=""/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.08"/>
-	<property name="ApproachSpeed" value="0.2"/>
-	<property name="NightWanderSpeed" value="0.08"/>
-	<property name="NightApproachSpeed" value="1.5"/>
-	<property name="PanicSpeed" value="1.2"/>
+	<property name="MoveSpeed" value="0.08"/>
+	<property name="MoveSpeedAggro" value="0.2, 1.35"/>
+	<property name="MoveSpeedPanic" value="1.2"/>
 	<property name="CanClimbVertical" value="true"/>
 	<property name="JumpMaxDistance" value="8"/>
 
@@ -1312,41 +1291,40 @@
 </entity_class>
 
 <entity_class name="zombieSpiderFeral" extends="zombieSpider">
-	<property name="Tags" value="zombie"/>
+	<property name="Tags" value="zombie,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.5"/>
-	<property name="NightApproachSpeed" value="1.5"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 	<property name="JumpMaxDistance" value="12"/>
 
 	<property name="HandItem" value="meleeHandZombie02Feral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
-<entity_class name="zombieSpiderRadiated" extends="zombieSpiderFeral">  <!-- dont want feral + radiated -->
-	<property name="Tags" value="zombie"/>
+<entity_class name="zombieSpiderRadiated" extends="zombieSpiderFeral">
+	<property name="Tags" value="zombie,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/spiderzombie_radiated"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombie02Feral"/>
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<triggered_effect event="onSelfFirstSpawn" action="AddBuff" buff="zombieRadiatedBuff40"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1357,6 +1335,7 @@
 	<property name="WalkType" value="7"/>
 	<property name="Mass" value="160"/>
 	<property name="SoundRandom" value="Enemies/Burnt_Zombie/zombieburntroam"/>
+  <property name="SoundSpawn" value="Ambient_Loops/a_fire_embersmoke_sm_lp"/>
 	<property name="SoundAlert" value="Enemies/Burnt_Zombie/zombieburntalert"/>
 	<property name="SoundAttack" value="Enemies/Burnt_Zombie/zombieburntattack"/>
 	<property name="SoundHurt" value="Enemies/Burnt_Zombie/zombieburntpain"/>
@@ -1409,19 +1388,18 @@
 </entity_class>
 
 <entity_class name="zombieNurseFeral" extends="zombieNurse">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="185"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -1451,29 +1429,28 @@
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieCop"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="250"/>
+		<passive_effect name="HealthMax" operation="base_set" value="300"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieFatHawaiianFeral" extends="zombieFatHawaiian">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieCopFeral"/>
 
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		<passive_effect name="HealthMax" operation="base_set" value="570"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -1531,7 +1508,7 @@
 	<property name="Explosion.DamageBonus.earth" value="0"/>
 	<property name="JumpMaxDistance" value="0"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="250"/>
@@ -1541,21 +1518,20 @@
 </entity_class>
 
 <entity_class name="zombieFatCopFeral" extends="zombieFatCop">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieCopFeral"/>
 	<property name="Explosion.BlockDamage" value="650"/>
 	<property name="Explosion.EntityDamage" value="200"/>
 
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		<passive_effect name="HealthMax" operation="base_set" value="475"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 		<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
@@ -1563,7 +1539,7 @@
 </entity_class>
 
 <entity_class name="zombieFatCopRadiated" extends="zombieFatCopFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/cop_rad"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/rad_eye"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
@@ -1573,14 +1549,14 @@
 	<property name="Explosion.BlockDamage" value="750"/>
 	<property name="Explosion.EntityDamage" value="250"/>
 
-	<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="375"/>
+		<passive_effect name="HealthMax" operation="base_set" value="902"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 		<triggered_effect trigger="onSelfFirstSpawn" action="ModifyCVar" target="self" cvar="EntityBoss" operation="set" value="1"/>
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="7.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="8"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1595,8 +1571,6 @@
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="150"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3"/>
-		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
 
@@ -1629,19 +1603,18 @@
 </entity_class>
 
 <entity_class name="zombieUtilityWorkerFeral" extends="zombieUtilityWorker">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieWorkerFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
@@ -1656,7 +1629,7 @@
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 	<property name="HandItem" value="meleeHandZombieWorkerFeral"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="900"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="1"/> <!-- Boss damage -->
 		<passive_effect name="HealthChangeOT" operation="base_set" value="1.4"/> <!-- Boss regen, 1% -->
@@ -1682,7 +1655,7 @@
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieWorker"/>
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="150"/>
@@ -1692,19 +1665,18 @@
 </entity_class>
 
 <entity_class name="zombieSoldierFeral" extends="zombieSoldier">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieWorkerFeral"/>
 
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
@@ -1712,26 +1684,25 @@
 </entity_class>
 
 <entity_class name="zombieSoldierRadiated" extends="zombieSoldierFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/feral_eye"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/soldier_Zombie_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieWorkerFeral"/>
 
-	<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="50"/>
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1747,7 +1718,7 @@
 	<property name="SoundSense" value="zombiemalesense"/>
 
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="700"/> <!-- XP grunt -->
+	<property name="ExperienceGain" value="550"/> <!-- XP grunt -->
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="150"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
@@ -1755,36 +1726,35 @@
 </entity_class>
 
 <entity_class name="zombieSkateboarderFeral" extends="zombieSkateboarder">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieSkateboarderRadiated" extends="zombieSkateboarderFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/hoodieZombie_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1809,42 +1779,41 @@
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombie01"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="120"/>
+		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieCheerleaderFeral" extends="zombieCheerleader">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="180"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieCheerleaderRadiated" extends="zombieCheerleaderFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/cheerleaderZombie_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="180"/>
+		<passive_effect name="HealthMax" operation="base_set" value="451"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="3.7"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1863,37 +1832,36 @@
 </entity_class>
 
 <entity_class name="zombieOldTimerFeral" extends="zombieOldTimer">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieOldTimerRadiated" extends="zombieOldTimerFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/oldTimer_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="541"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="5"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1907,48 +1875,47 @@
 
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandZombieStrong"/>
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="280"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieBikerFeral" extends="zombieBiker">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardBikerRagdoll"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
-	<!-- Gameplay Gazz comb through this -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<!-- Gameplay -->
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStrongFeral"/>
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="532"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieBikerRadiated" extends="zombieBikerFeral">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardBikerRagdoll"/>
 	<property name="ReplaceMaterial0" value="entities/zombies/materials/bikerZ_radiated"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
-	<property name="ExperienceGain" value="2000"/> <!-- XP strong radiated -->
+	<property name="ExperienceGain" value="1250"/> <!-- XP strong radiated -->
 	<property name="LootDropProb" value=".03"/> <!-- Radiated -->
 	<property name="LootDropEntityClass" value="EntityLootContainerStrong"/>
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="300"/>
+		<passive_effect name="HealthMax" operation="base_set" value="1010"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="PhysicalDamageResist" operation="base_set" value="20"/>
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="6"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="9"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -1982,22 +1949,21 @@
 </entity_class>
 
 <entity_class name="zombieFarmerFeral" extends="zombieFarmer">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardFarmerRagdoll"/>
 	<property name="WalkType" value="6"/>
 	<property name="TintMaterial1" value="84,84,84"/>
 	<property name="ReplaceMaterial2" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStrongFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="225"/>
+		<passive_effect name="HealthMax" operation="base_set" value="285"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -2013,26 +1979,25 @@
 	<property name="HandItem" value="meleeHandZombieStripper"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="120"/>
+		<passive_effect name="HealthMax" operation="base_set" value="125"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 	</effect_group>
 </entity_class>
 
 <entity_class name="zombieStripperFeral" extends="zombieStripper">
-	<property name="Tags" value="zombie,walker"/>
+	<property name="Tags" value="zombie,walker,feral"/>
 	<property name="Mesh" value="Zombies/zombieStandardStripperRagdoll"/>
 	<property name="ReplaceMaterial1" value="entities/zombies/materials/feral_eye"/>
 
 	<!-- Gameplay -->
-	<property name="ApproachSpeed" value="1.35"/>
-	<property name="NightApproachSpeed" value="1.35"/>
+	<property name="MoveSpeedAggro" value=".5, 1.35"/>
 
 	<property name="HandItem" value="meleeHandZombieStripperFeral"/>
 
-	<property name="ExperienceGain" value="900"/> <!-- XP grunt feral -->
+	<property name="ExperienceGain" value="700"/> <!-- XP grunt feral -->
 	<property name="LootDropProb" value=".03"/> <!-- Feral -->
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="180"/>
+		<passive_effect name="HealthMax" operation="base_set" value="237"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value="0"/> <!-- Feral damage -->
 	</effect_group>
@@ -2132,8 +2097,8 @@
 
 	<!-- Gameplay -->
 	<property name="MaxTurnSpeed" value="450"/>
-	<property name="WanderSpeed" value="0.7"/>
-	<property name="PanicSpeed" value="2.0"/>
+	<property name="MoveSpeed" value="0.7"/>
+	<property name="MoveSpeedPanic" value="2.0"/>
 	<property name="CanClimbLadders" value="false"/>
 
 	<property name="ExperienceGain" value="327"/>
@@ -2205,9 +2170,9 @@
 
 <entity_class name="animalRabbit" extends="animalTemplateTimid">
 	<property name="Tags" value="animal"/>
-	<property name="Mesh" value="Animals/Rabbit/RABBIT"/>
-	<property name="Prefab" value="NPC"/>
 	<property name="Class" value="EntityAnimalRabbit"/>
+	<property name="Prefab" value="/Entities/Animals/Rabbit/RABBIT"/>
+	<property name="Mesh" value=""/>
 	<property name="Parent" value="Animals"/>
 	<property name="Faction" value="animals"/>
 	<property name="PhysicsBody" value="rabbit"/>
@@ -2216,10 +2181,10 @@
 	<property name="SoundHurt" value="Animals/rabbitpain"/>
 	<property name="SoundDeath" value="Animals/rabbitdeath"/>
 	<property name="SwimOffset" value="2"/>
-	<property name="HasRagdoll" value="true"/>
+	<property name="HasRagdoll" value="false"/>
 
 	<!-- Gameplay -->
-	<property name="PanicSpeed" value="1.5"/>
+	<property name="MoveSpeedPanic" value="1.5"/>
 
 	<property name="ExperienceGain" value="173"/>
 	<property name="DeadBodyHitPoints" value="175"/>
@@ -2246,11 +2211,11 @@
 	<property name="SoundHurt" value="Animals/Chicken/chickenpain"/>
 	<property name="SoundDeath" value="Animals/Chicken/chickendeath"/>
 	<property name="SwimOffset" value="2"/>
-	<property name="HasRagdoll" value="true"/>
+	<property name="HasRagdoll" value="false"/>
 	<property name="HasDeathAnim" value="false"/>
 
 	<!-- Gameplay -->
-	<property name="PanicSpeed" value="1"/>
+	<property name="MoveSpeedPanic" value="1"/>
 	<property name="ExperienceGain" value="173"/>
 	<property name="DeadBodyHitPoints" value="175"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
@@ -2271,7 +2236,7 @@
 	<property name="Parent" value="Animals"/>
 	<property name="SoundHurt" value="Animals/pigpain"/>
 	<property name="SoundDeath" value="Animals/pigdeath"/>
-	<property name="PanicSpeed" value="1.2"/>
+	<property name="MoveSpeedPanic" value="1.2"/>
 	<property name="PhysicsBody" value="pig"/>
 	<property name="ExperienceGain" value="173"/>
 	<property name="SwimOffset" value="0.7"/>
@@ -2335,11 +2300,9 @@
 
 	<!-- Gameplay -->
 	<property name="MaxTurnSpeed" value="280"/>
-	<property name="WanderSpeed" value="0.25"/>
-	<property name="PanicSpeed" value="2.0"/>
-	<property name="ApproachSpeed" value="1.3"/>
-	<property name="NightWanderSpeed" value="0.25"/>
-	<property name="NightApproachSpeed" value="1.4"/>
+	<property name="MoveSpeed" value="0.25"/>
+	<property name="MoveSpeedAggro" value="1.3, 1.4"/>
+	<property name="MoveSpeedPanic" value="2.0"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
 	<property name="AttackTimeoutNight" value="1.4"/>
 	<property name="CanClimbLadders" value="false"/>
@@ -2347,7 +2310,7 @@
 	<property name="HandItem" value="meleeHandAnimalBear"/>
 
 	<property name="TimeStayAfterDeath" value="300"/>
-	<property name="ExperienceGain" value="700"/> <!-- XP grunt -->
+	<property name="ExperienceGain" value="550"/> <!-- XP grunt -->
 	<!-- <property name="CorpseBlock" value="goreBlockAnimal"/><property name="CorpseBlockChance" value="0"/> -->
 	<property name="DeadBodyHitPoints" value="350"/>
 	<property name="MapIcon" value="ui_game_symbol_bullet_point"/>
@@ -2407,7 +2370,7 @@
 	<property name="SoundGiveUp" value="Animals/Bear/beargiveup"/>
 
 	<!-- Gameplay -->
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="600"/>
 
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
@@ -2444,7 +2407,7 @@
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandAnimalZombieBear"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="600"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRottingFlesh" tag="butcherHarvest" count="7"/> <!-- animalZombieBear -->
@@ -2554,7 +2517,7 @@
 	<!-- Gameplay -->
 	<property name="HandItem" value="meleeHandAnimalZombieDogFeral"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP strong -->
+	<property name="ExperienceGain" value="800"/> <!-- XP strong -->
 	<property name="DeadBodyHitPoints" value="450"/>
 	<drop event="Harvest" name="foodRawMeat" count="0" tool_category="Butcher"/>
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="35"/> <!-- animalDireWolf -->
@@ -2564,7 +2527,7 @@
 	<drop event="Harvest" name="resourceFemur" tag="allToolsHarvest" count="1"/>
 
 	<effect_group name="Base Effects">
-		<passive_effect name="HealthMax" operation="base_set" value="200"/>
+		<passive_effect name="HealthMax" operation="base_set" value="250"/>
 		<passive_effect name="HealthMax" operation="perc_add" value="0"/> <!-- Animal HP scale -->
 	</effect_group>
 </entity_class>
@@ -2603,8 +2566,8 @@
 	<property name="SightRange" value="70"/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="1"/>
-	<property name="ApproachSpeed" value="2.1"/> <!-- Used when player in vehicle -->
+	<property name="MoveSpeed" value="1"/>
+	<property name="MoveSpeedAggro" value="2.1, 2.1"/> <!-- Used when player in vehicle -->
 	<property name="MaxTurnSpeed" value="190"/>
 
 	<property name="HandItem" value="meleeHandAnimalZombieVulture"/>
@@ -2627,17 +2590,17 @@
 	<property name="SizeScale" value="1.2"/>
 	<!--<property name="ParticleOnSpawn" value="ParticleEffects/RadiatedParticlesOnMesh" param1="SetShapeToMesh0"/>-->
 
-	<property name="WanderSpeed" value=".7"/>
-	<property name="ApproachSpeed" value="1.5"/>
+	<property name="MoveSpeed" value=".7"/>
+	<property name="MoveSpeedAggro" value="1.5, 1.5"/>
 	<property name="MaxTurnSpeed" value="150"/>
 
-	<property name="ExperienceGain" value="1200"/> <!-- XP grunt radiated -->
+	<property name="ExperienceGain" value="900"/> <!-- XP grunt radiated -->
 
 	<effect_group name="Base Effects">
 		<passive_effect name="HealthMax" operation="base_set" value="120"/>
 		<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
 		<passive_effect name="EntityDamage" operation="perc_add" value=".4"/> <!-- Feral damage -->
-		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="2.5"/>
+		<triggered_effect trigger="onOtherDamagedSelf" action="ModifyCVar" target="self" cvar="RadiatedRegenAmount" operation="set" value="4"/>
 		<triggered_effect trigger="onOtherDamagedSelf" action="AddBuff" target="self" buff="buffRadiatedRegen"/>
 	</effect_group>
 </entity_class>
@@ -2676,11 +2639,10 @@
 	<property name="SmellAlertThreshold" value="5"/> <!-- for awake zombies -->
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.5"/>
-	<property name="ApproachSpeed" value="1.6"/> <!--was 1.6 -->
-	<property name="NightWanderSpeed" value="0.3"/>
-	<property name="NightApproachSpeed" value="1.6"/>
-	<property name="PanicSpeed" value="1.6"/>
+	<property name="MoveSpeed" value="0.5"/>
+	<property name="MoveSpeedNight" value="0.3"/>
+	<property name="MoveSpeedAggro" value="1.6, 1.6"/>
+	<property name="MoveSpeedPanic" value="1.6"/>
 
 	<property name="HandItem" value="meleeHandAnimalZombieDog"/>
 
@@ -2750,11 +2712,9 @@
 
 	<!-- Gameplay -->
 	<property name="MaxTurnSpeed" value="100"/>
-	<property name="WanderSpeed" value="0.08"/>
-	<property name="PanicSpeed" value="0.2"/>
-	<property name="ApproachSpeed" value="0.2"/>
-	<property name="NightWanderSpeed" value="0.08"/>
-	<property name="NightApproachSpeed" value="0.2"/>
+	<property name="MoveSpeed" value="0.08"/>
+	<property name="MoveSpeedAggro" value=".2, .2"/>
+	<property name="MoveSpeedPanic" value="0.2"/>
 
 	<property name="HandItem" value="meleeHandAnimalSnake"/>
 	<property name="AttackTimeoutDay" value="1.5"/>
@@ -2812,11 +2772,9 @@
 	<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.2"/>
-	<property name="PanicSpeed" value="2.0"/>
-	<property name="ApproachSpeed" value="1.3"/>
-	<property name="NightWanderSpeed" value="0.2"/>
-	<property name="NightApproachSpeed" value="1.3"/>
+	<property name="MoveSpeed" value="0.2"/>
+	<property name="MoveSpeedAggro" value="1.3, 1.3"/>
+	<property name="MoveSpeedPanic" value="2.0"/>
 
 	<property name="HandItem" value="meleeHandAnimalWolf"/>
 
@@ -2851,15 +2809,13 @@
 	<property name="SoundGiveUp" value="Animals/Boar/boargiveup"/>
 
 	<!-- Gameplay -->
-	<property name="WanderSpeed" value="0.2"/>
-	<property name="PanicSpeed" value="2.0"/>
-	<property name="ApproachSpeed" value="1.3"/>
-	<property name="NightWanderSpeed" value="0.2"/>
-	<property name="NightApproachSpeed" value="1.3"/>
+	<property name="MoveSpeed" value="0.2"/>
+	<property name="MoveSpeedAggro" value="1.3, 1.3"/>
+	<property name="MoveSpeedPanic" value="2.0"/>
 
 	<property name="HandItem" value="meleeHandAnimalWolf"/>
 
-	<property name="ExperienceGain" value="1500"/> <!-- XP strong feral -->
+	<property name="ExperienceGain" value="1000"/> <!-- XP strong feral -->
 	<drop event="Harvest" name="foodRawMeat" tag="butcherHarvest" count="100"/> <!-- animalBoar -->
 	<drop event="Harvest" name="resourceLeather" tag="butcherHarvest" count="70"/>
 	<drop event="Harvest" name="resourceAnimalFat" tag="butcherHarvest" count="60"/>
@@ -3185,11 +3141,9 @@
 	<property name="MaxHealth" value="150"/>
 	<property name="MaxViewAngle" value="180"/>
 	<property name="Weight" value="70"/>
-	<property name="WanderSpeed" value="0.75"/>
-	<property name="ApproachSpeed" value="1.15"/>
-	<property name="NightWanderSpeed" value="0.75"/>
-	<property name="NightApproachSpeed" value="1.15"/>
-	<property name="PanicSpeed" value="1.15"/>
+	<property name="MoveSpeed" value="0.75"/>
+	<property name="MoveSpeedAggro" value="1.15, 1.15"/>
+	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 	<property name="IsEnemyEntity" value="true"/>
 	<property name="SurfaceCategory" value="organic"/>
@@ -3262,11 +3216,9 @@
 	<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="meleeClubIron"/>
 	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="meleeClubIron"/>
 
-	<property name="WanderSpeed" value="0.5"/>
-	<property name="ApproachSpeed" value="1"/>
-	<property name="NightWanderSpeed" value="0.5"/>
-	<property name="NightApproachSpeed" value="1"/>
-	<property name="PanicSpeed" value="1.15"/>
+	<property name="MoveSpeed" value="0.5"/>
+	<property name="MoveSpeedAggro" value="1, 1"/>
+	<property name="MoveSpeedPanic" value="1.15"/>
 	<property name="CanClimbLadders" value="true"/>
 
 	<property name="ExperienceGain" value="1039"/>
@@ -3352,11 +3304,9 @@
 
 	<property name="LootListAlive" value="62"/>
 
-	<property name="WanderSpeed" value="0.75"/>
-	<property name="ApproachSpeed" value="1.15"/>
-	<property name="NightWanderSpeed" value="0.75"/>
-	<property name="NightApproachSpeed" value="1.15"/>
-	<property name="PanicSpeed" value="1.35"/>
+	<property name="MoveSpeed" value="0.75"/>
+	<property name="MoveSpeedAggro" value="1.15, 1.15"/>
+	<property name="MoveSpeedPanic" value="1.35"/>
 	<property name="CanClimbLadders" value="true"/>
 
 	<property name="ExperienceGain" value="173"/>
@@ -3412,11 +3362,9 @@
 	<!-- Gameplay -->
 	<property name="LootListAlive" value="62"/>
 
-	<property name="WanderSpeed" value="0.75"/>
-	<property name="ApproachSpeed" value="1.15"/>
-	<property name="NightWanderSpeed" value="0.75"/>
-	<property name="NightApproachSpeed" value="1.15"/>
-	<property name="PanicSpeed" value="1.35"/>
+	<property name="MoveSpeed" value="0.75"/>
+	<property name="MoveSpeedAggro" value="1.15, 1.15"/>
+	<property name="MoveSpeedPanic" value="1.35"/>
 	<property name="CanClimbLadders" value="true"/>
 
 	<!-- <property name="Buffs" value="god"/> -->
