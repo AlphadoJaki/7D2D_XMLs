@@ -48,6 +48,8 @@ quality_mod: adjusts the price range of all items with a quality level.
 
 		<trader_item_group name="modGunMeleeT3" count="1">
 			<item group="modMeleeT3"/>
+			<!--<item name="modGunMeleeBlessedMetal"/>-->
+			<item name="modGunMeleeRadRemover" prob=".25"/>
 		</trader_item_group>
 
 		<trader_item_group name="modGunT1" count="1">
@@ -294,8 +296,10 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item group="pressboyCapAll"/>
 			<item group="suitAll" prob="0.2"/>
 			<item name="wornBoots"/>
-			<item name="shades"/>
-			<item name="aviatorGoggles"/>
+			<item name="shades" prob=".7"/>
+			<item name="nerdGlasses" prob=".7"/>
+			<item name="goggles" prob=".7"/>
+			<item name="aviatorGoggles" prob=".7"/>
 			<item name="armorFootballHelmet"/>
 			<item name="leatherDuster" prob="0.2"/>
 			<item name="leatherDusterBlack" prob="0.1"/>
@@ -310,7 +314,6 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item group="pantsAll"/>
 			<item group="sweatshirtAll"/>
 			<item group="hoodedSweatshirtAll"/>
-			<item name="shades"/>
 			<item name="leatherDuster" prob="0.6"/>
 			<item name="leatherDusterBlack" prob="0.2"/>
 		</trader_item_group>
@@ -328,7 +331,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="armorMilitaryHelmet" prob=".1"/>
 			<item name="armorMilitaryBoots" prob=".1"/>
 			<item name="armorMilitaryLegs" prob=".1"/>
-			<item name="armorMilitaryVest" prob=".1"/>			
+			<item name="armorMilitaryVest" prob=".1"/>
 		</trader_item_group>
 
 		<trader_item_group name="heavyArmor">
@@ -359,7 +362,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="resourceMilitaryFiber" count="1,5" prob="2"/>
 			<item name="nightvisionGoggles"/>
 		</trader_item_group>
-		
+
 		<trader_item_group name="steelArmor">
 			<item name="armorSteelBoots" />
 			<item name="armorSteelLegs" />
@@ -367,7 +370,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="armorSteelGloves" />
 			<item name="armorSwatHelmet" />
 			<item name="armorMiningHelmet" />
-		</trader_item_group>		
+		</trader_item_group>
 
 		<trader_item_group name="Armor">
 			<item group="clothes"/>
@@ -496,7 +499,6 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="magazinePerkRunAndGun"/>
 			<item name="magazinePerkLuckyLooter"/>
 			<item name="magazinePerkSalvageOperations"/>
-			<item name="magazinePerkWreckingCrew"/>
 			<item name="magazinePerkSexualTrex"/>
 			<item name="magazinePerkFlurryOfBlows"/>
 			<item name="magazinePerkDeepCuts"/>
@@ -667,7 +669,7 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="drinkJarGrainAlcohol" count="2,4"/>
 			<item name="drinkJarSnowberryJuice" count="1,3"/>
 			<item name="drinkYuccaJuiceSmoothie" count="1"/>
-			
+
 		</trader_item_group>
 
 		<trader_item_group name="foodAll">

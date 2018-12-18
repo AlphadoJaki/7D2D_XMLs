@@ -149,17 +149,16 @@
 		<item_display_info display_type="clothingShades" display_group="groupAttire" >
 			<display_entry name="AttributeLevel" tags="attPerception" title_key="statShowPerception"/>
 		</item_display_info>
-
 		<item_display_info display_type="clothingAviatorGoggles" display_group="groupAttire" >
 			<display_entry name="LootGamestage" title_key="statLootGamestage"/>
-			<display_entry name="dCraftingTime" title_key="statCraftingTime" display_type="Percent"/>
+			<display_entry name="dTreasureRadius" title_key="statTreasureRadius" negative_preferred="true"/>
 		</item_display_info>
 		<item_display_info display_type="clothingSkiGoggles" display_group="groupAttire" >
 			<display_entry name="AttributeLevel" tags="attAgility" title_key="statShowAgility"/>
 		</item_display_info>
-
 		<item_display_info display_type="clothingNerdGlasses" display_group="groupAttire" >
-			<display_entry name="AttributeLevel" tags="attIntellect" title_key="statShowIntellect"/>
+			<display_entry name="dCraftingTier" title_key="statCraftingTier"/>
+			<display_entry name="dCraftingTime" title_key="statCraftingTime" display_type="Percent" negative_preferred="true"/>
 			<display_entry name="dPlayerExpGain" title_key="statShowPlayerExpGain" display_type="Percent"/>
 		</item_display_info>
 		<item_display_info display_type="clothingBarter" display_group="groupAttire" >
@@ -182,7 +181,6 @@
 			<display_entry name="waterAmount" title_key="statWaterAmount"/>
 			<!-- <display_entry name="waterPerkDisplay" title_key="statWaterPerkDisplay" display_type="Percent"/> -->
 			<display_entry name="staminaAmount" title_key="statStaminaAmount" display_type="Percent"/>
-			<display_entry name="dIntellect" title_key="statShowIntellect"/>
 			<display_entry name="dHypothermalResist" title_key="statHypothermalResist"/>
 			<display_entry name="DysenteryRisk" title_key="statDysenteryRisk" display_type="Percent" negative_preferred="true"/>
 		</item_display_info>
@@ -409,6 +407,7 @@
 		<display_entry name="JumpStrength" title_key="statJumpStrength" display_type="Percent"/>
 		<display_entry name="CarryCapacity" title_key="statCarryCapacity"/>
 		<display_entry name="LootGamestage" title_key="statLootGamestage"/>
+		<display_entry name="TreasureRadius" title_key="statTreasureRadius"/>
 		<display_entry name="CraftingTier" title_key="statCraftingTier"/>
 		<display_entry name="PlayerExpGain" title_key="statPlayerExpGain" display_type="Percent"/>
 		<display_entry name="EntityDamage" title_key="statEntityDamage"/>

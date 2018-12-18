@@ -38,7 +38,7 @@ UMA Slots
 GENERAL computational order for determining effects and their magnitude, order of operations (OOO)
 Weather survival / temperature rebalance
 Items can be excluded from underwater use.
-How armor works in A14+
+How armor works in A14
 (Weapon) Degradation rate:
 Ballistic weapons with bullet drop.
 File: RECIPES.XML
@@ -57,6 +57,7 @@ Sleepers
 (A17) ISS - Integrated Survival System
 (A17) Weapons / mods
 (A17) Computational order for generating damage:
+(A17) Falling block / falling blocks damage / cave ins
 (A17) Screen effects and particles
 <!-- Template for adding a new shape to main building blocks
 
@@ -2552,6 +2553,13 @@ BONUS DAMAGE such as for headshots or attacking specific block materials (see be
 	Stance can also be put in the tags:
 		running,walking,idle,swimming,floating
 
+
+=====================================================================
+=====================================================================
+
+(A17) Falling blocks damage / cave ins
+
+damage = (Utils.FastMin(block.blockMaterial.Hardness.Value * block.blockMaterial.Mass.Value * fallTimeInTicks/Constants.cTicksPerSecond *.6f ,40));
 
 =====================================================================
 =====================================================================

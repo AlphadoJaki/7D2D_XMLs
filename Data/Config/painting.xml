@@ -649,6 +649,12 @@ Textures we might want for (terrain) imposters
 
 <!-- free -->
 
+<paint id="104" name="txName_trash_compactor">
+	<property name="TextureId" value="60"/>
+	<property name="Group" value="txGroupDecoration"/>
+	<property name="PaintCost" value="1" />
+</paint>
+
 <paint id="105" name="txName_Wall_oven">
 	<property name="TextureId" value="341"/>
 	<property name="Group" value="txGroupDecoration"/>

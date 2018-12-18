@@ -230,7 +230,7 @@
 		<reward type="Quest" id="quest_whiteRiverCitizen1" stage="aftercomplete">
 			<property name="chainquest" value="false" />
 		</reward>
-		<reward type="SkillPoints" value="5" chainreward="true" />
+		<reward type="SkillPoints" value="4" chainreward="true" />
 		<!-- <reward type="ShowTip" value="whiteRiverCitizen" stage="aftercomplete" />  -->
     </quest>
 
@@ -738,7 +738,7 @@
 
 		<requirement type="Holding" id="gunPumpShotgun" />
 
-		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" />
 	</quest>
 
 	<quest id="challenge_nailsomechicks">
@@ -755,7 +755,7 @@
 
 		<requirement type="Holding" id="gunToolNailgun" />
 
-		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" />
 	</quest>
 
 	<quest id="challenge_thatlldopig">
@@ -800,7 +800,7 @@
 
 		<objective type="AnimalKill" id="animalBear" value="3"  />
 
-		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" />
 	</quest>
 
 	<quest id="challenge_buythefarm">
@@ -820,7 +820,7 @@
 		<objective type="AnimalKill" id="animalBear" value="1"  />
 
 
-		<reward type="SkillPoints" value="2" />
+		<reward type="SkillPoints" value="1" />
 	</quest>
 
 	<quest id="treasure_taylor">
@@ -832,6 +832,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_taylor_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -848,6 +849,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_nickole_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -864,6 +866,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_stephan_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -880,6 +883,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_jennifer_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -896,6 +900,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_claude_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -912,6 +917,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_sarah_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -928,6 +934,7 @@
 		<property name="category_key" value="treasure" />
 		<property name="offer_key" value="treasure_raphael_offer" />
 		<property name="difficulty" value="medium" />
+		<property name="shareable" value="false" />
 
 		<objective type="TreasureChest">
 			<property name="block" value="treasureChest" />
@@ -1200,7 +1207,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="5" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="5" />
 	</quest>
-	
+
 	<quest id="tier6_clear">
 		<property name="name_key" value="quest_tier6_clear" />
 		<property name="subtitle_key" value="quest_clear_subtitle" />
@@ -1535,7 +1542,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="5" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="5" />
 	</quest>
-	
+
 	<quest id="tier6_fetch">
 		<property name="name_key" value="quest_tier6_fetch" />
 		<property name="subtitle_key" value="quest_fetch_subtitle" />
@@ -1591,7 +1598,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="6" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="6" />
 	</quest>
-	
+
 	<quest id="tier2_hidden_cache">
 		<property name="name_key" value="quest_tier2_hidden_cache" />
 		<property name="subtitle_key" value="quest_hidden_cache_subtitle" />
@@ -1648,7 +1655,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="2" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="2" />
 	</quest>
-	
+
 	<quest id="tier3_hidden_cache">
 		<property name="name_key" value="quest_tier3_hidden_cache" />
 		<property name="subtitle_key" value="quest_hidden_cache_subtitle" />
@@ -1705,7 +1712,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="3" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="3" />
 	</quest>
-	
+
 	<quest id="tier4_hidden_cache">
 		<property name="name_key" value="quest_tier4_hidden_cache" />
 		<property name="subtitle_key" value="quest_hidden_cache_subtitle" />
@@ -1762,7 +1769,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="4" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="4" />
 	</quest>
-	
+
 	<quest id="tier5_hidden_cache">
 		<property name="name_key" value="quest_tier5_hidden_cache" />
 		<property name="subtitle_key" value="quest_hidden_cache_subtitle" />
@@ -1819,7 +1826,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="5" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="5" />
 	</quest>
-	
+
 	<quest id="tier6_hidden_cache">
 		<property name="name_key" value="quest_tier6_hidden_cache" />
 		<property name="subtitle_key" value="quest_hidden_cache_subtitle" />
@@ -2119,7 +2126,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="5" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="5" />
 	</quest>
-	
+
 	<quest id="tier6_fetch_clear">
 		<property name="name_key" value="quest_tier6_fetch_clear" />
 		<property name="subtitle_key" value="quest_fetch_clear_subtitle" />
@@ -2364,7 +2371,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="5" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="5" />
 	</quest>
-	
+
 	<quest id="tier6_hidden_clear">
 		<property name="name_key" value="quest_tier6_hidden_clear" />
 		<property name="subtitle_key" value="quest_hidden_clear_subtitle" />
@@ -2425,7 +2432,7 @@
 		<reward type="LootItem" id="questSchematics" ischosen="true" value="6" />
 		<reward type="LootItem" id="questMods" ischosen="true" value="6" />
 	</quest>
-	
+
 	<quest id="tier1_buried_supplies">
 		<property name="name_key" value="quest_tier1_buried_supplies" />
 		<property name="subtitle_key" value="quest_buried_supplies_subtitle" />
@@ -2455,7 +2462,7 @@
 		</objective>
 
 		<action type="SpawnEnemy" id="zombieArlene,zombieDarlene,zombieMarlene,zombieBoe,zombieJoe,zombieMoe,zombieYo" value="3-5" phase="2" />
-		
+
 		<objective type="ReturnToNPC">
 			<property name="phase" value="2" />
 		</objective>
@@ -2884,7 +2891,7 @@
 		<quest id="tier1_clear" />
 		<quest id="tier1_fetch" />
 		<quest id="tier1_buried_supplies" />
-		
+
 		<!-- Tier 2 -->
 		<quest id="tier2_clear" />
 		<quest id="tier2_fetch" />
@@ -2904,14 +2911,14 @@
 		<quest id="tier4_hidden_cache" />
 		<quest id="tier4_fetch_clear" />
 		<quest id="tier4_hidden_clear" />
-		
+
 		<!-- Tier 5 -->
 		<quest id="tier5_clear" />
 		<quest id="tier5_fetch" />
 		<quest id="tier5_hidden_cache" />
 		<quest id="tier5_fetch_clear" />
 		<quest id="tier5_hidden_clear" />
-		
+
 		<!-- Tier 6 -->
 		<!-- <quest id="tier6_clear" /> -->
 		<!-- <quest id="tier6_fetch" /> -->
@@ -2946,7 +2953,7 @@
 		<quest_tier_reward tier="6">
 			<reward type="Quest" id="quest_tier5complete" />
 		</quest_tier_reward>
-		
+
 		<!-- <quest_tier_reward tier="7"> -->
 			<!-- <reward type="Quest" id="quest_tier6complete" /> -->
 		<!-- </quest_tier_reward> -->
