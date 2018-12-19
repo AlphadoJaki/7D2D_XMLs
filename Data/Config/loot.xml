@@ -1433,8 +1433,7 @@ A single player on default diff can have a GS of up to 480 without perks.
 	<item name="meleeToolPickaxeSteel"/>
 	<item name="meleeToolFireaxeSteel"/>
 	<item name="meleeToolShovelSteel"/>
-	<!-- <item name="toolCalipers" prob="0.09"/> -->
-	<item name="toolAndDieSet" prob="0.09"/>
+	<item name="toolAndDieSet" />
 	<item name="gunToolNailgun" loot_prob_template="probTemplate1.0"/>
 </lootgroup>
 

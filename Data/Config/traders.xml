@@ -748,10 +748,9 @@ quality_mod: adjusts the price range of all items with a quality level.
 			<item name="resourceRepairKit" count="1,4"/>
 			<item name="resourceWood" count="50,250"/>
 			<item name="toolAnvil" count="1"/>
-			<!-- <item name="toolCalipers" prob="0.6"/> -->
-			<item name="toolAndDieSet" prob="0.6"/>
-			<item name="resourceForgedIron" count="2,8" prob="0.21"/>
-			<item name="resourceForgedSteel" count="2,8" prob="0.12"/>
+			<item name="toolAndDieSet" prob="0.7"/>
+			<item name="resourceForgedIron" count="2,8" />
+			<item name="resourceForgedSteel" count="2,8" />
 			<item name="meleeToolPaintTool" prob="0.5"/>
 			<item name="meleeToolWireTool"/>
 		</trader_item_group>

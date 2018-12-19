@@ -1134,7 +1134,7 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 	<property name="damage_category" value="stone"/>
 	<property name="surface_category" value="stone"/>
 	<property name="forge_category" value="stone"/>
-	<property name="Experience" value=".7"/>
+	<property name="Experience" value="1"/>
 </material>
 
 <material id="MresourceSnowBall">
@@ -1164,21 +1164,28 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 	<property name="damage_category" value="wood"/>
 	<property name="surface_category" value="wood"/>
 	<property name="forge_category" value="wood"/>
-	<property name="Experience" value=".28"/>
+	<property name="Experience" value=".75"/>
+</material>
+
+<material id="MresourceClayLump">
+	<property name="damage_category" value="earth"/>
+	<property name="surface_category" value="earth"/>
+	<property name="forge_category" value="clay"/>
+	<property name="Experience" value=".8"/>
 </material>
 
 <material id="MresourceCrushedSand">
 	<property name="damage_category" value="glass"/>
 	<property name="surface_category" value="glass"/>
 	<property name="forge_category" value="glass"/>
-	<property name="Experience" value=".6"/>
+	<property name="Experience" value=".7"/>
 </material>
 
 <material id="MresourceIronFragment">
 	<property name="damage_category" value="metal"/>
 	<property name="surface_category" value="metal"/>
 	<property name="forge_category" value="iron"/>
-	<property name="Experience" value="4"/>
+	<property name="Experience" value="4.5"/>
 </material>
 
 <material id="MresourceScrapIron">
@@ -1308,13 +1315,6 @@ Do not rename "basic" materials like cloth, metal, or stone. These auto-generate
 	<property name="surface_category" value="metal"/>
 	<property name="forge_category" value="lead"/>
 	<property name="Experience" value="50"/>
-</material>
-
-<material id="MresourceClayLump">
-	<property name="damage_category" value="earth"/>
-	<property name="surface_category" value="earth"/>
-	<property name="forge_category" value="clay"/>
-	<property name="Experience" value="1"/>
 </material>
 
 <material id="MresourceCobblestones">

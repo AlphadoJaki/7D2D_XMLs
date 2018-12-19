@@ -3902,6 +3902,10 @@ We _want_ players to specialise so we also have to make it feasible.
 	<property name="Weight" value="0"/>
 	<property name="FuelValue" value="60"/>
 	<property name="Stacknumber" value="40"/> <!-- STK explosives -->
+	<property name="LightValue" value="0.35"/>
+	<property name="LightSource" value="lightSource"/>
+	<property name="ActivateObject" value="lightSource"/>
+	<property name="AlwaysActive" value="true"/>
 	<property name="Explosion.BlockDamage" value="5"/>
 	<property name="Explosion.EntityDamage" value="5"/>
 	<property name="Explosion.ParticleIndex" value="10"/>
@@ -8898,10 +8902,12 @@ So no clothing dyes until that can be resolved. -->
 	<property name="Group" value="Food/Cooking"/>
 
 	<effect_group tiered="false">
+		<requirement name="NotHasBuff" buff="buffIsOnFire"/>
+
 		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="waterAmount" operation="add" value="24"/>
 		<display_value name="staminaAmount" value=".15" />
 		<!-- <triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="waterPerkDisplay" operation="add" value="@waterHydrationPSec"/> -->
-		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" target="self" buff="buffProcessConsumables,buffRedTea"/>
 	</effect_group>
 
 	<effect_group tiered="false">
@@ -11992,6 +11998,7 @@ So no clothing dyes until that can be resolved. -->
 	<property name="Meshfile" value="Items/Misc/sackPrefab"/>
 	<property name="DropMeshfile" value="Items/Misc/sack_droppedPrefab"/>
 	<property name="Material" value="Msteel"/>
+	<property name="Weight" value="200"/>
 	<property name="Stacknumber" value="1"/> <!-- STK loot -->
 	<property name="EconomicValue" value="240"/>
 	<property name="Group" value="Resources"/>
